@@ -1,0 +1,161 @@
+Il World Wide Web è:
+-un protocollo
+-la rete Internet
+*-un sistema di accesso ad Internet
+-un sistema per introdurre nomi logici
+
+Il fatto che un utente non autorizzato abbia accesso ad una rete è un problema che riguarda:
+-La prestazione della rete.	
+-La velocità della rete.	
+*-La sicurezza della rete.	
+-L'affidabilità della rete.	
+
+Lo scopo di una memoria cache è:
+-permettere a più core di accedere in parallelo alla stessa zona di memoria fisica
+-fornire uno spazio di memoria condiviso tra più processi per consentire loro di comunicare
+-garantire che un processo non possa accedere allo spazio logico di un altro processo
+*-sfruttare le proprietà di località dei programmi per velocizzare gli accessi a memoria
+
+L'algoritmo Merge Sort (ordinamento sequenza di n numeri) ha una complessità computazionale:
+-Θ(n)
+-Θ(n^2)
+*-Θ(nlogn)
+-c (costante)
+
+Un circuito combinatorio è:
+*-costruito mediante porte logiche e calcola funzioni booleane
+-alla base della costruzione delle porte logiche
+-un circuito che consente di mantenere uno stato ed è pertanto un possibile ingrediente per costruire memorie
+-un circuito per la temporizzazione degli eventi in un sistema di calcolo
+
+Quanti bit servono per rappresentare il numero esadecimale 0xDEADBEEF?
+*-32 
+-8
+-24
+-16
+
+Si consideri una funzione comparatore int compar(const void *a, const void *b). Quale delle seguenti affermazioni è falsa?
+-se l’elemento puntato da a è minore di quello puntato da b la funzione restituisce un valore negativo
+*-se l’elemento puntato da a è minore o uguale di quello puntato da b la funzione restituisce un valore negativo
+-se l’elemento puntato da a è maggiore di quello puntato da b la funzione restituisce un valore positivo
+-se l’elemento puntato da a è uguale a quello puntato da b la funzione restituisce un valore zero
+
+Data la struct C “struct s { char x, short y; char z}”, quanti byte di padding sono presenti nella struct?
+-0
+-1
+*-2
+-3
+
+La metodologia standard di progettazione di una base di dati prevede che siano eseguite, nellâ€™ordine, le fasi di progettazione:
+*-concettuale, logica, fisica
+-concettuale, fisica, logica
+-logica, fisica, concettuale
+-fisica, concettuale, logica
+
+Cosa significa HTML?
+*-Hyper Text Markup Language
+-Hyper Tool Mondial Line
+-Hyper Text Mondial Language
+-Hyper Tool Mega Language
+
+
+A cosa servono i Meta tag in un documento HTML?
+-*Forniscono informazioni ai motori di ricerca
+-Chiudono il documento dopo il tag HTML
+-Danno il titolo alla pagina
+-Formattano il testo, in particolare i titoli
+
+Qual e' la differenza tra il codice contenuto tra il tag head e il tag body di un documento HTML?
+*-Il tag body racchiude tutti gli elementi visibili all'interno della pagina, il tag head quelli non visibili
+-Il tag body racchiude i contenuti principali, il tag head quelli periferici (logo, pubblicita',menu...)
+-Il tag body racchiude i contenuti dinamici, il tag head quelli statici
+-Il tag head non esiste
+
+Qual'e' la differenza tra HTML e CSS?
+-L'HTML e' interpretato direttamente dal browser, mentre il CSS e' interpretato dal server web
+-HTML e CSS possono essere utilizzati in maniera intercambiabile
+-L'HTML definisce gli elementi presenti nella pagina, il CSS il loro aspetto
+-L'HTML e' un linguaggio di markup, il CSS di programmazione
+
+Cos'e' il CSS?
+-Il Creating Style System e' un framework utilizzato per avvantaggiare notevolmente la creazione della struttura grafica delle pagine web
+-Il Coded Style Sheet e' un sistema sviluppato da Adobe per incorporare direttamente immagini e video all'interno di una pagina web
+*-Il Cascading Style Sheet e' un linguaggio interpretato dal browser che definisce lo stile degli elementi presenti in una pagina web
+-Il Crash Server with Style e' un meccanismo per gestire i malfunzionamenti durante l'elaborazione degli elementi grafici della pagina Web
+
+Come si misura l’efficienza di un algoritmo?
+-In base al tempo necessario a scrivere un programma basato sull’algoritmo
+-In base al tempo necessario ad eseguire l’algoritmo su un’architettura diriferimento
+-In base al numero di linee di codice di un programma basato sull’algoritmo
+*-In base alla quantit`a di risorse (tempo, spazio) richieste alla sua esecuzione
+
+Qual`e la complessita’ dell’algoritmo di ricerca binaria, in funzione del numero dielementi n?
+-Θ(n)nel caso peggiore
+*-Θ(logn)nel caso peggiore
+-Θ(log logn)nel caso medio-
+-Θ(logn)nel caso medio edO(n)nel caso peggiore
+
+In quali casi la visita in profondit`a e la visita in ampiezza su un grafo non orientatoproducono esattamente lo stesso albero?-
+-Se il grafo ha esattamentenarchi
+-Se il grafo`e un ciclo semplice 
+*-Se il grafo`e un cammino semplice
+-Mai
+
+Quanti caratteri diversi possono essere rappresentati nel codice ASCII esteso?
+-infiniti
+-8
+*-256
+-1024
+
+
+Quale delle seguenti voci è un componente funzionale della CPU?
+-AGP
+*-ALU
+-ISA
+-RAM
+
+Una possibile definizione di "Sistema Operativo" è:
+-E' l'insieme di tutti i programmi installati in un PC.
+-E' il metodo con cui opera il PC.
+*-E' una interfaccia tra l'utente e l'hardware del sistema.
+-E' il programma interno della CPU che ne consente la funzionalità.
+
+Il linguaggio macchina è:
+-Un qualsiasi linguaggio usato per programmare.
+*-Il linguaggio capito dalla CPU.
+-Un linguaggio di programmazione non più in uso.
+-Il più diffuso linguaggio di programmazione.
+
+
+Il BUS è:
+-un dispositivo hardware che effettua i calcoli
+-una memoria di transito usata dalla stampante
+*-un insieme di collegamenti elettrici che connettono i diversi componenti del computer
+-un particolare collegamento in rete
+
+La funzione della ALU è:
+*-eseguire operazioni aritmetiche e logiche
+-garantire la correttezza dei dati elaborati
+-controllare lo scambio di dati tra la RAM e il disco fisso
+-inviare segnali di controllo al sistema
+
+Quale esatto ordine delle seguenti operazioni rappresentano il ciclo della CPU?
+-decode, execute, fetch
+-execute, fetch, decode
+*-fetch, decode, execute
+-fetch, execute, decode
+
+Quale caratteristica è tipica della ROM?
+-è una memoria virtuale
+*-è di sola lettura
+-è di sola scrittura
+-è una memoria dinamica
+
+Cos’è l’estensione di un file?
+-il percorso completo dalla root directory fino al file
+-la grandezza del file in byte
+*-una sigla attribuita al file dal sistema operativo o da programmi applicativi
+-il funzionamento del file
+
+
+
