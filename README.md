@@ -9,7 +9,7 @@ Progetto Linguaggi e Tecnologie per il Web
 - HTML, PHP
 - CSS
 - JavaScript, JQuery, AJAX
-- 
+- PostgreSQL (pgAdmin4)
 
 # Pagine Principali
 - Homepage

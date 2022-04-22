@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Mono', monospace;
+}
+
+h1 {
+    font-size: 64px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: regular;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: lighter;
+}
+
+p {
+    font-size: 16px;
+    font-weight: lighter;
+}
+
+a {
+    text-decoration: none;
+    font-weight: regular;
+    font-size: 16px;
+}
+
+.button {
+    background-color: lightgreen;
+    border-color: lightgreen;
+    border-radius: 8px;
+    color: #000000;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: green;
+    border-color: green;
+    color: #ffffff;
+    cursor: pointer;
+}
