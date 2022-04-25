@@ -5,6 +5,10 @@
     font-family: 'Roboto Mono', monospace;
 }
 
+body {
+    background-color: #000000;
+}
+
 h1 {
     font-size: 64px;
     font-weight: bold;
@@ -33,11 +37,11 @@ a {
 }
 
 .button {
-    background-color: lightgreen;
-    border-color: lightgreen;
-    border-radius: 8px;
+    background-color: #77bc3f;
+    border-color: #77bc3f;
+    border-radius: 12px;
     color: #000000;
-    padding: 10px;
+    padding: 15px;
     cursor: pointer;
     font-weight: bold;
 }
@@ -47,4 +51,30 @@ a {
     border-color: green;
     color: #ffffff;
     cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 48px;
+    }
+    
+    h2 {
+        font-size: 28px;
+    }
+    
+    h3 {
+        font-size: 18px;
+    }
+    
+    p {
+        font-size: 12px;
+    }
+    
+    a {
+        font-size: 14px;
+    }
+    
+    .button {
+        font-weight: regular;
+    }
 }

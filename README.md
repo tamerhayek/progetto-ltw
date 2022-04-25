@@ -26,3 +26,7 @@ Progetto Linguaggi e Tecnologie per il Web
 
 
 
+# Colors
+- Primary: #77bc3f
+- White: #ffffff
+- Black: #000000

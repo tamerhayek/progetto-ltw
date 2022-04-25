@@ -1,0 +1,42 @@
+{
+    "UTENTE": {
+        "nome": "string",
+        "cognome": "string",
+        "email": "string",
+        "username": "string",
+        "password": "string",
+        "punteggio": "number",
+        "partiteGiocate": "number"
+    },
+    "SFIDE": {
+        "id": "number incremental",
+        "status": "string (in attesa, in corso, terminata)",
+        "giocatore1": "string username",
+        "giocatore2": "string username",
+        "vincitore": "string username",
+        "duello": {
+            "Round1": ["number (0, 1, 2) giocatore1",
+                        "number (0, 1, 2) giocatore2",
+                        "number (0, 1, 2) vincitore"],
+            "Round2": ["number (0, 1, 2) giocatore1",
+                        "number (0, 1, 2) giocatore2",
+                        "number (0, 1, 2) vincitore"],
+            "Round3": ["number (0, 1, 2) giocatore1",
+                        "number (0, 1, 2) giocatore2",
+                        "number (0, 1, 2) vincitore"]
+        },
+        "domande": ["number (id delle domande)"]
+    },
+    "DOMANDE": {
+        "id": "number incremental",
+        "domanda": "string",
+        "risposte": ["string (risposta)", 
+                    "string (risposta)",
+                    "string (risposta)",
+                    "string (risposta)"],
+        "corretta": "number (0, 1, 2, 3)"
+    }
+}
+
+
+
