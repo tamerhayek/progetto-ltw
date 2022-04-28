@@ -4,47 +4,108 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="registrazione.css" rel="stylesheet"/>
+    <link href="registrazione.css" rel="stylesheet"/> 
     <title>Registrazione</title>
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#divCognome").hide();
+            $("#divEmail").hide();
+            $("#divUsername").hide();
+            $("#divPassword").hide();
+            $("#divPasswordConf").hide();
+            $("#divSubmit").hide();
+
+            $("#nome").on({
+                change: function(){
+                    if(validaNome()){
+                        $("#divCognome").fadeIn();
+                    }
+                }
+             });
+             $("#cognome").on({
+                change: function(){
+                    if(validaCognome())
+                        $("#divEmail").fadeIn();
+                }
+             });
+             $("#email").on({
+                change: function(){
+                    if(validaEmail()){
+                        $("#divUsername").fadeIn();
+                    }
+                }
+             });
+             $("#username").on({
+                change: function(){
+                    if(validaUsername()){
+                        $("#divPassword").fadeIn();
+                    }
+                }
+             });
+             $("#password").on({
+                change: function(){
+                    if(validaPassword()){
+                        $("#divPasswordConf").fadeIn();
+                    }
+                }
+             });
+             $("#passwordconferma").on({
+                change: function(){
+                    if(validaPasswordConf())
+                        $("#divSubmit").fadeIn();
+                }
+             });
+        });
+    </script>
+
+
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h2>Registrazione</h2>        
+
+    <!-- CENTRO -->
+    <div class="centro">
+        <div class="descrizione">
+            <h2>Registrazione</h2>
+            <h3>Crea il tuo account e intraprendi una sfida! </h3>
         </div>
-        <form class="form" name="formregistrazione" id="form">
-            <div class="form-control">
-                <label for="nome">Nome</label>
-                <input type="text" id="nome" name="nomeUtente" placeholder="inserisci il tuo nome">
-                <small></small>
+        <form name="formregistrazione" id="form">
+            <div class="grid">
+                <div id="divNome" class="form-control">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nomeUtente" placeholder="inserisci il tuo nome">
+                    <small></small>
+                </div>
+                <div id="divCognome" class="form-control">
+                    <label for="cognome">Cognome</label>
+                    <input type="text" id="cognome" name="cognomeUtente" placeholder="inserisci il tuo cognome">
+                    <small></small>
+                </div>
+                <div id="divEmail" class="form-control">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="emailUtente" placeholder="inserisci la tua email">
+                    <small></small>
             </div>
-            <div class="form-control">
-                <label for="cognome">Cognome</label>
-                <input type="text" id="cognome" name="cognomeUtente" placeholder="inserisci il tuo cognome">
-                <small></small>
-            </div>
-            <div class="form-control">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="emailUtente" placeholder="inserisci la tua email">
-                <small></small>
-            </div>
-            <div class="form-control">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="nomeUtente" placeholder="scegli un username">
-                <small></small>
-            </div>
-            <div class="form-control">
-                <label for="password">Password </label>
-                <input type="password" id="password" name="passwordUtente" placeholder="scegli una password">
-                <small></small>
-            </div>
-            <div class="form-control">
-                <label for="passwordconferma">Conferma Password </label>
-                <input type="password" id="passwordconferma" name="passwordConfermaUtente" placeholder="conferma la tua password">
-                <small></small>
-            </div>
-            <div class="form.control">
-                <button type="submit">Registra</button>
+                <div id="divUsername" class="form-control">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="nomeUtente" placeholder="scegli un username">
+                    <small></small>
+                </div>
+                <div id="divPassword" class="form-control">
+                    <label for="password">Password </label>
+                    <input type="password" id="password" name="passwordUtente" placeholder="scegli una password">
+                    <small></small>
+                </div>
+                <div id="divPasswordConf" class="form-control">
+                    <label for="passwordconferma">Conferma Password </label>
+                    <input type="password" id="passwordconferma" name="passwordConfermaUtente" placeholder="conferma la tua password">
+                    <small></small>
+                </div>
+                <div id="divSubmit" class="form.control">
+                    <button type="submit">Registrami</button>
+                </div>
             </div>
         </form>
     </div>
