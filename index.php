@@ -13,26 +13,36 @@
       href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
+
     <!-- Style -->
     <link rel="stylesheet" href="src/css/general.css" />
-    <link rel="stylesheet" href="src/css/index.css" />
+    <link rel="stylesheet" href="index.css" />
+
+    <!-- Vue.js -->
+    <script src="https://unpkg.com/vue@3"></script>
   </head>
   <body>
     <!-- NAVBAR -->
     <div class="navbar">
       <div class="navbar-logo">
-        <a href="index.html">
+        <a href="">
           <img src="src/images/logo.png" alt="Logo Trivia Stack" />
         </a>
       </div>
       <div class="navbar-menu">
-        <a href="#">Classifica</a>
-        <a href="#">Sfide</a>
-        <a href="#">Contatti</a>
+        <a href="classifica/">Classifica</a>
+        <a href="quiz/">Sfide</a>
+        <a href="contatti/">Contatti</a>
       </div>
       <div class="navbar-user">
-        <a class="login" href="auth/login.html">Login</a>
-        <a class="button" href="#">Sign up</a>
+        <?php 
+          if (isset($_COOKIE['username'])) {
+            echo '<a class="button" href=""><img src="src/images/icons/profile.svg" alt="Icona Profilo">'.$_COOKIE["username"].'</a>';
+          } else {
+            echo "<a class='login' href='auth/accesso/'>Accedi</a>";
+            echo "<a class='button' href='auth/registrazione/'>Registrati</a>";
+          }
+        ?>
       </div>
     </div>
 
@@ -46,5 +56,11 @@
       </div>
     </div>
 
+    <?php 
+      setcookie("username", "tamerhayek", time()+20);
+    ?>
+
+    <!-- vue script -->
+    <!-- <script type="application/javascript" src="src/vuejs/app.js"></script> -->
     </body>
 </html>

@@ -1,0 +1,152 @@
+.container {
+    width: 100%;
+    padding: 10px;
+    padding-top: 80px;
+}
+
+.pannello{
+    justify-content: center;
+    margin-top: 20px;
+    border-radius: 10px;  
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: #77bc3f;
+}
+
+.descrizione{
+    padding-top: 15px;
+    align-items: center;
+    text-align: center;   
+}
+
+.descrizione > h2{
+    margin-top: 20px;
+    color: #000000;
+    text-transform: uppercase;
+}
+.descrizione > h3{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: #ffffff;
+    font-style: italic;
+}
+
+.form{
+    padding: 10px 30px;
+}
+
+.grid{
+    display: grid;
+    grid-template: "i1 i3"
+                   "i4 i6"
+                   "i7 i9"/ 1fr 1fr;   
+    grid-column-gap: 10%;
+    grid-row-gap: 2%;
+    justify-content: center; 
+    margin-left: 5%;
+    margin-right: 5%;       
+}
+
+.form-control[id="divNome"]{grid-area: i1;}
+.form-control[id="divCognome"]{grid-area: i4;}
+.form-control[id="divEmail"]{grid-area: i7;}
+.form-control[id="divUsername"]{grid-area: i3;}
+.form-control[id="divPassoword"]{grid-area: i6;}
+.form-control[id="divPasswordConf"]{grid-area: i9;}
+
+.form-control{
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+.form-control label{
+    display: inline-block;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.form-control input{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.form-control.success input{
+    border:2px solid green;
+}
+.form-control.error input{
+    border:2px solid red;
+}
+.form-control small{
+    position:absolute;
+    margin: 3px;
+    visibility: hidden;
+    color: rgb(153, 13, 8);
+}
+
+#divSubmit {
+    padding: 20px;
+}
+
+.submit {
+    background-color: #000000;
+    border-color: #77bc3f;
+    border-radius: 12px;
+    color: #77bc3f;
+    padding: 15px;
+    margin: 0 auto;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.submit:hover {
+    background-color: green;
+    border-color: green;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .container{
+        padding: 70px 5px 15px 5px;
+    }
+    
+    .pannello{  
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .descrizione{
+        padding: 10px; 
+    }
+    
+    .descrizione > h2{
+        margin-top: 10px;
+    }
+    .descrizione > h3{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .grid{
+        display: block;
+        justify-content: center; 
+        margin-left: 5%;
+        margin-right: 5%;       
+    }
+
+    .form-control{
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        position: relative;
+    }
+
+    #divSubmit {
+        padding: 10px;
+    }
+    
+    .submit {
+        padding: 10px;
+    }
+}
