@@ -11,6 +11,11 @@
         <link rel="stylesheet" href="accesso.css" />
     </head>
     <body>
+        <?php 
+            if (isset($_COOKIE['username'])) {
+                header("location: ../../");
+            }
+        ?>
         <!-- NAVBAR -->
         <div class="navbar">
             <div class="navbar-logo">
@@ -21,8 +26,7 @@
             <div class="navbar-menu">
             </div>
             <div class="navbar-user">
-                <a class="login" href="">Accedi</a>
-                <a class="button" href="../registrazione/">Registrati</a>
+                <a class="login" href="../registrazione/">Ancora non sei registrato? &rarr; Registrati</a>
             </div>
         </div>
 
@@ -56,7 +60,7 @@
                     </div>
                     <div id="divSubmit" class="divSubmit">
                         <button class="submit button" type="submit">
-                            Registrami
+                            Accedi
                         </button>
                     </div>
                 </form>

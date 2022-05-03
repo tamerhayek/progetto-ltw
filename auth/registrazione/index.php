@@ -57,6 +57,11 @@
         </script>
     </head>
     <body>
+        <?php 
+            if (isset($_COOKIE['username'])) {
+                header("location: ../../");
+            }
+        ?>
         <!-- NAVBAR -->
         <div class="navbar">
             <div class="navbar-logo">
@@ -65,8 +70,7 @@
                 </a>
             </div>
             <div class="navbar-user">
-                <a class="login" href="../accesso/">Accedi</a>
-                <a class="button" href="">Registrati</a>
+                <a class="login" href="../accesso/"> Sei già registrato? &rarr; Accedi</a>
             </div>
         </div>
         <!-- REGISTRAZIONE -->
@@ -142,7 +146,7 @@
                         </div>
                     </div>
                     <div id="divSubmit" class="divSubmit">
-                        <button class="submit" type="submit">Registrami</button>
+                        <button class="submit button" type="submit">Registrami</button>
                     </div>
                 </form>
             </div>

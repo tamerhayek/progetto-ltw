@@ -22,6 +22,18 @@
     <script src="https://unpkg.com/vue@3"></script>
   </head>
   <body>
+    <?php
+      if(isset($_GET['logout'])){
+        if(isset($_COOKIE['username'])){
+            unset($_COOKIE["username"]);
+            setcookie("username", null, time()-3600);
+           // header("location: /");
+        }
+        else{
+            header("location: ../");
+        }
+      }
+    ?>
     <!-- NAVBAR -->
     <div class="navbar">
       <div class="navbar-logo">
@@ -38,6 +50,7 @@
         <?php 
           if (isset($_COOKIE['username'])) {
             echo '<a class="button" href=""><img src="src/images/icons/profile.svg" alt="Icona Profilo">'.$_COOKIE["username"].'</a>';
+            echo "<a class='login' href='?logout=true'>Esci</a>";
           } else {
             echo "<a class='login' href='auth/accesso/'>Accedi</a>";
             echo "<a class='button' href='auth/registrazione/'>Registrati</a>";
@@ -64,3 +77,4 @@
     <!-- <script type="application/javascript" src="src/vuejs/app.js"></script> -->
     </body>
 </html>
+

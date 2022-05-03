@@ -23,7 +23,7 @@
     <!-- NAVBAR -->
     <div class="navbar">
       <div class="navbar-logo">
-        <a href="">
+        <a href="../">
           <img src="../src/images/logo.png" alt="Logo Trivia Stack" />
         </a>
       </div>
