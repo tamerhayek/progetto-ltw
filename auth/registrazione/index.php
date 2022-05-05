@@ -86,7 +86,7 @@
                         }
                     ?>
                 </div>
-                <form name="formregistrazione" id="form" method='POST' action="registrati.php">
+                <form name="formregistrazione" id="form" method='POST' action="./registrati.php">
                     <div class="grid">
                         <div id="divNome" class="form-control">
                             <label for="nome">Nome</label>
@@ -155,7 +155,7 @@
                         <?php
                             if (isset($_GET['utente'])) {
                                 if ($_GET['utente'] == "false") {
-                                    echo "<p>Utente già esistente! <a href='../accesso'>Accedi</a></a></p>";
+                                    echo "<p>Utente già esistente! <a href='../accesso'>Accedi</a></p>";
                                 }
                             }
                         ?>

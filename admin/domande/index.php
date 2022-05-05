@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="domande.css">
 </head>
 <body>
+    <?php include 'src/php/logout.php';?>
     <table>
         <tr>
             <th>ID</th>

@@ -38,7 +38,7 @@
                         echo "<a href=\"../accesso/\">Clicca qui per loggarti!</a>";
                     } else
                         echo ("C'è stato un errore :-(");
-                    }
+                }
             }        
         ?>
     </div>

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="duello.css">
 </head>
 <body>
+    <?php include '../../src/php/logout.php';?>
     <!-- NAVBAR -->
     <div class="navbar">
       <div class="navbar-logo">
@@ -25,8 +26,10 @@
       </div>
       <div class="navbar-user">
         <?php 
-          if (isset($_COOKIE['username'])) {
-            echo '<a class="button" href=""><img src="../src/images/icons/profile.svg" alt="Icona Profilo">'.$_COOKIE["username"].'</a>';
+          if (isset($_COOKIE['userArray'])) {
+            $data = json_decode($_COOKIE['userArray'], true);
+            echo '<a class="button" href="../../profilo/"><img src="../../src/images/icons/profile.svg" alt="Icona Profilo">'.$data['username'].'</a>';
+            echo "<a class='login' href='?logout=true'>Esci</a>";
           } else {
             echo "<a class='login' href='../../auth/accesso/'>Accedi</a>";
             echo "<a class='button' href='../../auth/registrazione/'>Registrati</a>";
@@ -34,5 +37,5 @@
         ?>
       </div>
     </div>
-</body>
+  </body>
 </html>

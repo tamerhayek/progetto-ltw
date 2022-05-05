@@ -9,14 +9,14 @@
     $result = pg_query_params($dbconn, $query, array($username, $password));
     if (!($utente = pg_fetch_array($result, null, PGSQL_ASSOC))) {
         header("location: ./?utente=false");
-    }
-
-    if (!isset($_COOKIE['userArray'])) {
-        $data = json_encode(array(
-            'username' => $username,
-            'password' => $password
-        ));
-        setcookie("userArray", $data, time() + 2592000, "/");
-    }
-    header("location: ../../");
+    } else {
+        if (!isset($_COOKIE['userArray'])) {
+            $data = json_encode(array(
+                'username' => $username,
+                'password' => $password
+            ));
+            setcookie("userArray", $data, time() + 2592000, "/");
+        }
+        header("location: ../../");
+    }  
 ?>
