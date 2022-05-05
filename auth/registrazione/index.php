@@ -82,7 +82,7 @@
                     <h3>Crea il tuo account e intraprendi una sfida!</h3>
                     <a href="../accesso/"> Sei già registrato?</a>
                 </div>
-                <form name="formregistrazione" id="form">
+                <form name="formregistrazione" id="form" method='POST' action="registrati.php">
                     <div class="grid">
                         <div id="divNome" class="form-control">
                             <label for="nome">Nome</label>
@@ -119,7 +119,7 @@
                             <input
                                 type="text"
                                 id="username"
-                                name="nomeUtente"
+                                name="username"
                                 placeholder="Deve contenere almeno 8 caratteri"
                             />
                             <small></small>
@@ -148,7 +148,7 @@
                         </div>
                     </div>
                     <div id="divSubmit" class="divSubmit">
-                        <button class="submit button" type="submit">Registrami</button>
+                        <button name="registrazione" class="submit button" type="submit">Registrami</button>
                     </div>
                 </form>
             </div>

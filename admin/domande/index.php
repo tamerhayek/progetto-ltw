@@ -25,15 +25,11 @@
             while ($domanda = pg_fetch_array($domande, null, PGSQL_ASSOC)) {
                 echo "<tr>";
                 foreach ($domanda as $key => $value) {
-                    echo "<td>".$domanda['id']."</td>";
-                    echo "<td>".$domanda['domanda']."</td>";
-                    echo "<td>".$domanda['risposta1']."</td>";
-                    echo "<td>".$domanda['risposta2']."</td>";
-                    echo "<td>".$domanda['risposta3']."</td>";
-                    echo "<td>".$domanda['risposta4']."</td>";
-                    echo "<td>".$domanda['risposta_corretta']."</td>";
-                    echo "<td><a href='edit.php?id=".$domanda['id']."'>Modifica</a> | <a href='delete.php?id=".$domanda['id']."'>Elimina</a></td>";
+                    echo "\t\t<td>";
+                    echo "$value";
+                    echo "</td>";
                 }
+                echo "<td><a href='edit.php?id=".$domanda['id']."'>Modifica</a> | <a href='delete.php?id=".$domanda['id']."'>Elimina</a></td>";
                 echo "</tr>";
             }
             pg_free_result($domande);
