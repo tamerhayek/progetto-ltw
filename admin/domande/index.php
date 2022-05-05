@@ -5,16 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trivia Stack | Admin | Domande</title>
+
+    <!-- STYLE -->
+    <link rel="stylesheet" href="../../src/css/general.css">
+    <link rel="stylesheet" href="domande.css">
 </head>
 <body>
     <table>
         <tr>
             <th>ID</th>
             <th>Domanda</th>
-            <th>Risposta1</th>
-            <th>Risposta2</th>
-            <th>Risposta3</th>
-            <th>Risposta4</th>
+            <th>Risposta 1</th>
+            <th>Risposta 2</th>
+            <th>Risposta 3</th>
+            <th>Risposta 4</th>
             <th>Risposta Corretta</th>
             <th>Azioni</th>
         </tr>
@@ -29,7 +33,7 @@
                     echo "$value";
                     echo "</td>";
                 }
-                echo "<td><a href='edit.php?id=".$domanda['id']."'>Modifica</a> | <a href='delete.php?id=".$domanda['id']."'>Elimina</a></td>";
+                echo "<td><a href='edit.php?id=".$domanda['id']."'>Modifica</a> <a href='delete.php?id=".$domanda['id']."'>Elimina</a></td>";
                 echo "</tr>";
             }
             pg_free_result($domande);

@@ -80,7 +80,11 @@
                 <div class="descrizione">
                     <h2>Registrazione</h2>
                     <h3>Crea il tuo account e intraprendi una sfida!</h3>
-                    <a href="../accesso/"> Sei già registrato?</a>
+                    <?php
+                        if (!isset($_GET['utente'])) {
+                            echo "<a href='../accesso/'> Sei già registrato?</a></p>";
+                        }
+                    ?>
                 </div>
                 <form name="formregistrazione" id="form" method='POST' action="registrati.php">
                     <div class="grid">
@@ -147,12 +151,29 @@
                             <small></small>
                         </div>
                     </div>
+                    <div class="utenteEsistente">
+                        <?php
+                            if (isset($_GET['utente'])) {
+                                if ($_GET['utente'] == "false") {
+                                    echo "<p>Utente già esistente! <a href='../accesso'>Accedi</a></a></p>";
+                                }
+                            }
+                        ?>
+                    </div>
                     <div id="divSubmit" class="divSubmit">
                         <button name="registrazione" class="submit button" type="submit">Registrami</button>
                     </div>
                 </form>
             </div>
         </div>
+
+        <?php 
+            if (isset($_GET['utente'])) {
+                if ($_GET['utente'] == "false") {
+                    echo "<p style='color: white'>".$_POST["nomeUtente"]."</p>";
+                }
+            }
+        ?>
         <script src="validaRegistrazione.js"></script>
     </body>
 </html>

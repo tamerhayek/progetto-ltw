@@ -46,7 +46,7 @@
                             <input
                                 type="text"
                                 id="username"
-                                name="nomeUtente"
+                                name="username"
                                 placeholder="Inserisci il tuo username"
                                 required
                             />
@@ -62,8 +62,17 @@
                             />
                         </div>
                     </div>
+                    <div class="utenteNotFound">
+                        <?php
+                            if (isset($_GET['utente'])) {
+                                if ($_GET['utente'] == "false") {
+                                    echo "<p>Username o password errati!</p>";
+                                }
+                            }
+                        ?>
+                    </div>
                     <div id="divSubmit" class="divSubmit">
-                        <button class="submit button" type="submit">
+                        <button name="accesso" class="submit button" type="submit">
                             Accedi
                         </button>
                     </div>

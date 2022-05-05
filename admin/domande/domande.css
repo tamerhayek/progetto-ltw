@@ -1,0 +1,17 @@
+table {
+    width: 100%;
+    color: #ffffff;
+}
+
+th {
+    color: #77bc3f;
+}
+
+td {
+    padding: 5px;
+    border: 1px solid #ffffff;
+}
+
+td > a {
+    color: #ffffff;
+}

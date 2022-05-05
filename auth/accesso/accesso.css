@@ -72,6 +72,15 @@
     border-radius: 10px;
 }
 
+.utenteNotFound {
+    color: #000000;
+    font-style: italic;
+    text-align: center;
+    align-items: center;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
 #divSubmit {
     padding: 20px;
 }
@@ -128,6 +137,10 @@
         padding-bottom: 10px;
         margin-bottom: 10px;
         position: relative;
+    }
+
+    .utenteNotFound {
+        padding-top: 5px;
     }
 
     #divSubmit {
