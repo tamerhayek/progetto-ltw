@@ -12,7 +12,7 @@
     </head>
     <body>
         <?php 
-            if (isset($_COOKIE['username'])) {
+            if (isset($_COOKIE['userArray'])) { // controllo username e password
                 header("location: ../../");
             }
         ?>
@@ -26,7 +26,8 @@
             <div class="navbar-menu">
             </div>
             <div class="navbar-user">
-                <a class="login" href="../registrazione/">Ancora non sei registrato? &rarr; Registrati</a>
+                <a class='login' href='./'>Accedi</a>
+                <a class='button' href='../registrazione/'>Registrati</a>
             </div>
         </div>
 
@@ -36,8 +37,9 @@
                 <div class="descrizione">
                     <h2>ACCESSO</h2>
                     <h3>Entra con il tuo account e intraprendi una sfida!</h3>
+                    <a href="../registrazione/">Ancora non sei registrato?</a>
                 </div>
-                <form action="" method="post" onsubmit="">
+                <form action="./accedi.php" method="post" onsubmit="">
                     <div class="grid">
                         <div id="divUsername" class="form-control">
                             <label for="username">Username</label>
@@ -46,6 +48,7 @@
                                 id="username"
                                 name="nomeUtente"
                                 placeholder="Inserisci il tuo username"
+                                required
                             />
                         </div>
                         <div id="divPassword" class="form-control">
@@ -55,6 +58,7 @@
                                 id="password"
                                 name="passwordUtente"
                                 placeholder="Inserisci la tua password"
+                                required
                             />
                         </div>
                     </div>

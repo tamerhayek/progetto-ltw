@@ -70,7 +70,8 @@
                 </a>
             </div>
             <div class="navbar-user">
-                <a class="login" href="../accesso/"> Sei già registrato? &rarr; Accedi</a>
+                <a class='login' href='../accesso/'>Accedi</a>
+                <a class='button' href='./'>Registrati</a>
             </div>
         </div>
         <!-- REGISTRAZIONE -->
@@ -79,6 +80,7 @@
                 <div class="descrizione">
                     <h2>Registrazione</h2>
                     <h3>Crea il tuo account e intraprendi una sfida!</h3>
+                    <a href="../accesso/"> Sei già registrato?</a>
                 </div>
                 <form name="formregistrazione" id="form">
                     <div class="grid">
