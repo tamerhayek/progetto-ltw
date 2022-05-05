@@ -74,7 +74,7 @@ Qual e' la differenza tra il codice contenuto tra il tag head e il tag body di u
 Qual'e' la differenza tra HTML e CSS?
 -L'HTML e' interpretato direttamente dal browser, mentre il CSS e' interpretato dal server web
 -HTML e CSS possono essere utilizzati in maniera intercambiabile
--L'HTML definisce gli elementi presenti nella pagina, il CSS il loro aspetto
+*-L'HTML definisce gli elementi presenti nella pagina, il CSS il loro aspetto
 -L'HTML e' un linguaggio di markup, il CSS di programmazione
 
 Cos'e' il CSS?
