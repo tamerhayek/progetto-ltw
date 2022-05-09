@@ -55,9 +55,48 @@
       <div class="home-text">
         <h1 class="home-title">Trivia Stack</h1>
         <h3 class="home-subtitle">Computer Science Quiz</h3>
-        <a class="button" href="#">Scopri di più</a>
+        <a class="button" id="scopri" href="#aboutus">Scopri di più</a>
       </div>
     </div>
+
+    <!-- INFORMAZIONI -->
+    <div class="informazioni" id="aboutus">
+        <div class="cover">
+          <img src="src/images/question.jpg">
+        </div>
+        <div class="descrizione">
+          <p>
+            "Trivia Stack" ha come ispirazione "Trivia Crack",un gioco divertente strutturato a quiz, in cui bisogna sfidare gli altri utenti su domande di cultura generale.
+            <br>
+            La particolarità di "Trivia Stack", così come suggerito dal nome, è che le domande riguardano svariati argomenti di informatica. 
+            Ciò permette ai giocatori di mettere alla prova le loro conoscenze in questo campo intraprendendo sfide tra di loro nel tentativo di arrivare sempre più in alto nella classifica generale del gioco.
+            <br>
+            Per iniziare a giocare ogni utente deve registrarsi e una volta loggato può iniziare il gioco!
+          </p>
+        </div>
+    </div>
+
+    <!-- TEAM -->
+    <div class="team">
+          <h1>IL NOSTRO TEAM<h1>
+          <div class="sviluppo">
+              <div class="dev">
+                <img src="src/images/icons/profile.svg">
+                <h3>Tamer Hayek<h3>
+                <p>Matricola: 1897438</p>
+              </div>
+
+              <div class="dev">
+                <img src="src/images/icons/profile.svg">
+                <h3>Maria Diana<h3>
+                <p>Matricola: 1893272</p>
+              </div>
+          </div>
+          <div class="collaborazioni">
+    </div>
+
+
+
 
     <!-- vue script -->
     <!-- <script type="application/javascript" src="src/vuejs/app.js"></script> -->
