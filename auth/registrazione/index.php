@@ -63,13 +63,13 @@
             }
         ?>
         <!-- NAVBAR -->
-        <div class="navbar">
-            <div class="navbar-logo">
+        <div class="barra-nav">
+            <div class="barra-nav-logo">
                 <a href="../../">
                     <img src="../../src/images/logo.png" alt="Logo Trivia Stack" />
                 </a>
             </div>
-            <div class="navbar-user">
+            <div class="barra-nav-user">
                 <a class='login' href='../accesso/'>Accedi</a>
                 <a class='button' href='./'>Registrati</a>
             </div>

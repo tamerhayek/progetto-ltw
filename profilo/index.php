@@ -30,18 +30,18 @@
 
     <?php include '../src/php/logout.php'; ?>
     <!-- NAVBAR -->
-    <div class="navbar">
-        <div class="navbar-logo">
+    <div class="barra-nav">
+        <div class="barra-nav-logo">
             <a href="../">
                 <img src="../src/images/logo.png" alt="Logo Trivia Stack" />
             </a>
         </div>
-        <div class="navbar-menu">
+        <div class="barra-nav-menu">
             <a href="../classifica/">Classifica</a>
             <a href="../quiz/">Sfide</a>
             <a href="../contatti/">Contatti</a>
         </div>
-        <div class="navbar-user">
+        <div class="barra-nav-user">
             <?php
             if (isset($_COOKIE['userArray'])) {
                 $data = json_decode($_COOKIE['userArray'], true);

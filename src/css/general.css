@@ -2,7 +2,11 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Roboto Mono', monospace;
+    font-family: "Roboto Mono", monospace;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -66,107 +70,105 @@ a {
     h1 {
         font-size: 48px;
     }
-    
+
     h2 {
         font-size: 28px;
     }
-    
+
     h3 {
         font-size: 18px;
     }
-    
+
     p {
         font-size: 12px;
     }
-    
+
     a {
         font-size: 14px;
     }
-    
+
     .button {
         font-weight: regular;
     }
 }
 
-/* NAVBAR */
-.navbar {
+/* barra-nav */
+.barra-nav {
     width: 100%;
     height: 70px;
     display: flex;
     background-color: #000000;
-    position: fixed;
     z-index: 999;
-  }
-  
-  .navbar-logo {
+}
+
+.barra-nav-logo {
     flex-grow: 0;
     height: 70px;
     margin-right: 30px;
-  }
-  
-  .navbar-logo > a > img {
+}
+
+.barra-nav-logo > a > img {
     height: 100%;
-  }
-  
-  .navbar-menu {
+}
+
+.barra-nav-menu {
     flex-grow: 3;
     display: flex;
     align-items: center;
-  }
-  
-  .navbar-menu > a {
+}
+
+.barra-nav-menu > a {
     padding: 25px;
     color: #ffffff;
-  }
-  .navbar-menu > a:hover{
+}
+.barra-nav-menu > a:hover {
     background-color: #77bc3f;
-  }
-  
-  .navbar-user {
+}
+
+.barra-nav-user {
     flex-grow: 1;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-  }
-  
-  .navbar-user > .button {
+}
+
+.barra-nav-user > .button {
     margin-right: 30px;
-  }
-  
-  .navbar-user > .login {
+}
+
+.barra-nav-user > .login {
     margin-right: 40px;
     color: #77bc3f;
-  }
-  .navbar-user > .login:hover {
-      color: #ffffff;
+}
+.barra-nav-user > .login:hover {
+    color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+    .barra-nav {
+        height: auto;
+        flex-wrap: wrap;
     }
-  
-  @media screen and (max-width: 768px) {
-    .navbar {
-      height: auto;
-      flex-wrap: wrap;
+
+    .barra-nav-logo {
+        margin-right: 0;
+        flex-grow: 0;
+        order: 0;
     }
-  
-    .navbar-logo {
-      margin-right: 0;
-      flex-grow: 0;
-      order: 0;
+
+    .barra-nav-menu {
+        flex-basis: 100%;
+        justify-content: center;
+        order: 2;
     }
-  
-    .navbar-menu {
-      flex-basis: 100%;
-      justify-content: center;
-      order: 2;
+
+    .barra-nav-menu > a {
+        margin-right: 20px;
+        padding: 10px;
     }
-  
-    .navbar-menu > a {
-      margin-right: 20px;
-      padding: 10px;
+
+    .barra-nav-user {
+        flex-grow: 1;
+        order: 1;
     }
-  
-    .navbar-user {
-      flex-grow: 1;
-      order: 1;
-    }
-  }
-  
+}
