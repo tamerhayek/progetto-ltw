@@ -11,7 +11,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap"
-      rel="stylesheet"
     />
 
     <!-- Style -->
@@ -20,31 +19,43 @@
 
   </head>
   <body>
-    <?php include '../src/php/logout.php';?>
-    <!-- NAVBAR -->
-    <div class="navbar">
-      <div class="navbar-logo">
-        <a href="../">
-          <img src="../src/images/logo.png" alt="Logo Trivia Stack" />
-        </a>
-      </div>
-      <div class="navbar-menu">
-        <a href="./">Classifica</a>
-        <a href="../quiz/">Sfide</a>
-        <a href="../contatti/">Contatti</a>
-      </div>
-      <div class="navbar-user">
-        <?php 
-          if (isset($_COOKIE['userArray'])) {
-            $data = json_decode($_COOKIE['userArray'], true);
-            echo '<a class="button" href="../profilo/"><img src="../src/images/icons/profile.svg" alt="Icona Profilo">'.$data['username'].'</a>';
-            echo "<a class='login' href='?logout=true'>Esci</a>";
-          } else {
-            echo "<a class='login' href='../auth/accesso/'>Accedi</a>";
-            echo "<a class='button' href='../auth/registrazione/'>Registrati</a>";
-          }
-        ?>
-      </div>
+    <!-- CLASSIFICA -->
+    <div class="quit">
+      <a href="../../">&#8592</a>
     </div>
+    <div class="descrizione">
+            <h2>CLASSIFICA DEI PRIMI 10 GIOCATORI</h2>
+    </div>
+    <div class="container">
+      <table>
+          <tr>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th>Punteggio</th>
+          </tr>
+          <?php
+              $dbconn = pg_connect("host=localhost port=5432 dbname=trivia-stack user=postgres password=password");
+              $query = 'SELECT nome,cognome,username,punteggio FROM utenti ORDER BY punteggio DESC limit 10';
+              $utenti = pg_query($dbconn, $query);
+              $posizione=0;
+              while ($utente = pg_fetch_array($utenti, null, PGSQL_ASSOC)) {
+                  $posizione++;
+                  $nome=$utente['nome'].' '.$utente['cognome'];
+                  $username=$utente['username'];
+                  $punteggio=$utente['punteggio'];
+                  echo "<tr><td>$posizione</td><td>$nome</td><td>$username</td><td>$punteggio</td>";
+                  /*echo "<tr>";
+                  foreach ($utente as $key => $value) {
+                      echo "\t\t<td>";
+                      echo "$value";
+                      echo "</td>";
+                  }*/
+              }
+              pg_free_result($utenti);
+              pg_close($dbconn);
+          ?>
+      </table>
+            </div>
   </body>
 </html>

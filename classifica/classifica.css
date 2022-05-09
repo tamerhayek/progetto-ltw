@@ -1,0 +1,33 @@
+.container {
+    color: white;
+    width: 100%;
+    padding: 5%;
+    align-items: center;
+}
+
+table {
+    width: 100%;
+    color: #ffffff;
+}
+
+th {
+    color: #77bc3f;
+}
+
+td {
+    padding: 5px;
+    border: 1px solid #ffffff;
+    text-align: center;
+}
+
+.descrizione {
+    margin-top: 10px;
+    color:#77bc3f;
+    text-align: center;
+    font-style: oblique;
+}
+
+a{
+    color:#ffffff;
+    font-weight: bold; 
+}
