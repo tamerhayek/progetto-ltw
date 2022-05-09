@@ -68,11 +68,17 @@
         $email = $tuple['email'];
         $partiteGiocate = $tuple['partitegiocate'];
         $partiteVinte = $tuple['punteggio'];
+        $admin = $tuple['admin'];
     }
     ?>
     <div class="container">
         <div class="descrizione">
             <h2>IL TUO PROFILO</h2>
+            <?php
+                if ($admin) {
+                    echo "<a class='button' href='../admin/domande/'>Vai alla sezione admin</a>";
+                }
+            ?>
         </div>
         <br>
         <hr><br>

@@ -51,7 +51,7 @@
   <!-- CLASSIFICA -->
   <div class="descrizione">
     <h2>CLASSIFICA DEI PRIMI 10 GIOCATORI</h2>
-  </div>
+  </div><br>
   <div class="container">
     <table class="table">
       <thead>
@@ -74,7 +74,7 @@
           $username = $utente['username'];
           $punteggio = $utente['punteggio'];
           echo "<tr>";
-          echo "<th scope='row'>$posizione</th>";
+          echo "<td scope='row'>$posizione</td>";
           echo "<td>$nome</td>";
           echo "<td>$username</td>";
           echo "<td>$punteggio</td>";

@@ -1,10 +1,16 @@
-
 .descrizione {
     padding-top: 100px;
     margin-top: 10px;
     color:#77bc3f;
     text-align: center;
     font-style: oblique;
+}
+.table {
+    color: #ffffff;
+}
+.table th {
+    background-color: #ffffff;
+    color: #000000;
 }
 
 
