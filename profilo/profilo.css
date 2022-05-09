@@ -1,3 +1,92 @@
-.data {
+.container {
     color: white;
+    width: 100%;
+    padding: 5%;
+    padding-top: 100px;
+    text-align: center;
+}
+.descrizione {
+    margin-bottom: 10px;
+}
+
+.first {
+    margin-top: 10px;
+}
+
+.container > .data {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px;
+}
+
+.container > .data > * {
+    display: inline-block;
+    margin: 0 30px;
+}
+
+.container > .data > h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    justify-self: flex-start;
+    text-align: right;
+    width: 35%;
+    margin: 0;
+    padding: 0 30px;
+}
+
+.container > .data > input {
+    text-align: center;
+    justify-self: flex-end;
+    width: 40%;
+    border: 4px solid #77bc3f;
+    border-radius: 12px;
+    margin: 0;
+    padding: 10px 30px;
+}
+.container > .data > input:disabled {
+    color: #000000;
+    background-color: #ffffff;
+}
+.container > .data > input:disabled:hover {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0;
+        padding-top: 120px;
+    }
+    .first {
+        margin-top: 0;
+    }
+    .container > .data {
+        text-align: center;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: baseline;
+        padding: 5px;
+    }
+    .container > .data > * {
+        margin: 10px 0;
+    }
+
+    .container > .data > h3 {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: end;
+        width: 100%;
+        margin-right: 0;
+        text-align: center;
+        padding-bottom: 10px;
+    }
+
+    .container > .data > input {
+        text-align: center;
+        padding: 10px;
+        margin: 0 30px 10px;
+        width: 100%;
+        border: 4px solid #77bc3f;
+        border-radius: 12px;
+    }
 }
