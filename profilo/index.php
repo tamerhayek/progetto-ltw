@@ -20,14 +20,21 @@
 </head>
 
 <body>
-
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-        $(document).ready(function() {
-            
-
+        $(document).ready(function () {
+            $(".descrizione").hide();
+            $(".data").hide();
+            $(".descrizione").fadeIn();
+            $("#nome").delay(200).fadeIn();
+            $("#cognome").delay(400).fadeIn();
+            $("#email").delay(600).fadeIn();
+            $("#username").delay(800).fadeIn();
+            $("#partiteGiocate").delay(1000).fadeIn();
+            $("#partiteVinte").delay(1200).fadeIn();
         });
     </script>
+            
 
     <?php include '../src/php/logout.php'; ?>
     <!-- NAVBAR -->
@@ -83,27 +90,27 @@
         </div>
         <br>
         <hr><br>
-        <div class="data first">
+        <div class="data first" id="nome">
             <h3>Nome</h3>
             <?php echo '<input value="' . $nome . '" disabled>'; ?>
         </div>
-        <div class="data">
+        <div class="data" id="cognome">
             <h3>Cognome</h3>
             <?php echo '<input value="' . $cognome . '" disabled>'; ?>
         </div>
-        <div class="data">
+        <div class="data" id="email">
             <h3>Email</h3>
             <?php echo '<input  value="' . $email . '" disabled>'; ?>
         </div>
-        <div class="data">
+        <div class="data" id="username">
             <h3>Username</h3>
             <?php echo '<input value="' . $username . '" disabled>'; ?>
         </div>
-        <div class="data">
+        <div class="data" id="partiteGiocate">
             <h3>Partite Giocate</h3>
             <?php echo '<input value="' . $partiteGiocate . '" disabled>'; ?>
         </div>
-        <div class="data">
+        <div class="data" id="partiteVinte">
             <h3>Partite Vinte</h3>
             <?php echo '<input value="' . $partiteVinte . '" disabled>'; ?>
         </div>

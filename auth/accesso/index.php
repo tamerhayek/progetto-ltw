@@ -32,6 +32,9 @@
         </div>
 
         <!-- ACCEDI -->
+        <div class="sfondo">
+            <img id="bg" src="../../src/images/sfondo.jpg">
+        </div>
         <div class="container">
             <div class="pannello">
                 <div class="descrizione">
@@ -48,7 +51,6 @@
                                 id="username"
                                 name="username"
                                 placeholder="Inserisci il tuo username"
-                                required
                             />
                         </div>
                         <div id="divPassword" class="form-control">
@@ -58,7 +60,6 @@
                                 id="password"
                                 name="passwordUtente"
                                 placeholder="Inserisci la tua password"
-                                required
                             />
                         </div>
                     </div>

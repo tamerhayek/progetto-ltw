@@ -227,5 +227,15 @@ img{
     padding: 5px;
 }
 
-
-
+@media screen and (max-width: 768px) {
+    .footer {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .copyright{
+        padding-top:5px;
+    }
+    .loghi{
+        margin-right: 10%;
+    }
+}
