@@ -204,3 +204,28 @@
         font-size: 14px;
     }
 }
+
+
+/* FOOTER */
+.footer{
+    display:flex;
+    padding: 10px;
+}
+
+.copyright{
+    padding-top: 20px;
+}
+
+.loghi{
+    padding-left: 20%;
+    display: flex;
+}
+
+img{
+    height: 50px;
+    width: 50px;
+    padding: 5px;
+}
+
+
+

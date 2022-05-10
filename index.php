@@ -84,7 +84,7 @@
       </div>
       <div class="dev">
         <img src="src/images/dev/tamer-hayek.jpg">
-        <h3>Maria Diana</h3>
+        <h3>Maria Diana Calugaru</h3>
             <p>Matricola: 1893272</p>
       </div>
     </div>
@@ -103,7 +103,22 @@
         <h3>Elon Musk</h3>
       </div>
     </div>
+    <hr>
 
+    <!-- FOOTER -->
+    <div class="footer">
+          <div>
+            <p class="copyright"> &copy; Linguaggi e Tecnologie Web 2021/2022</p>
+          </div>
+          <div class="loghi">
+            <div class="facebook">
+                <img src="src/images/facebook.png">
+            </div>
+            <div class="instagram">
+                <img src="src/images/instagram.png">
+            </div>
+          </div>
+    </div>
 </body>
 
 </html>
