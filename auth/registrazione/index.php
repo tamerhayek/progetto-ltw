@@ -71,6 +71,11 @@
                 <img src="../../src/images/logo.png" alt="Logo Trivia Stack" />
             </a>
         </div>
+        <div class="barra-nav-menu">
+            <a href="../../classifica/">Classifica</a>
+            <a href="../../sfida/">Sfide</a>
+            <a href="../../contatti/">Contatti</a>
+        </div>
         <div class="barra-nav-user">
             <a class='login' href='../accesso/'>Accedi</a>
             <a class='button' href='./'>Registrati</a>

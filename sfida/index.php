@@ -47,5 +47,27 @@
         ?>
       </div>
     </div>  
+
+    <!-- Nuove Sfide -->
+    <div class="container">
+        <div class="nuova-sfida">
+          <a class="button" href="./casuale.php">Inizia una nuova sfida casuale!</a>
+          <a class="button" href="">Sfida un tuo amico!</a>
+        </div>
+        <div class="sfide">
+          <?php 
+            echo "<h3>Sfide in corso</h3>";
+            echo "<h1>Sfida</h1>";
+            echo "<h1>Sfida</h1>";
+          ?>
+        </div>
+        <div class="sfide">
+          <?php 
+            echo "<h3>Sfide concluse</h3>";
+            echo "<h1>Sfida</h1>";
+            echo "<h1>Sfida</h1>";
+          ?>
+        </div>
+      </div>
   </body>
 </html>

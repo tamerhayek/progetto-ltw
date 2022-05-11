@@ -1,0 +1,30 @@
+.container {
+    width: 100%;
+    padding: 30px;
+}
+
+.nuova-sfida {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    border: 2px solid #77bc3f;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+.nuova-sfida a {
+    margin: 20px;
+}
+
+.sfide {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #77bc3f;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}

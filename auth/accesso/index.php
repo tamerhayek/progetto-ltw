@@ -27,7 +27,7 @@
         </div>
         <div class="barra-nav-menu">
             <a href="../../classifica/">Classifica</a>
-            <a href="../../quiz/">Sfide</a>
+            <a href="../../sfida/">Sfide</a>
             <a href="../../contatti/">Contatti</a>
         </div>
         <div class="barra-nav-user">

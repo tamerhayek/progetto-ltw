@@ -30,3 +30,22 @@ Progetto Linguaggi e Tecnologie per il Web
 - Primary: #77bc3f
 - White: #ffffff
 - Black: #000000
+
+
+
+# TO DO
+- Registrazione (copia login)
+    - Tentare jQuery
+
+- Lista Sfide
+    - In corso
+    - Terminate
+- CSS Round Quiz
+    - Animazioni
+    - Risultati
+    - Suoni
+    - Prossima Sfida
+- Cerca Utente per sfida
+- Continua sfida
+
+- Contatti
