@@ -143,6 +143,10 @@ a {
 .barra-nav-user > .login:hover {
     color: #ffffff;
 }
+.barra-nav-user .black-icon {
+    filter: invert(100%);
+}
+
 
 @media screen and (max-width: 768px) {
     .barra-nav {
@@ -210,11 +214,11 @@ a {
         justify-content: center;
         padding: 0;
     }
-    .copyright{
+    .footer .footer-copyright {
         width: 100%;
         padding: 10px;
     }
-    .loghi{
+    .footer .footer-loghi {
         width: 100%;
         padding: 10px;
     }

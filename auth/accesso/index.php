@@ -37,9 +37,6 @@
     </div>
 
     <!-- ACCEDI -->
-    <!-- <div class="sfondo">
-        <img id="bg" src="../../src/images/sfondo.jpg">
-    </div> -->
     <div class="container">
         <div class="descrizione">
             <h3>Entra con il tuo account e intraprendi una sfida!</h3>
@@ -49,18 +46,18 @@
             <div class="window-bar">
                 <div class="window-bar-title">
                     <img src="../../src/images/icons/code.svg" alt="Logo Terminale">
-                    <p>Login</p>
+                    <p>Login - Premi <i>Invio</i> per confermare</p>
                 </div>
                 <div class="window-bar-buttons">
                     <img src="../../src/images/icons/minimize.svg" alt="Minimize">
                     <img src="../../src/images/icons/maximize.svg" alt="Maximize">
-                    <img src="../../src/images/icons/close.svg" alt="Close">
+                    <a href="../../"><img src="../../src/images/icons/close.svg" alt="Close"></a>
                 </div>
             </div>
             <form class="form" action="./accedi.php" method="post" onsubmit="">
                 <div id="divUsername" class="form-elem">
                     <label for="username"><span class="dominio">trivia-stack@login</span>:<span class="root">/username</span>$></label>
-                    <input type="text" id="username" name="username" placeholder="Inserisci il tuo username" />
+                    <input type="text" id="username" name="username" placeholder="Inserisci il tuo username" autofocus />
                 </div>
                 <div id="divPassword" class="form-elem">
                     <label for="password"><span class="dominio">trivia-stack@login</span>:<span class="root">/password</span>$></label>
