@@ -172,3 +172,50 @@ a {
         order: 1;
     }
 }
+
+/* FOOTER */
+.footer{
+    display: flex;
+    padding: 10px;
+    width: 100%;
+    height: 30vh;
+    align-items: center;
+    border-top: 3px solid #ffffff;
+    color: #ffffff;
+    margin-top: 100px;
+}
+
+.footer .footer-copyright{
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+}
+
+.footer .footer-loghi{
+    display: flex;
+    width: 50%;
+    padding: 10px;
+    justify-content: center;
+}
+
+.footer .footer-loghi img{
+    height: 50px;
+    width: 50px;
+    padding: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        justify-content: center;
+        padding: 0;
+    }
+    .copyright{
+        width: 100%;
+        padding: 10px;
+    }
+    .loghi{
+        width: 100%;
+        padding: 10px;
+    }
+}

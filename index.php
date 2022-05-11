@@ -34,14 +34,14 @@
     </div>
     <div class="barra-nav-user">
       <?php
-        if (isset($_COOKIE['userArray'])) {
-          $data = json_decode($_COOKIE['userArray'], true);
-          echo '<a class="button" href="/profilo/"><img src="src/images/icons/profile.svg" alt="Icona Profilo">' . $data['username'] . '</a>';
-          echo "<a class='login' href='?logout=true'>Esci</a>";
-        } else {
-          echo "<a class='login' href='auth/accesso/'>Accedi</a>";
-          echo "<a class='button' href='auth/registrazione/'>Registrati</a>";
-        }
+      if (isset($_COOKIE['userArray'])) {
+        $data = json_decode($_COOKIE['userArray'], true);
+        echo '<a class="button" href="/profilo/"><img src="src/images/icons/profile.svg" alt="Icona Profilo">' . $data['username'] . '</a>';
+        echo "<a class='login' href='?logout=true'>Esci</a>";
+      } else {
+        echo "<a class='login' href='auth/accesso/'>Accedi</a>";
+        echo "<a class='button' href='auth/registrazione/'>Registrati</a>";
+      }
       ?>
     </div>
   </div>
@@ -80,12 +80,12 @@
       <div class="dev">
         <img src="src/images/dev/tamer-hayek.jpg">
         <h3>Tamer Hayek</h3>
-            <p>Matricola: 1897438</p>
+        <p>Matricola: 1897438</p>
       </div>
       <div class="dev">
         <img src="src/images/dev/tamer-hayek.jpg">
         <h3>Maria Diana Calugaru</h3>
-            <p>Matricola: 1893272</p>
+        <p>Matricola: 1893272</p>
       </div>
     </div>
     <h2>COLLABORAZIONI</h2>
@@ -103,21 +103,16 @@
         <h3>Elon Musk</h3>
       </div>
     </div>
-    <hr>
-
+    
     <!-- FOOTER -->
     <div class="footer">
-          <div>
-            <p class="copyright"> &copy; Linguaggi e Tecnologie Web 2021/2022</p>
-          </div>
-          <div class="loghi">
-            <div class="facebook">
-                <img src="src/images/facebook.png">
-            </div>
-            <div class="instagram">
-                <img src="src/images/instagram.png">
-            </div>
-          </div>
+      <div class="footer-copyright">
+        <p> &copy; Linguaggi e Tecnologie Web 2021/2022</p>
+      </div>
+      <div class="footer-loghi">
+        <a href=""><img alt="Logo Facebook" src="src/images/facebook.png"></a>
+        <a href=""><img alt="Logo Instagram" src="src/images/instagram.png"></a>
+      </div>
     </div>
 </body>
 

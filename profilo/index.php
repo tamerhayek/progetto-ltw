@@ -22,7 +22,7 @@
 <body>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             $(".descrizione").hide();
             $(".data").hide();
             $(".descrizione").fadeIn();
@@ -34,9 +34,12 @@
             $("#partiteVinte").delay(1200).fadeIn();
         });
     </script>
-            
+
 
     <?php include '../src/php/logout.php'; ?>
+    <?php
+    if (!isset($_COOKIE['userArray'])) header("Location: ../auth/accesso/");
+    ?>
     <!-- NAVBAR -->
     <div class="barra-nav">
         <div class="barra-nav-logo">
@@ -83,9 +86,9 @@
         <div class="descrizione">
             <h2>IL TUO PROFILO</h2>
             <?php
-                if ($admin) {
-                    echo "<a class='button' href='../admin/domande/'>Vai alla sezione admin</a>";
-                }
+            if ($admin) {
+                echo "<a class='button' href='../admin/domande/'>Vai alla sezione admin</a>";
+            }
             ?>
         </div>
         <br>
@@ -113,6 +116,17 @@
         <div class="data" id="partiteVinte">
             <h3>Partite Vinte</h3>
             <?php echo '<input value="' . $partiteVinte . '" disabled>'; ?>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="footer-copyright">
+            <p> &copy; Linguaggi e Tecnologie Web 2021/2022</p>
+        </div>
+        <div class="footer-loghi">
+            <a href=""><img alt="Logo Facebook" src="../src/images/facebook.png"></a>
+            <a href=""><img alt="Logo Instagram" src="../src/images/instagram.png"></a>
         </div>
     </div>
 
