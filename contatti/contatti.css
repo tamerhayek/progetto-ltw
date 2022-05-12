@@ -1,0 +1,39 @@
+.container{
+    position: absolute;
+    top:45%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    border-radius: 20px;
+    width: 40%;
+    padding:20px;
+    font-weight: bolder;
+}
+
+.container > div{
+    padding:10px;
+    display: flex;
+}
+
+.container > div > p{
+   padding-left: 20px;
+}
+
+.cellulare > img{
+    height: 25px;
+    margin-right: 12px;
+}
+
+.email > img{
+    height: 25px; 
+}
+
+.indirizzo > img{
+    height: 30px;
+    margin-left: 5px;
+    margin-right: 15px;
+}
+
+.footer{
+    margin-top: 33%;
+}

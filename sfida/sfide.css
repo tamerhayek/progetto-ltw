@@ -6,7 +6,7 @@
 .nuova-sfida {
     width: 100%;
     padding: 10px;
-    display: flex;
+    display:flex;
     justify-content: center;
     border: 2px solid #77bc3f;
     border-radius: 12px;
@@ -15,7 +15,8 @@
 }
 
 .casuale{
-    padding: 20px;
+    padding-right: 100px;
+    padding-left: 20px;
     width: 50%;
 }
 .amico{
@@ -46,4 +47,18 @@ form{
     border-radius: 12px;
     margin-bottom: 20px;
     color: #ffffff;
+}
+
+.table {
+    width:80%;
+    color: #ffffff;
+}
+.table th {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.table tr{
+    margin-top:10px;
+    align-items:flex-end;
 }
