@@ -11,9 +11,28 @@
     border: 2px solid #77bc3f;
     border-radius: 12px;
     margin-bottom: 20px;
+    align-items: center;
 }
-.nuova-sfida a {
-    margin: 20px;
+
+.casuale{
+    padding: 20px;
+    width: 50%;
+}
+.amico{
+    width: 50%;
+    padding:20px;
+    display:flex;
+    justify-content: center;
+}
+form{
+    display: flex;
+}
+.nuova-sfida input{
+    padding:15px;
+    border: 1 px solid white;
+    border-radius: 10px;
+    align-self: center;
+    margin-left: 10px;
 }
 
 .sfide {

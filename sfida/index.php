@@ -51,8 +51,15 @@
     <!-- Nuove Sfide -->
     <div class="container">
         <div class="nuova-sfida">
-          <a class="button" href="./casuale.php">Inizia una nuova sfida casuale!</a>
-          <a class="button" href="">Sfida un tuo amico!</a>
+          <div class="casuale">
+            <a class="button" href="./casuale.php">Inizia una nuova sfida casuale!</a>
+          </div>
+          <div class="amico">
+             <form name="cercaAmico" action="./amico.php" method='POST'>
+              <button type='submit' class="button" id="sfidaamico">Sfida un tuo amico!</button>
+              <input type="text" name="username" id="avversario" placeholder="Cerca username">
+            <form>
+          </div>
         </div>
         <div class="sfide">
           <?php 

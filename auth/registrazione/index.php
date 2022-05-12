@@ -93,7 +93,7 @@
                 }
                 ?>
             </div>
-            <form name="formregistrazione" id="form" method='POST' action="./registrati.php">
+            <form name="formregistrazione" id="form" method='POST' action="./registrati.php" onsubmit="return validaForm();">
                 <div class="grid">
                     <div id="divNome" class="form-control">
                         <label for="nome">Nome</label>

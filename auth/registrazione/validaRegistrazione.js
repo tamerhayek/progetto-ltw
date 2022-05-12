@@ -96,14 +96,33 @@ function validaPasswordConf() {
         return false;
     } else {
         if (passwordConferma.value.trim() !== password.value.trim()) {
-            setError(
-                passwordConferma,
-                "La password scelta e quella di conferma non coincidono!"
-            );
+            setError(passwordConferma,"La password scelta e quella di conferma non coincidono!");
             return false;
         } else {
             setSuccess(passwordConferma);
             return true;
         }
     }
+}
+
+function validaForm(){
+    if(!validaNome()){
+        return false;
+    }
+    if(!validaCognome()){
+        return false;
+    }
+    if(!validaEmail()){
+        return false;
+    }
+    if(validaUsername()){
+        return false;
+    }
+    if(!validaPassword()){
+        return false;
+    }
+    if(!validaPasswordConf()){
+        return false;
+    }
+    return true;
 }
