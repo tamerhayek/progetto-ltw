@@ -115,7 +115,7 @@ function validaForm(){
     if(!validaEmail()){
         return false;
     }
-    if(validaUsername()){
+    if(!validaUsername()){
         return false;
     }
     if(!validaPassword()){

@@ -69,7 +69,7 @@
     <!-- PROFILO -->
     <?php
     $data = json_decode($_COOKIE['userArray'], true);
-    $dbconn = pg_connect("host=localhost dbname=trivia-stack port=5432 user=postgres password=password");
+    $dbconn = pg_connect("postgres://crolxvdhppthgq:76b70cf66246929bd0e20b8c1a277a71fdaf8b317e307801ddcd58314b387a84@ec2-54-170-90-26.eu-west-1.compute.amazonaws.com:5432/d6fkjg0dv9b5uu");
     $query = 'SELECT * from utenti where username = $1 and password = $2';
     $result = pg_query_params($dbconn, $query, array($data['username'], $data['password']));
     if ($tuple = pg_fetch_array($result, null, PGSQL_ASSOC)) {
@@ -77,9 +77,17 @@
         $nome = $tuple['nome'];
         $cognome = $tuple['cognome'];
         $email = $tuple['email'];
-        $partiteGiocate = $tuple['partitegiocate'];
-        $partiteVinte = $tuple['punteggio'];
         $admin = $tuple['admin'];
+    }
+    $vincitoreQuery = 'SELECT count(*) as vinte from sfide where vincitore = $1';
+    $vincitoreQueryResult = pg_query_params($dbconn, $vincitoreQuery, array($data['username']));
+    if ($tuple = pg_fetch_array($vincitoreQueryResult, null, PGSQL_ASSOC)) {
+        $partiteVinte = $tuple['vinte'];
+    }
+    $giocateQuery = 'SELECT count(*) as giocate from sfide where (giocatore1 = $1 and status1 = true) or (giocatore2 = $1 and status2 = true)';
+    $giocateQueryResult = pg_query_params($dbconn, $giocateQuery, array($data['username']));
+    if ($tuple = pg_fetch_array($giocateQueryResult, null, PGSQL_ASSOC)) {
+        $partiteGiocate = $tuple['giocate'];
     }
     ?>
     <div class="container">
@@ -129,6 +137,10 @@
             <a href=""><img alt="Logo Instagram" src="../src/images/instagram.png"></a>
         </div>
     </div>
+    <?php 
+        pg_free_result($result);
+        pg_close($dbconn);
+    ?>
 
 </body>
 

@@ -66,8 +66,12 @@
       </thead>
       <tbody>
         <?php
-        $dbconn = pg_connect("host=localhost port=5432 dbname=trivia-stack user=postgres password=password");
-        $query = 'SELECT nome,cognome,username,punteggio FROM utenti ORDER BY punteggio DESC limit 10';
+        $dbconn = pg_connect("postgres://crolxvdhppthgq:76b70cf66246929bd0e20b8c1a277a71fdaf8b317e307801ddcd58314b387a84@ec2-54-170-90-26.eu-west-1.compute.amazonaws.com:5432/d6fkjg0dv9b5uu");
+        $query = 'select u.nome, u.cognome, u.username, count(*) as punteggio
+                from utenti u join sfide s on (u.username = s.vincitore)
+                group by u.username
+                order by punteggio desc
+                limit 10';
         $utenti = pg_query($dbconn, $query);
         $posizione = 0;
         while ($utente = pg_fetch_array($utenti, null, PGSQL_ASSOC)) {
