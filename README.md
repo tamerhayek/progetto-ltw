@@ -36,10 +36,6 @@ DB URI: "postgres://crolxvdhppthgq:76b70cf66246929bd0e20b8c1a277a71fdaf8b317e307
 
 
 # TO DO
-- Registrazione (copia login)
-    - Tentare jQuery
-- Homepage (fix cover image)
-    - Pulsante inizia gioco casuale
 
 - Lista Sfide
     - In corso
@@ -51,5 +47,3 @@ DB URI: "postgres://crolxvdhppthgq:76b70cf66246929bd0e20b8c1a277a71fdaf8b317e307
     - Prossima Sfida
 - Cerca Utente per sfida
 - Continua sfida
-
-- Contatti

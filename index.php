@@ -13,34 +13,34 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet" />
 
   <!-- Style -->
-  <link rel="stylesheet" href="src/css/general.css" />
-  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="./src/css/general.css" />
+  <link rel="stylesheet" href="./index.css" />
 
 </head>
 
 <body>
-  <?php include 'src/php/logout.php'; ?>
+  <?php include './src/php/logout.php'; ?>
   <!-- NAVBAR -->
   <div class="barra-nav">
     <div class="barra-nav-logo">
-      <a href="">
-        <img src="src/images/logo.png" alt="Logo Trivia Stack" />
+      <a href="./">
+        <img src="./src/images/logo.png" alt="Logo Trivia Stack" />
       </a>
     </div>
     <div class="barra-nav-menu">
-      <a href="classifica/">Classifica</a>
-      <a href="sfida/">Sfide</a>
-      <a href="contatti/">Contatti</a>
+      <a href="./classifica/">Classifica</a>
+      <a href="./sfida/">Sfide</a>
+      <a href="./contatti/">Contatti</a>
     </div>
     <div class="barra-nav-user">
       <?php
       if (isset($_COOKIE['userArray'])) {
         $data = json_decode($_COOKIE['userArray'], true);
-        echo '<a class="button" href="/profilo/"><img src="src/images/icons/profile.svg" alt="Icona Profilo">' . $data['username'] . '</a>';
-        echo "<a class='login' href='?logout=true'><img class='black-icon' src='src/images/icons/logout.svg'></a>";
+        echo '<a class="button" href="./profilo/"><img src="./src/images/icons/profile.svg" alt="Icona Profilo">' . $data['username'] . '</a>';
+        echo "<a class='login' href='?logout=true'><img class='black-icon' src='./src/images/icons/logout.svg'></a>";
       } else {
-        echo "<a class='login' href='auth/accesso/'>Accedi</a>";
-        echo "<a class='button' href='auth/registrazione/'>Registrati</a>";
+        echo "<a class='login' href='./auth/accesso/'>Accedi</a>";
+        echo "<a class='button' href='./auth/registrazione/'>Registrati</a>";
       }
       ?>
     </div>
@@ -59,7 +59,7 @@
   <!-- INFORMAZIONI -->
   <div class="descrizione" id="descrizione">
     <div class="descrizione-img">
-      <img src="src/images/question.jpg">
+      <img src="./src/images/question.jpg">
     </div>
     <div class="descrizione-content">
       <p>"Trivia Stack" ha come ispirazione "Trivia Crack",un gioco divertente strutturato a quiz, in cui bisogna sfidare gli altri utenti su domande di cultura generale.
@@ -78,12 +78,12 @@
     <h2>IL NOSTRO TEAM</h2>
     <div class="sviluppo">
       <div class="dev">
-        <img src="src/images/dev/tamer-hayek.jpg">
+        <img src="./src/images/dev/tamer-hayek.jpg">
         <h3>Tamer Hayek</h3>
         <p>Matricola: 1897438</p>
       </div>
       <div class="dev">
-        <img src="src/images/dev/tamer-hayek.jpg">
+        <img src="./src/images/dev/tamer-hayek.jpg">
         <h3>Maria Diana Calugaru</h3>
         <p>Matricola: 1893272</p>
       </div>
@@ -91,29 +91,31 @@
     <h2>COLLABORAZIONI</h2>
     <div class="collaborazioni">
       <div class="sponsor">
-        <img src="src/images/dev/tamer-hayek.jpg">
+        <img src="./src/images/dev/tamer-hayek.jpg">
         <h3>Sapienza</h3>
       </div>
       <div class="sponsor">
-        <img src="src/images/dev/tamer-hayek.jpg">
+        <img src="./src/images/dev/tamer-hayek.jpg">
         <h3>Mark Zuckerberg</h3>
       </div>
       <div class="sponsor">
-        <img src="src/images/dev/tamer-hayek.jpg">
+        <img src="./src/images/dev/tamer-hayek.jpg">
         <h3>Elon Musk</h3>
       </div>
     </div>
-    
-    <!-- FOOTER -->
-    <div class="footer">
-      <div class="footer-copyright">
-        <p> &copy; Linguaggi e Tecnologie Web 2021/2022</p>
-      </div>
-      <div class="footer-loghi">
-        <a href=""><img alt="Logo Facebook" src="src/images/facebook.png"></a>
-        <a href=""><img alt="Logo Instagram" src="src/images/instagram.png"></a>
-      </div>
+  </div>
+  
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-copyright">
+      <p> &copy; Linguaggi e Tecnologie Web 2021/2022</p>
     </div>
+    <div class="footer-loghi">
+      <a href=""><img alt="Logo Facebook" src="./src/images/facebook.png"></a>
+      <a href=""><img alt="Logo Instagram" src="./src/images/instagram.png"></a>
+    </div>
+  </div>
+
 </body>
 
 </html>

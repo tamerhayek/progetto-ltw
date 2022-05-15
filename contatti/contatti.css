@@ -1,17 +1,17 @@
 .container{
-    position: absolute;
-    top:45%;
-    left:50%;
-    transform: translate(-50%,-50%);
+    width: 50%;
     background-color: white;
     border-radius: 20px;
-    width: 40%;
-    padding:20px;
+    margin-top: 70px;
+    padding: 20px;
     font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .container > div{
-    padding:10px;
+    padding: 10px;
     display: flex;
 }
 
@@ -34,6 +34,16 @@
     margin-right: 15px;
 }
 
-.footer{
-    margin-top: 33%;
+@media screen and (max-width: 1200px){
+    .container{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 768px){
+    .container{
+        width: 90%;
+    }
+}
+.footer {
+    margin-top: 60px;
 }

@@ -1,186 +1,12 @@
-/* 
-#bg{
-    filter: blur(8px);
-    -webkit-filter: blur(8px);
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    overflow: hidden;
-}
-
-.container {
-    border: 1px solid white;
-    border-radius: 10px;
-    position: absolute;
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    text-align: center;
-}
-
-.pannello{
-    justify-content: center;
-    margin-top: 20px;
-    border-radius: 10px;  
-    margin-left: 10%;
-    margin-right: 10%;
-}
-
-.descrizione{
-    padding-top: 15px;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 30px;  
-}
-
-.descrizione > h2{
-    padding-bottom:20px;
-    font-weight: bolder;
-    color: white;
-    text-transform: uppercase;
-}
-.descrizione > h3{
-    padding:10px;
-    margin-bottom: 10px;
-    color: #ffffff;
-    font-style: italic;
-}
-.descrizione > a {
-    font-weight: bold;
-    color: black;
-    font-style: italic;
-}
-.descrizione > a:hover {
-    color: #ffffff;
-}
-
-.form{
-    margin-top: 50%;
-    
-}
-
-.grid{
-    padding: 20px;
-    display: grid;
-    grid-template: "i1 i3"/ 1fr 1fr;   
-    grid-column-gap: 15%; 
-    margin-left: 5%;
-    margin-right: 5%;       
-}
-
-.form-control[id="divUsername"]{grid-area: i1;}
-.form-control[id="divPassoword"]{grid-area: i3;}
-
-.form-control{
-    position: relative;
-}
-.form-control label{
-    color:white;
-    display: inline-block;
-    margin-bottom: 10px;
-    cursor: pointer;
-    font-weight: bold;
-}
-.form-control input{
-    display: block;
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-}
-
-.utenteNotFound {
-    color: white;
-    font-style: italic;
-    text-align: center;
-    align-items: center;
-    font-weight: bold;
-    padding-top: 20px;
-}
-
-#divSubmit {
-    padding: 20px;
-}
-
-.submit {
-    background-color: #000000;
-    border-color: #77bc3f;
-    border-radius: 12px;
-    color: #77bc3f;
-    padding: 15px;
-    margin: 0 auto;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.submit:hover {
-    background-color: green;
-    border-color: green;
-    color: #ffffff;
-    cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
-    .container{
-        padding: 70px 5px 15px 5px;
-    }
-    
-    .pannello{  
-        margin-left: 5%;
-        margin-right: 5%;
-    }
-
-    .descrizione{
-        padding: 10px;
-        margin-bottom: 10px;
-    }
-    
-    .descrizione > h2{
-        margin-top: 10px;
-    }
-    .descrizione > h3{
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-
-    .grid{
-        display: block;
-        justify-content: center; 
-        margin-left: 5%;
-        margin-right: 5%;       
-    }
-
-    .form-control{
-        padding-bottom: 10px;
-        margin-bottom: 10px;
-        position: relative;
-    }
-
-    .utenteNotFound {
-        padding-top: 5px;
-    }
-
-    #divSubmit {
-        padding: 10px;
-    }
-    
-    .submit {
-        padding: 10px;
-    }
-} */
 .container {
     width: 100%;
-    height: auto;
-    padding: 50px 250px 20px;
+    padding: 30px 150px 30px;
     color: #000000;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    height: calc(100vh - 70px);
+    min-height: calc(100vh - 70px);
     background-image: url('../../src/images/sfondo-verde.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -224,6 +50,7 @@
     color: #000000;
     font-size: 20px;
     font-weight: bold;
+    align-items: center;
 }
 .window-bar-title img {
     margin-right: 10px;
@@ -234,6 +61,7 @@
 .window-bar-buttons {
     width: 30%;
     text-align: right;
+    align-items: center;
 }
 .window-bar img {
     width: 20px;
@@ -281,39 +109,70 @@
     justify-content: flex-start;
     align-items: center;
 }
+.form .utenteNotFound {
+    padding: 10px 0;
+}
 .form .utenteNotFound p {
     color: #ffffff;
     font-style: italic;
     font-size: 16px;
 }
 .form .submit {
-    background-color: #4e9a06;
+    background-color: #77bc3f;
     color: #000000;
-    padding: 15px;
     border-radius: 12px;
+    font-weight: bold;
+    padding: 15px 20px;
     border: none;
     outline: none;
     visibility: hidden;
+    margin: 10px;
 }
 .form .submit:hover {
-    background-color: #000000;
-    color: #4e9a06;
+    background-color: #4e9a06;
+    color: #000000;
     cursor: pointer;
+}
+
+small{
+    margin: 3px;
+    visibility: hidden;
+    color: rgb(153, 13, 8);
 }
 
 @media screen and (max-width: 1200px) {
     .container {
-        padding: 20px 30px 10px;
+        padding: 20px 50px 10px;
+    }
+    .form {
+        font-size: 16px;
+    }
+    .form label {
+        font-size: 16px;
+    }
+    .form input {
+        font-size: 16px;
+    }
+    .form .utenteNotFound p {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    .pressEnter {
+        display: none;
     }
 }
 
 @media screen and (max-width: 768px) {
+    .container {
+        height: calc(100vh - 108.4px);
+    }
     .descrizione {
         padding: 10px;
     }
     .form {
         padding: 10px;
         font-size: 16px;
+        align-items: center;
     }
     .form label {
         width: 100%;
@@ -329,10 +188,40 @@
         flex-wrap: wrap;
         justify-content: center;
     }
+    .form .utenteNotFound {
+        text-align: center;
+        align-items: center;
+    }
     .form .utenteNotFound p {
-        font-size: 12px;
+        font-size: 16px;
+        margin-bottom: 10px;
+        text-align: center;
     }
-    .form .submit {
-        visibility: visible;
+    .pressEnter {
+        display: none;
     }
+}
+
+@media screen and (max-width: 450px) {
+    .container {
+        padding: 20px 20px 10px;
+    }
+    .form {
+        font-size: 14px;
+    }
+    .form label {
+        font-size: 14px;
+    }
+    .form input {
+        font-size: 14px;
+    }
+    .form .utenteNotFound p {
+        font-size: 14px;
+    }
+}
+
+
+
+#divPassword {
+    visibility: hidden;
 }

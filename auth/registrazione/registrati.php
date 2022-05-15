@@ -9,7 +9,7 @@
 
     <!-- STYLE -->
     <link rel="stylesheet" href="../../src/css/general.css">
-    <link rel="stylesheet" href="registrazione.css">
+    <link rel="stylesheet" href="./registrazione.css">
 </head>
 
 <body>
