@@ -73,7 +73,7 @@
     padding: 0 5px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: flex-start;
     font-size: 20px;
 }
@@ -109,10 +109,8 @@
     justify-content: flex-start;
     align-items: center;
 }
-.form .utenteNotFound {
-    padding: 10px 0;
-}
 .form .utenteNotFound p {
+    padding: 10px 0;
     color: #ffffff;
     font-style: italic;
     font-size: 16px;
