@@ -37,13 +37,19 @@ DB URI: "postgres://crolxvdhppthgq:76b70cf66246929bd0e20b8c1a277a71fdaf8b317e307
 
 # TO DO
 
+- Auth
+    - AJAX Post
+
 - Lista Sfide
-    - In corso
-    - Terminate
-- CSS Round Quiz
-    - Animazioni
+    - CSS
+    - Continua sfida
+
+- Round Quiz
+    - CSS
     - Risultati
     - Suoni
-    - Prossima Sfida
-- Cerca Utente per sfida
-- Continua sfida
+    - Prossima Sfida (aggiungere su pagina risultati se partita conclusa)
+
+- Mettere Favicon
+
+- Animazioni su tutto

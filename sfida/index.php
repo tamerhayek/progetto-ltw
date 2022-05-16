@@ -24,7 +24,6 @@
 <body>
   <?php include '../src/php/logout.php'; ?>
   <!-- NAVBAR -->
-  <!-- NAVBAR -->
   <div class="barra-nav">
     <div class="barra-nav-logo">
       <a href="../">
