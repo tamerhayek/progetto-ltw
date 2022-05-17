@@ -62,12 +62,12 @@
       <img src="./src/images/question.jpg">
     </div>
     <div class="descrizione-content">
-      <p>"Trivia Stack" ha come ispirazione "Trivia Crack",un gioco divertente strutturato a quiz, in cui bisogna sfidare gli altri utenti su domande di cultura generale.
+      <p>"Trivia Stack" ha come ispirazione "Trivia Crack",un gioco divertente strutturato a quiz, in cui gli utenti si sfidano tra di loro su domande di cultura generale.
         <br><br>
         La particolarità di "Trivia Stack", così come suggerito dal nome, è che le domande riguardano svariati argomenti di informatica.
         Ciò permette ai giocatori di mettere alla prova le loro conoscenze in questo campo intraprendendo sfide tra di loro nel tentativo di arrivare sempre più in alto nella classifica generale del gioco.
         <br><br>
-        Per iniziare a giocare ogni utente deve registrarsi e una volta loggato può iniziare il gioco!
+        Per iniziare a giocare è necessario registrarti: una volta effettuato il login, puoi dare inizio al divertimento sfidando un tuo amico o un utente casuale.
       </p>
       <a href="#chi-siamo" class="button">Chi siamo</a>
     </div>

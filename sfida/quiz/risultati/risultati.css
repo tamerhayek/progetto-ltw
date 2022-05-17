@@ -1,0 +1,33 @@
+body{
+    background-color: black;
+} 
+
+
+.container{
+    width: 70%;;
+    background-color: white;
+    border-radius: 20px;
+    margin-top: 70px;
+    padding: 20px;
+    font-weight: bolder;
+    margin-left: 15%;
+    text-align: center;
+}
+
+.container > .esito{
+    padding: 30px;
+}
+
+.container > .esito > h2{
+    font-size:xx-large;
+}
+
+.container > .dati{
+    padding: 30px;
+    display: flex;
+}
+
+span{
+    border: 1px solid black;
+    border-radius: 5px;
+}
