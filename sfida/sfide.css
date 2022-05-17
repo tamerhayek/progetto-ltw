@@ -1,6 +1,6 @@
 .container {
     width: 100%;
-    padding: 30px;
+    padding: 50px 150px;
 }
 
 .nuova-sfida {
@@ -25,10 +25,7 @@
     display: flex;
     justify-content: center;
 }
-form {
-    display: flex;
-}
-.nuova-sfida input {
+.amico input {
     padding: 15px;
     border: 1 px solid white;
     border-radius: 10px;
@@ -49,16 +46,21 @@ form {
     color: #ffffff;
 }
 .sfide > h3 {
+    text-align: center;
     font-size: 30px;
     font-weight: bold;
 }
 .sfide > p {
+    text-align: center;
     font-size: 20px;
 }
 
 .sfida {
-    width: 70%;
+    width: 80%;
     padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .sfida .sfida-giocatore {
     width: 100%;
@@ -67,7 +69,7 @@ form {
     align-items: center;
     color: #ffffff;
 }
-.sfida .sfida-giocatore h3 {
+.sfida .sfida-giocatore span {
     text-align: center;
     padding: 10px;
     font-size: 20px;
@@ -79,14 +81,105 @@ form {
     background-color: #ffffff;
 }
 .sfida .sfida-giocatore .left {
-    width: 33%;
-    justify-self: flex-start;
+    width: 40%;
 }
 .sfida .sfida-giocatore .center {
-    width: 33%;
-    justify-self: center;
+    width: 20%;
 }
 .sfida .sfida-giocatore .right {
-    width: 33%;
-    justify-self: flex-end;
+    width: 40%;
 }
+
+@media screen and (max-width: 1200px) {
+    .container {
+        width: 100%;
+        padding: 20px 50px;
+    }
+    
+    .nuova-sfida {
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: 2px solid #77bc3f;
+        border-radius: 12px;
+        margin-bottom: 20px;
+        align-items: center;
+    }
+    
+    .casuale {
+        padding: 10px 50px;
+        width: 100%;
+    }
+    .amico {
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+    }
+    .amico button {
+        width: 30%;
+    }
+    .amico input {
+        width: 30%;
+    }
+    
+    .sfide > h3 {
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .sfide > p {
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .casuale {
+        padding: 10px;
+        width: 100%;
+    }
+    .amico {
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+    }
+    .amico button {
+        width: 50%;
+    }
+    .amico input {
+        width: 50%;
+    }
+    
+    .sfide > h3 {
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .sfide > p {
+        padding: 10px;
+        font-size: 12px;
+    }
+    .sfida {
+        width: 100%;
+    }
+    .sfida .sfida-giocatore span {
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .sfida .sfida-giocatore:hover {
+        color: #000000;
+        background-color: #ffffff;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .sfida .sfida-giocatore span {
+        font-size: 10px;
+        font-weight: bold;
+    }
+}
+

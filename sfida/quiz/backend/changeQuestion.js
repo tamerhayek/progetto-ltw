@@ -1,6 +1,16 @@
 function changeQuestion(id, sfida, next) {
     if (next == 6) {
-        window.location.href = "./risultati/?id=" + sfida;
+        $.post(
+            "./backend/finish.php",
+            { id: sfida },
+            function (response) {
+                if (response == 1) {
+                    window.location.href = "./risultati/?id=" + sfida;
+                } else {
+                    window.location.href = "../../";
+                }
+            }
+        );
     } else {
         $.post(
             "./backend/changeQuestion.php",

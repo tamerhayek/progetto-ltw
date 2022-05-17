@@ -1,112 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Trivia Stack | Risultati</title>
 
-     <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet" />
 
     <!-- STYLE -->
-  <link rel="stylesheet" href="../../../src/css/general.css">
-  <link rel="stylesheet" href="risultati.css">
+    <link rel="stylesheet" href="../../../src/css/general.css">
+    <link rel="stylesheet" href="./risultati.css">
 
-   
+
 </head>
-<body>
-    <?php
-        $dbconn = pg_connect("postgres://crolxvdhppthgq:76b70cf66246929bd0e20b8c1a277a71fdaf8b317e307801ddcd58314b387a84@ec2-54-170-90-26.eu-west-1.compute.amazonaws.com:5432/d6fkjg0dv9b5uu");
-        $username = json_decode($_COOKIE["userArray"], true)['username'];
 
-        $querySfida = "SELECT * FROM sfide WHERE id = $1";
-        $querySfidaResult = pg_query_params($dbconn, $querySfida, array($_GET['id']));
-        if ($sfida = pg_fetch_array($querySfidaResult, null, PGSQL_ASSOC)) {
-            $giocatore1 = $sfida['giocatore1'];
-            $giocatore2 = $sfida['giocatore2'];
-            $punteggio1 = $sfida['punteggio1'];
-            $punteggio2 = $sfida['punteggio2'];
-    
-            if ($username == $giocatore1) {
-                $queryUpdateStatus = "UPDATE sfide SET status1=true WHERE id = $1";
-                $queryUpdateStatusResult = pg_query_params($dbconn, $queryUpdateStatus, array($_GET['id']));
-                if($sfida['status2'] == 'true'){
-                    $queryUpdateWinner = "UPDATE sfide SET vincitore=$1 WHERE id = $2";
-                    if($sfida['punteggio1'] > $sfida['punteggio2']){
-                        $queryUpdateWinnerResult = pg_query_params($dbconn, $queryUpdateWinner, array($giocatore1,$_GET['id']));
-                        $esito = "Hai vinto!";
-                    }
-                    else if($sfida['punteggio1'] < $sfida['punteggio2']){
-                        $queryUpdateWinnerResult = pg_query_params($dbconn, $queryUpdateWinner, array($giocatore2,$_GET['id']));
-                        $esito = "Hai perso!";
-                    }
-                    else{
-                        $pareggio = "pareggio";
-                        $queryUpdateWinnerResult = pg_query_params($dbconn, $queryUpdateWinner, array($pareggio,$_GET['id']));
-                        $esito = "Hai pareggiato!";
-                    }
-                    pg_free_result($queryUpdateStatusResult);
-                    pg_free_result($queryUpdateWinnerResult);
-                }
-                else{
-                    $esito = "Hai finito il tuo turno! <br> L'altro giocatore deve completare la sfida.";
-                }
-            } 
-            else {
-                $queryUpdateStatus = "UPDATE sfide SET status2=true WHERE id = $1";
-                $queryUpdateStatusResult = pg_query_params($dbconn, $queryUpdateStatus, array($_GET['id']));
-                if($sfida['status1'] == 'true'){
-                    $queryUpdateWinner = "UPDATE sfide SET vincitore=$1 WHERE id = $2";
-                    if($sfida['punteggio1'] > $sfida['punteggio2']){
-                        $queryUpdateWinnerResult = pg_query_params($dbconn, $queryUpdateWinner, array($giocatore1,$_GET['id']));
-                        $esito = "Hai perso!";
-                    }
-                    else if($sfida['punteggio1'] < $sfida['punteggio2']){
-                        $queryUpdateWinnerResult = pg_query_params($dbconn, $queryUpdateWinner, array($giocatore2,$_GET['id']));
-                        $esito = "Hai vinto!";
-                    }
-                    else{
-                        $pareggio = "pareggio";
-                        $queryUpdateWinnerResult = pg_query_params($dbconn, $queryUpdateWinner, array($pareggio,$_GET['id']));
-                        $esito = "Hai pareggiato!";
-                    }
-                    pg_free_result($queryUpdateStatusResult);
-                    pg_free_result($queryUpdateWinnerResult);
-                }
-                else{
-                    $esito = "Hai finito il tuo turno! <br> L'altro giocatore deve completare la sfida.";
-                }
-            }
-        }
-        
-    ?>
-    
-    <div class="container">
-        <div class="esito">
-            <?php echo "<h2>$esito</h2>" ?>
+<body>
+    <?php include '../../../src/php/logout.php'; ?>
+
+    <!-- NAVBAR -->
+    <div class="barra-nav">
+        <div class="barra-nav-logo">
+            <a href="../../../">
+                <img src="../../../src/images/logo.png" alt="Logo Trivia Stack" />
+            </a>
         </div>
-        <div class="riepilogo">
-            <h3>Stato attuale della sfida:<h3>
-            </hr>
-            <div class="dati">
-                <span class='info'>
-                   <?php echo $giocatore1; ?>
-                </span>
-                <span class='info'>
-                    <?php echo $punteggio1;?>
-                </span>
-                <span>-</span>
-                <span class='info'>
-                    <?php echo $punteggio2; ?>
-                </span>
-                <span class='info'>
-                    <?php echo $giocatore2; ?>
-                </span>
+        <div class="barra-nav-menu">
+            <a href="../../../classifica/">Classifica</a>
+            <a href="../../">Sfide</a>
+            <a href="../../../contatti/">Contatti</a>
+        </div>
+        <div class="barra-nav-user">
+            <?php
+            if (isset($_COOKIE['userArray'])) {
+                $data = json_decode($_COOKIE['userArray'], true);
+                echo '<a class="button" href="../../../profilo/"><img src="../../../src/images/icons/profile.svg" alt="Icona Profilo">' . $data['username'] . '</a>';
+                echo "<a class='login' href='?logout=true'><img class='black-icon' src='../../../src/images/icons/logout.svg'></a>";
+            } else {
+                header('Location: ../auth/accesso/');
+            }
+            ?>
+        </div>
+    </div>
+
+    <?php
+
+    if (!isset($_GET['id'])) {
+        header("Location: ../../");
+    }
+
+    $dbconn = pg_connect("postgres://crolxvdhppthgq:76b70cf66246929bd0e20b8c1a277a71fdaf8b317e307801ddcd58314b387a84@ec2-54-170-90-26.eu-west-1.compute.amazonaws.com:5432/d6fkjg0dv9b5uu");
+    $username = json_decode($_COOKIE["userArray"], 'true')['username'];
+
+    $esito = "";
+
+    $querySfida = "SELECT * FROM sfide WHERE id = $1";
+    $querySfidaResult = pg_query_params($dbconn, $querySfida, array($_GET['id']));
+    if ($sfida = pg_fetch_array($querySfidaResult, null, PGSQL_ASSOC)) {
+        if ($username == $sfida['giocatore1']) {
+            if ($sfida['status1'] == 't' && $sfida['status2'] == 't') {
+                if ($sfida['punteggio1'] > $sfida['punteggio2']) {
+                    $esito = "Hai vinto!";
+                } else if ($sfida['punteggio1'] < $sfida['punteggio2']) {
+                    $esito = "Hai perso!";
+                } else {
+                    $esito = "Hai pareggiato!";
+                }
+            } else if ($sfida['status1'] == 't' && $sfida['status2'] == 'f') {
+                $esito = "Hai finito il tuo turno! <br> L'altro giocatore deve completare la sfida.";
+            } else if ($sfida['status1'] == 'f') {
+                header("Location: ../?id=$_GET[id]");
+            }
+        } else if ($username == $sfida['giocatore2']) {
+            if ($sfida['status1'] == 't' && $sfida['status2'] == 't') {
+                if ($sfida['punteggio1'] > $sfida['punteggio2']) {
+                    $esito = "Hai perso!";
+                } else if ($sfida['punteggio1'] < $sfida['punteggio2']) {
+                    $esito = "Hai vinto!";
+                } else {
+                    $esito = "Hai pareggiato!";
+                }
+            } else if ($sfida['status1'] == 'f' && $sfida['status2'] == 't') {
+                $esito = "Hai finito il tuo turno! <br> L'altro giocatore deve completare la sfida.";
+            } else if ($sfida['status2'] == 'f') {
+                header("Location: ../?id=$_GET[id]");
+            }
+        } else {
+            header("Location: ../../");
+        }
+    }
+    pg_free_result($querySfidaResult);
+    pg_close($dbconn);
+    ?>
+
+    <div class="container">
+        <div class="pannello">
+            <div class="esito">
+                <?php echo "<h2>$esito</h2>" ?>
+            </div>
+            <div class="riepilogo">
+                <div class='punteggio'>
+                    <?php echo "<span class='left'>" . $sfida['punteggio1'] . "</span><span class='center'> - </span><span class='right'>" . $sfida['punteggio2'] . "</span>"; ?>
+                </div>
+                <div class='giocatori'>
+                    <?php echo "<span class='left'>" . $sfida['giocatore1'] . "</span><span class='center'> - </span><span class='right'>" . $sfida['giocatore2'] . "</span>"; ?>
+                </div>
             </div>
         </div>
     </div>
 </body>
+
 </html>

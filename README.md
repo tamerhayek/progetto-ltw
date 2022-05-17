@@ -41,13 +41,22 @@ DB URI: "postgres://crolxvdhppthgq:76b70cf66246929bd0e20b8c1a277a71fdaf8b317e307
     - AJAX Post
 
 - Lista Sfide
-    - CSS
-    - Continua sfida
+    - Cerca utente (gestisci tutto)
+    - Casuale
 
 - Round Quiz
     - Suoni
+    - Controlla se funziona risultati dopo quiz (file finish.php)
+    - Evitare cheat
+
+-Risultati
     - Prossima Sfida (aggiungere su pagina risultati se partita conclusa)
+    - Partite scorse
 
 - Mettere Favicon
 
 - Animazioni su tutto
+
+- Inserire immagini nella homepage
+
+- Controllo sul duello se hai già giocato

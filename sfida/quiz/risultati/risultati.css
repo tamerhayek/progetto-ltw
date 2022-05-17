@@ -1,33 +1,63 @@
-body{
-    background-color: black;
-} 
-
-
 .container{
-    width: 70%;;
-    background-color: white;
-    border-radius: 20px;
+    width: 100%;
     margin-top: 70px;
     padding: 20px;
-    font-weight: bolder;
-    margin-left: 15%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.container > .pannello {
+    width: 80%;
+    padding: 30px;
+    border-radius: 12px;
+    background-color: #ffffff;
+}
+
+.container > .pannello > .esito{
+    padding: 20px;
     text-align: center;
 }
-
-.container > .esito{
-    padding: 30px;
+.container > .pannello > .esito > h2{
+    font-size: 30px;
+    font-weight: bold;
 }
 
-.container > .esito > h2{
-    font-size:xx-large;
-}
-
-.container > .dati{
+.container > .pannello > .riepilogo{
     padding: 30px;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-span{
-    border: 1px solid black;
-    border-radius: 5px;
+.container > .pannello > .riepilogo .punteggio{
+    width: 100%;
+    font-size: 100px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
+.container > .pannello > .riepilogo .giocatori{
+    width: 100%;
+    font-size: 30px;
+    font-weight: regular;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.container > .pannello > .riepilogo .left{
+    width: 40%;
+    text-align: right;
+}
+.container > .pannello > .riepilogo .center{
+    width: 20%;
+    text-align: center;
+}
+.container > .pannello > .riepilogo .right{
+    width: 40%;
+    text-align: left;
+}
+

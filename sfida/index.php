@@ -8,7 +8,7 @@
   <title>Trivia Stack | Sfide</title>
 
   <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -54,64 +54,62 @@
       <div class="casuale">
         <a class="button" href="./casuale.php">Inizia una nuova sfida casuale!</a>
       </div>
-      <div class="amico">
-        <form name="cercaAmico" action="./amico.php" method='POST'>
-          <button type='submit' class="button" id="sfidaamico">Sfida un tuo amico!</button>
-          <input type="text" name="username" id="avversario" placeholder="Cerca username">
-          <form>
-      </div>
+      <form name="cercaAmico" class="amico" action="./amico.php" method='POST'>
+        <button type='submit' class="button" id="sfidaamico">Sfida un tuo amico!</button>
+        <input type="text" name="username" id="avversario" placeholder="Cerca username">
+      </form>
     </div>
 
     <div class="sfide incorso">
       <h3>Sfide in corso</h3>
       <p> Il giocatore con punteggio nullo deve concludere la sfida</p>
-          <?php
-          $username = json_decode($_COOKIE["userArray"], true)['username'];
+      <?php
+      $username = json_decode($_COOKIE["userArray"], true)['username'];
 
-          $dbconn = pg_connect("postgres://crolxvdhppthgq:76b70cf66246929bd0e20b8c1a277a71fdaf8b317e307801ddcd58314b387a84@ec2-54-170-90-26.eu-west-1.compute.amazonaws.com:5432/d6fkjg0dv9b5uu");
-          $query = 'SELECT * FROM sfide where (giocatore1=$1 or giocatore2=$1) and (status1=false or status2=false)';
-          $result = pg_query_params($dbconn, $query, array($username));
+      $dbconn = pg_connect("postgres://crolxvdhppthgq:76b70cf66246929bd0e20b8c1a277a71fdaf8b317e307801ddcd58314b387a84@ec2-54-170-90-26.eu-west-1.compute.amazonaws.com:5432/d6fkjg0dv9b5uu");
+      $query = 'SELECT * FROM sfide where (giocatore1=$1 or giocatore2=$1) and (status1=false or status2=false)';
+      $result = pg_query_params($dbconn, $query, array($username));
 
-          while ($sfida = pg_fetch_array($result, null, PGSQL_ASSOC)) {
-            $id = $sfida['id'];
-            $giocatore1 = $sfida['giocatore1'];
-            $giocatore2 = $sfida['giocatore2'];
-            $punteggio1 = $sfida['punteggio1'];
-            $punteggio2 = $sfida['punteggio2'];
-            echo "<a class='sfida' href='./quiz/risultati/?id=$id'>";
-            echo "<div class='sfida-giocatore'>";
-            echo "<h3 class='left'>$giocatore1</h3>";
-            echo "<h3 class='center'>$punteggio1 - $punteggio2</h3>";
-            echo "<h3 class='right'>$giocatore2</h3>";
-            echo "</div>";
-            echo "</a>";
-          }
-          pg_free_result($result);
-        ?>
+      while ($sfida = pg_fetch_array($result, null, PGSQL_ASSOC)) {
+        $id = $sfida['id'];
+        $giocatore1 = $sfida['giocatore1'];
+        $giocatore2 = $sfida['giocatore2'];
+        $punteggio1 = $sfida['punteggio1'];
+        $punteggio2 = $sfida['punteggio2'];
+        echo "<a class='sfida' href='./quiz/risultati/?id=$id'>";
+        echo "<div class='sfida-giocatore'>";
+        echo "<span class='left'>$giocatore1</span>";
+        echo "<span class='center'>$punteggio1 - $punteggio2</span>";
+        echo "<span class='right'>$giocatore2</span>";
+        echo "</div>";
+        echo "</a>";
+      }
+      pg_free_result($result);
+      ?>
     </div>
 
     <div class="sfide concluse">
-          <?php
-          echo "<h3>Sfide concluse</h3>";
-          $query = 'SELECT * FROM sfide where (giocatore1=$1 or giocatore2=$1) and (status1=true and status2=true)';
-          $result = pg_query_params($dbconn, $query, array($username));
-          while ($sfida = pg_fetch_array($result, null, PGSQL_ASSOC)) {
-            $id = $sfida['id'];
-            $giocatore1 = $sfida['giocatore1'];
-            $giocatore2 = $sfida['giocatore2'];
-            $punteggio1 = $sfida['punteggio1'];
-            $punteggio2 = $sfida['punteggio2'];
-            echo "<a class='sfida' href='./quiz/risultati/?id=$id'>";
-            echo "<div class='sfida-giocatore'>";
-            echo "<h3 class='left'>$giocatore1</h3>";
-            echo "<h3 class='center'>$punteggio1 - $punteggio2</h3>";
-            echo "<h3 class='right'>$giocatore2</h3>";
-            echo "</div>";
-            echo "</a>";
-          }
-          pg_free_result($result);
-          pg_close($dbconn);
-        ?>
+      <?php
+      echo "<h3>Sfide concluse</h3>";
+      $query = 'SELECT * FROM sfide where (giocatore1=$1 or giocatore2=$1) and (status1=true and status2=true)';
+      $result = pg_query_params($dbconn, $query, array($username));
+      while ($sfida = pg_fetch_array($result, null, PGSQL_ASSOC)) {
+        $id = $sfida['id'];
+        $giocatore1 = $sfida['giocatore1'];
+        $giocatore2 = $sfida['giocatore2'];
+        $punteggio1 = $sfida['punteggio1'];
+        $punteggio2 = $sfida['punteggio2'];
+        echo "<a class='sfida' href='./quiz/risultati/?id=$id'>";
+        echo "<div class='sfida-giocatore'>";
+        echo "<span class='left'>$giocatore1</span>";
+        echo "<span class='center'>$punteggio1 - $punteggio2</span>";
+        echo "<span class='right'>$giocatore2</span>";
+        echo "</div>";
+        echo "</a>";
+      }
+      pg_free_result($result);
+      pg_close($dbconn);
+      ?>
     </div>
   </div>
 
