@@ -20,6 +20,11 @@
 
 <body>
   <?php include './src/php/logout.php'; ?>
+  
+  <!-- PULSANTE GIOCO -->
+  <div id="backBtn" class="button fixed">+</div>
+  
+
   <!-- NAVBAR -->
   <div class="barra-nav">
     <div class="barra-nav-logo">
@@ -115,7 +120,7 @@
       <a href=""><img alt="Logo Instagram" src="./src/images/instagram.png"></a>
     </div>
   </div>
-
+  
 </body>
 
 </html>
