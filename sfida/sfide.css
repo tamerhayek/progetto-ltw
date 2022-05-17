@@ -6,7 +6,7 @@
 .nuova-sfida {
     width: 100%;
     padding: 10px;
-    display:flex;
+    display: flex;
     justify-content: center;
     border: 2px solid #77bc3f;
     border-radius: 12px;
@@ -14,22 +14,22 @@
     align-items: center;
 }
 
-.casuale{
+.casuale {
     padding-right: 100px;
     padding-left: 20px;
     width: 50%;
 }
-.amico{
+.amico {
     width: 50%;
-    padding:20px;
-    display:flex;
+    padding: 20px;
+    display: flex;
     justify-content: center;
 }
-form{
+form {
     display: flex;
 }
-.nuova-sfida input{
-    padding:15px;
+.nuova-sfida input {
+    padding: 15px;
     border: 1 px solid white;
     border-radius: 10px;
     align-self: center;
@@ -48,18 +48,45 @@ form{
     margin-bottom: 20px;
     color: #ffffff;
 }
+.sfide > h3 {
+    font-size: 30px;
+    font-weight: bold;
+}
+.sfide > p {
+    font-size: 20px;
+}
 
-.table {
-    width:80%;
+.sfida {
+    width: 70%;
+    padding: 10px;
+}
+.sfida .sfida-giocatore {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #ffffff;
 }
-.table th {
-    background-color: #ffffff;
-    color: #000000;
+.sfida .sfida-giocatore h3 {
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px solid #ffffff;
 }
-
-.table tr{
-    background-color: black;
-    margin-top:10px;
-    align-items:flex-end;
+.sfida .sfida-giocatore:hover {
+    color: #000000;
+    background-color: #ffffff;
+}
+.sfida .sfida-giocatore .left {
+    width: 33%;
+    justify-self: flex-start;
+}
+.sfida .sfida-giocatore .center {
+    width: 33%;
+    justify-self: center;
+}
+.sfida .sfida-giocatore .right {
+    width: 33%;
+    justify-self: flex-end;
 }

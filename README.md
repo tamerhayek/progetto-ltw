@@ -45,8 +45,6 @@ DB URI: "postgres://crolxvdhppthgq:76b70cf66246929bd0e20b8c1a277a71fdaf8b317e307
     - Continua sfida
 
 - Round Quiz
-    - CSS
-    - Risultati
     - Suoni
     - Prossima Sfida (aggiungere su pagina risultati se partita conclusa)
 

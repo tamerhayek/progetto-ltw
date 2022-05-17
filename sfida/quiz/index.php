@@ -75,7 +75,7 @@
 
   <div class="container">
     <div class="quit">
-      <a href="../../">Quit</a>
+      <a href="../">Quit</a>
     </div>
     <div class="quiz" id="quiz">
       <div class="quiz-domanda">

@@ -8,7 +8,6 @@
 .quit {
     width: 100%;
     height: 5vh;
-    border: 1px solid red;
     padding: 20px;
 }
 .quit > a {
@@ -20,26 +19,28 @@
     width: 100%;
     padding: 20px;
     height: 90vh;
-    border: 1px solid rgb(200, 0, 0);
 }
 
 .quiz > .quiz-domanda {
     width: 100%;
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    align-items: center;
+    margin-bottom: 30px;
 }
 .quiz > .quiz-domanda #domanda {
-    border: 2px solid #77bc3f;
-    border-radius: 12px;
-    padding: 10px;
+    background-color: #77bc3f;
+    color: #000000;
+    width: 80%;
+    padding: 30px;
     font-size: 24px;
     font-weight: bold;
-    color: #ffffff;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .quiz > .quiz-domanda #esito {
     color: #ffffff;
-    margin-bottom: 10px;
 }
 
 .quiz > .quiz-risposte {
@@ -52,28 +53,34 @@
 .quiz > .quiz-risposte > .quiz-risposta {
     width: 100%;
     height: 100%;
-    border: 1px solid red;
-    padding: 10px 40px;
+    padding: 10px 50px;
 }
 .quiz > .quiz-risposte > .quiz-risposta > button {
     width: 100%;
     height: 100%;
     font-size: 20px;
     padding: 20px;
-    border-radius: 12px;
-    min-height: 150px;
+    border-radius: 8px;
+    min-height: 170px;
+    background-color: #ffffff;
+    border: 1px solid #cacdc7;
+    box-shadow: #a9a9a3 4px 4px 0px;
+    transition: transform 200ms, box-shadow 200ms;
 }
 .quiz > .quiz-risposte > .quiz-risposta > button:hover {
     cursor: pointer;
 }
 .quiz > .quiz-risposte > .quiz-risposta > button:disabled {
-    background-color: gray;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #000000;
+}
+.quiz > .quiz-risposte > .quiz-risposta > button:active {
+    transform: translateY(4px) translateX(4px);
+    box-shadow: #b0aeae 0px 0px 0px;
 }
 
 .quiz > .quiz-prossima {
     width: 100%;
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -81,27 +88,27 @@
     text-align: center;
     align-items: center;
 }
-.quiz > .quiz-prossima > a {
-    color: #000000;
-    text-decoration: none;
-    padding: 15px;
-    background-color: #00b7ea;
-    border-radius: 12px;
-}
 .quiz > .quiz-prossima > button {
     color: #ffffff;
-    background-color: #013e7f;
-    border-radius: 12px;
+    border-radius: 8px;
     padding: 15px;
+    background-color: #013e7f;
+    border: 1px solid #07305c;
+    box-shadow: #031221 4px 4px 0px;
+    transition: transform 200ms, box-shadow 200ms;
 }
-.quiz > .quiz-prossima > button:hover {
+.quiz > .quiz-prossima .prossima:hover {
     background-color: #092748;
     cursor: pointer;
 }
-
 .quiz > .quiz-prossima .prossima:disabled {
     background-color: gray;
+    box-shadow: rgb(55, 54, 54) 4px 4px 0px;
     color: #ffffff;
+}
+.quiz > .quiz-prossima .prossima:active {
+    transform: translateY(4px) translateX(4px);
+    box-shadow: #013e7f 0px 0px 0px;
 }
 
 .quiz > .quiz-prossima #prossima2 {
@@ -119,7 +126,53 @@
 
 .correct {
     background-color: #77bc3f !important;
+    border: 1px solid #426922 !important;
+    box-shadow: #324a1e 4px 4px 0px !important;
 }
 .wrong {
     background-color: #ff0000 !important;
+    border: 1px solid #bd0707 !important;
+    box-shadow: #440202 4px 4px 0px !important;
+}
+
+@media screen and (max-width: 1200px) {
+    .quiz > .quiz-domanda #domanda {
+        padding: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .quiz > .quiz-risposte > .quiz-risposta {
+        padding: 10px 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    
+    .quiz > .quiz-domanda {
+        margin-bottom: 10px;
+    }
+    .quiz > .quiz-domanda #domanda {
+        width: 100%;
+        padding: 10px;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .quiz > .quiz-domanda #esito {
+        color: #ffffff;
+    }
+
+    .quiz > .quiz-risposte {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .quiz > .quiz-risposte > .quiz-risposta {
+        padding: 10px;
+    }
+    
 }

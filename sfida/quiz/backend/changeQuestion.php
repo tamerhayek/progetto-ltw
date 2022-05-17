@@ -15,6 +15,7 @@ if ($domanda = pg_fetch_array($queryNextQuestionResult, null, PGSQL_ASSOC)) {
             echo 0;
         } else {
             $arrayReturn = array(
+                'id' => $domanda['id'],
                 'domanda' => $domanda['domanda'],
                 'risposta1' => $domanda['risposta1'],
                 'risposta2' => $domanda['risposta2'],

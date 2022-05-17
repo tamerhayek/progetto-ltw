@@ -42,8 +42,7 @@
         echo '<a class="button" href="../profilo/"><img src="../src/images/icons/profile.svg" alt="Icona Profilo">' . $data['username'] . '</a>';
         echo "<a class='login' href='?logout=true'><img class='black-icon' src='../src/images/icons/logout.svg'></a>";
       } else {
-        echo "<a class='login' href='../auth/accesso/'>Accedi</a>";
-        echo "<a class='button' href='../auth/registrazione/'>Registrati</a>";
+        header('Location: ../auth/accesso/');
       }
       ?>
     </div>
@@ -62,38 +61,35 @@
           <form>
       </div>
     </div>
+
     <div class="sfide incorso">
+      <h3>Sfide in corso</h3>
+      <p> Il giocatore con punteggio nullo deve concludere la sfida</p>
+      <!-- <table class='table'>
+        <tbody> -->
           <?php
-          echo "<h3>Sfide in corso</h3>";
-          echo "<p> Il giocatore con punteggio nullo deve concludere la sfida</p>";
-          if (!isset($_COOKIE['userArray'])) {
-              header('Location: ../auth/accesso/');
-          }
           $username = json_decode($_COOKIE["userArray"], true)['username'];
 
           $dbconn = pg_connect("postgres://crolxvdhppthgq:76b70cf66246929bd0e20b8c1a277a71fdaf8b317e307801ddcd58314b387a84@ec2-54-170-90-26.eu-west-1.compute.amazonaws.com:5432/d6fkjg0dv9b5uu");
           $query = 'SELECT * FROM sfide where (giocatore1=$1 or giocatore2=$1) and (status1=false or status2=false)';
           $result = pg_query_params($dbconn, $query, array($username));
-          echo "<table class='table'>";
-          echo "<tbody>";
+
           while ($sfida = pg_fetch_array($result, null, PGSQL_ASSOC)) {
             $giocatore1 = $sfida['giocatore1'];
             $giocatore2 = $sfida['giocatore2'];
             $punteggio1 = $sfida['punteggio1'];
             $punteggio2 = $sfida['punteggio2'];
-            echo "<a href=''>";
-            echo "<tr>";
-            echo "<td scope='row'>$giocatore1</td>";
-            echo "<td>$punteggio1</td>";
-            echo "<td>-</td>";
-            echo "<td>$punteggio2</td>";
-            echo "<td>$giocatore2</td>";
-            echo "</tr>";
+            echo "<a class='sfida' href=''>";
+            echo "<div class='sfida-giocatore'>";
+            echo "<h3 class='left'>$giocatore1</h3>";
+            echo "<h3 class='center'>$punteggio1 - $punteggio2</h3>";
+            echo "<h3 class='right'>$giocatore2</h3>";
+            echo "</div>";
             echo "</a>";
           }
           ?>
-        </tbody>
-      </table>
+        <!-- </tbody>
+      </table> -->
     </div>
 
     <div class="sfide concluse">
