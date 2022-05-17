@@ -59,6 +59,7 @@ form{
 }
 
 .table tr{
+    background-color: black;
     margin-top:10px;
     align-items:flex-end;
 }
