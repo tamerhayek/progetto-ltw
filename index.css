@@ -222,10 +222,37 @@
     }
 }
 
-.fixed{
+.fixbutton{
+    background-color:#77bc3f;
+    border-color:#77bc3f;
+    border-radius: 12px;
+    padding: 15px;
+    font-weight: bolder;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    color: black;
     position: fixed;
     bottom: 30px;
     right: 30px;
     cursor: pointer;
     z-index: 999;
+    min-width: 50px;
+    min-height: 50px;
+
+    box-shadow: 4px 4px 0px #034d09;
+    
+}
+
+
+.fixbutton:hover {
+    background-color: green;
+    border-color: green;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.fixbutton:active{
+    transform: translateY(4px) translateX(4px);
+    box-shadow: #055202 0px 0px 0px;
 }

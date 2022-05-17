@@ -43,11 +43,13 @@
 .container > .data > input {
     text-align: center;
     justify-self: flex-end;
-    width: 40%;
-    border: 4px solid #77bc3f;
+    width: 35%;
+    border: 4px solid #ffffff;
     border-radius: 12px;
     margin: 0;
-    padding: 10px 30px;
+    padding: 8px;
+    font-size: medium;
+    font-weight: bold;
 }
 .container > .data > input:disabled {
     color: #000000;

@@ -16,13 +16,31 @@
   <link rel="stylesheet" href="./src/css/general.css" />
   <link rel="stylesheet" href="./index.css" />
 
+  <!-- scrollreveal -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+   
+
 </head>
 
 <body>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#fixbtn").on({
+              mouseenter: function(){
+                $(this).delay(2000).text("Inizia a giocare!");
+              },
+              mouseleave: function(){
+                $(this).delay(2000).text("+");
+              }
+            })
+        });
+    </script>
+
   <?php include './src/php/logout.php'; ?>
   
   <!-- PULSANTE GIOCO -->
-  <div id="backBtn" class="button fixed">+</div>
+  <a id="fixbtn" class="fixbutton zoom" href="./sfida/casuale.php">+</a>
   
 
   <!-- NAVBAR -->
@@ -54,27 +72,27 @@
   <!-- HOMEPAGE -->
   <div class="home" id="homepage">
     <div class="home-bg"></div>
-    <div class="home-text">
-      <h1 class="home-title">Trivia Stack</h1>
-      <h3 class="home-subtitle">Computer Science Quiz</h3>
-      <a class="button" id="scopri" href="#descrizione">Scopri di più</a>
+    <div class="home-text reveal zoom">
+      <h1 class="home-title reveal">Trivia Stack</h1>
+      <h3 class="home-subtitle reveal">Computer Science Quiz</h3>
+      <a class="button reveal" id="scopri" href="#descrizione">Scopri di più</a>
     </div>
   </div>
 
   <!-- INFORMAZIONI -->
   <div class="descrizione" id="descrizione">
-    <div class="descrizione-img">
+    <div class="descrizione-img reveal">
       <img src="./src/images/question.jpg">
     </div>
     <div class="descrizione-content">
-      <p>"Trivia Stack" ha come ispirazione "Trivia Crack",un gioco divertente strutturato a quiz, in cui gli utenti si sfidano tra di loro su domande di cultura generale.
+      <p class="reveal">"Trivia Stack" ha come ispirazione "Trivia Crack",un gioco divertente strutturato a quiz, in cui gli utenti si sfidano tra di loro su domande di cultura generale.
         <br><br>
         La particolarità di "Trivia Stack", così come suggerito dal nome, è che le domande riguardano svariati argomenti di informatica.
         Ciò permette ai giocatori di mettere alla prova le loro conoscenze in questo campo intraprendendo sfide tra di loro nel tentativo di arrivare sempre più in alto nella classifica generale del gioco.
         <br><br>
         Per iniziare a giocare è necessario registrarti: una volta effettuato il login, puoi dare inizio al divertimento sfidando un tuo amico o un utente casuale.
       </p>
-      <a href="#chi-siamo" class="button">Chi siamo</a>
+      <a href="#chi-siamo" class="button reveal">Chi siamo</a>
     </div>
   </div>
 
@@ -82,12 +100,12 @@
   <div class="team" id="chi-siamo">
     <h2>IL NOSTRO TEAM</h2>
     <div class="sviluppo">
-      <div class="dev">
+      <div class="dev reveal">
         <img src="./src/images/dev/tamer-hayek.jpg">
         <h3>Tamer Hayek</h3>
         <p>Matricola: 1897438</p>
       </div>
-      <div class="dev">
+      <div class="dev reveal">
         <img src="./src/images/dev/tamer-hayek.jpg">
         <h3>Maria Diana Calugaru</h3>
         <p>Matricola: 1893272</p>
@@ -95,15 +113,15 @@
     </div>
     <h2>COLLABORAZIONI</h2>
     <div class="collaborazioni">
-      <div class="sponsor">
+      <div class="sponsor reveal">
         <img src="./src/images/dev/tamer-hayek.jpg">
         <h3>Sapienza</h3>
       </div>
-      <div class="sponsor">
+      <div class="sponsor reveal">
         <img src="./src/images/dev/tamer-hayek.jpg">
         <h3>Mark Zuckerberg</h3>
       </div>
-      <div class="sponsor">
+      <div class="sponsor reveal">
         <img src="./src/images/dev/tamer-hayek.jpg">
         <h3>Elon Musk</h3>
       </div>
@@ -111,7 +129,7 @@
   </div>
   
   <!-- FOOTER -->
-  <div class="footer">
+  <div class="footer reveal">
     <div class="footer-copyright">
       <p> &copy; Linguaggi e Tecnologie Web 2021/2022</p>
     </div>
@@ -120,6 +138,23 @@
       <a href=""><img alt="Logo Instagram" src="./src/images/instagram.png"></a>
     </div>
   </div>
+
+
+  <script>
+     ScrollReveal().reveal('.reveal', {
+        distance: '50px',
+        duration: 1000,
+        easing: 'cubic-bezier(.215,.61,.355, 1)',
+        interval: 100
+      });
+      ScrollReveal().reveal('.zoom', {
+        duration: 1000,
+        easing: 'cubic-bezier(.215,.61,.355, 1)',
+        interval: 200,
+        scale: 0.65,
+        mobile: false
+      });
+  </script>
   
 </body>
 

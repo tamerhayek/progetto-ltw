@@ -17,13 +17,18 @@
     <!-- Style -->
     <link rel="stylesheet" href="../src/css/general.css">
     <link rel="stylesheet" href="profilo.css">
+
+    <!-- scrollreveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+   
+
 </head>
 
 <body>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         $(document).ready(function() {
-            $(".descrizione").hide();
+            /*$(".descrizione").hide();
             $(".data").hide();
             $(".descrizione").fadeIn();
             $("#nome").delay(200).fadeIn();
@@ -31,7 +36,7 @@
             $("#email").delay(600).fadeIn();
             $("#username").delay(800).fadeIn();
             $("#partiteGiocate").delay(1000).fadeIn();
-            $("#partiteVinte").delay(1200).fadeIn();
+            $("#partiteVinte").delay(1200).fadeIn();*/
         });
     </script>
 
@@ -102,30 +107,35 @@
         <br>
         <hr><br>
         <div class="data first" id="nome">
-            <h3>Nome</h3>
+            <h3>NOME</h3>
             <?php echo '<input value="' . $nome . '" disabled>'; ?>
         </div>
         <div class="data" id="cognome">
-            <h3>Cognome</h3>
+            <h3>COGNOME</h3>
             <?php echo '<input value="' . $cognome . '" disabled>'; ?>
         </div>
         <div class="data" id="email">
-            <h3>Email</h3>
+            <h3>EMAIL</h3>
             <?php echo '<input  value="' . $email . '" disabled>'; ?>
         </div>
         <div class="data" id="username">
-            <h3>Username</h3>
+            <h3>USERNAME</h3>
             <?php echo '<input value="' . $username . '" disabled>'; ?>
         </div>
         <div class="data" id="partiteGiocate">
-            <h3>Partite Giocate</h3>
+            <h3>SFIDE GIOCATE</h3>
             <?php echo '<input value="' . $partiteGiocate . '" disabled>'; ?>
         </div>
         <div class="data" id="partiteVinte">
-            <h3>Partite Vinte</h3>
+            <h3>SFIDE VINTE</h3>
             <?php echo '<input value="' . $partiteVinte . '" disabled>'; ?>
         </div>
     </div>
+
+    <script>
+        ScrollReveal().reveal('.descrizione');
+        ScrollReveal().reveal('.data',{ interval: 300, distance: '50px'});
+    </script>
 
     <!-- FOOTER -->
     <div class="footer">
