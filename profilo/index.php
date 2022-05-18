@@ -21,26 +21,13 @@
     <!-- scrollreveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
    
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../src/images/logo.png" />
 
 </head>
 
 <body>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            /*$(".descrizione").hide();
-            $(".data").hide();
-            $(".descrizione").fadeIn();
-            $("#nome").delay(200).fadeIn();
-            $("#cognome").delay(400).fadeIn();
-            $("#email").delay(600).fadeIn();
-            $("#username").delay(800).fadeIn();
-            $("#partiteGiocate").delay(1000).fadeIn();
-            $("#partiteVinte").delay(1200).fadeIn();*/
-        });
-    </script>
-
-
+    
     <?php include '../src/php/logout.php'; ?>
     <?php
     if (!isset($_COOKIE['userArray'])) header("Location: ../auth/accesso/");
@@ -134,7 +121,7 @@
 
     <script>
         ScrollReveal().reveal('.descrizione');
-        ScrollReveal().reveal('.data',{ interval: 300, distance: '50px'});
+        ScrollReveal().reveal('.data',{ interval: 100, distance: '50px'});
     </script>
 
     <!-- FOOTER -->

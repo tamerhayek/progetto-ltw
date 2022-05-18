@@ -17,10 +17,12 @@
   <script src="./backend/verifyQuestion.js"></script>
   <script src="./backend/changeQuestion.js"></script>
 
+  <!-- favicon -->
+  <link rel="shortcut icon" href="../../src/images/logo.png" />
+
 </head>
 
 <body>
-
   <?php
   if (!isset($_COOKIE['userArray'])) {
     header("Location: ../../auth/accesso/");

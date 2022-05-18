@@ -18,6 +18,12 @@
   <link rel="stylesheet" href="../src/css/general.css" />
   <link rel="stylesheet" href="contatti.css" />
 
+  <!-- scrollreveal -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="../src/images/logo.png" />
+
 </head>
 
 <body>
@@ -50,15 +56,15 @@
 
   <!-- Contenuto -->
   <div class="container">
-      <div class="cellulare">
+      <div class="cellulare reveal">
         <img src = '../src/images/celllogo.jpg'>
         <p> +39 1234567890</p>
       </div>
-      <div class="email">
+      <div class="email reveal">
         <img src = '../src/images/emaillogo.jpg'>
         <p> triviastack@gmail.com</p>
       </div>
-      <div class="indirizzo">
+      <div class="indirizzo reveal">
         <img src = '../src/images/posizionelogo.jpg'>
         <p> Viale dello Scalo S. Lorenzo, 82 </br> 00159 </br> Roma RM<p>
       </div>
@@ -75,5 +81,21 @@
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+  <script>
+     ScrollReveal().reveal('.reveal', {
+        distance: '50px',
+        duration: 1000,
+        easing: 'cubic-bezier(.215,.61,.355, 1)',
+        interval: 100
+      });
+      ScrollReveal().reveal('.zoom', {
+        duration: 1000,
+        easing: 'cubic-bezier(.215,.61,.355, 1)',
+        interval: 200,
+        scale: 0.65,
+        mobile: false
+      });
+  </script>
 </body>
 </html>

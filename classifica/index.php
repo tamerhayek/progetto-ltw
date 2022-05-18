@@ -19,6 +19,12 @@
   <link rel="stylesheet" href="../src/css/general.css" />
   <link rel="stylesheet" href="classifica.css" />
 
+  <!-- scrollreveal -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="../src/images/logo.png" />
+
 </head>
 
 <body>
@@ -51,10 +57,10 @@
   </div>
 
   <!-- CLASSIFICA -->
-  <div class="descrizione">
+  <div class="descrizione reveal">
     <h2>I MIGLIORI GIOCATORI</h2>
   </div><br>
-  <div class="container">
+  <div class="container reveal">
     <table class="table">
       <thead>
         <tr>
@@ -104,6 +110,14 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-</body>
 
+  <script>
+     ScrollReveal().reveal('.reveal', {
+        distance: '50px',
+        duration: 1000,
+        easing: 'cubic-bezier(.215,.61,.355, 1)',
+        interval: 100
+      });
+  </script>
+</body>
 </html>

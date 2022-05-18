@@ -18,6 +18,7 @@ DB URI: "postgres://crolxvdhppthgq:76b70cf66246929bd0e20b8c1a277a71fdaf8b317e307
 - Login
 - Registrazione
 - Classifica
+- Contatti
 - Lista Sfide (Sfide in attesa di approvazione e Sfide in corso)
 - Sfida singola (con esito in corso e a fine partita)
 - Quiz
@@ -53,10 +54,6 @@ DB URI: "postgres://crolxvdhppthgq:76b70cf66246929bd0e20b8c1a277a71fdaf8b317e307
     - Prossima Sfida (aggiungere su pagina risultati se partita conclusa)
     - Partite scorse
 
-- Mettere Favicon
-
 - Animazioni su tutto
-
-- Inserire immagini nella homepage
 
 - Controllo sul duello se hai già giocato

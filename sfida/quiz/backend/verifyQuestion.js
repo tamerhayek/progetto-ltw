@@ -1,3 +1,6 @@
+const corretta = new Audio("../../../src/audio/correct-answer.mp3");
+const errata = new Audio("../../../src/audio/wrong-answer.mp3");
+
 function verifyQuestion(id, risposta, sfida) {
     $.post(
         "./backend/verifyQuestion.php",
@@ -9,9 +12,11 @@ function verifyQuestion(id, risposta, sfida) {
             if (response == 1) {
                 $("#risposta"+risposta).addClass("correct");
                 $("#esito").text("Risposta corretta!");
+                corretta.play();
             } else if (response == 0) {
                 $("#risposta"+risposta).addClass("wrong");
                 $("#esito").text("Risposta errata!");
+                errata.play();
             } 
             // abilita bottone prossima
             $(".prossima").attr("disabled", false);

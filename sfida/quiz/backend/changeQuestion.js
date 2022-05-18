@@ -5,7 +5,7 @@ function changeQuestion(id, sfida, next) {
             { id: sfida },
             function (response) {
                 if (response == 1) {
-                    window.location.href = "./risultati/?id=" + sfida;
+                    window.location.href = "../risultati/?id=" + sfida;
                 } else {
                     window.location.href = "../../";
                 }

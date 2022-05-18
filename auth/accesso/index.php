@@ -19,6 +19,9 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./enterClicked.js"></script>
 
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../../src/images/logo.png" />
+
 </head>
 
 <body>

@@ -16,6 +16,11 @@
     <link rel="stylesheet" href="../../../src/css/general.css">
     <link rel="stylesheet" href="./risultati.css">
 
+    <!-- scrollreveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../../../src/images/logo.png" />
 
 </head>
 
@@ -97,7 +102,7 @@
     pg_close($dbconn);
     ?>
 
-    <div class="container">
+    <div class="container zoom">
         <div class="pannello">
             <div class="esito">
                 <?php echo "<h2>$esito</h2>" ?>
@@ -112,6 +117,16 @@
             </div>
         </div>
     </div>
-</body>
 
+    <script>
+      ScrollReveal().reveal('.zoom', {
+        duration: 1000,
+        easing: 'cubic-bezier(.215,.61,.355, 1)',
+        interval: 200,
+        scale: 0.65,
+        mobile: false
+      });
+  </script>
+
+</body>
 </html>

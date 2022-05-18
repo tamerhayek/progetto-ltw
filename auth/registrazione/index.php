@@ -20,6 +20,9 @@
     <!-- <script src="./validaRegistrazione.js"></script> -->
     <script src="./enterClicked.js"></script>
 
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../..src/images/logo.png" />
+
 </head>
 
 <body>

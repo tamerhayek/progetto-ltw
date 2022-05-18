@@ -19,6 +19,12 @@
   <link rel="stylesheet" href="../src/css/general.css" />
   <link rel="stylesheet" href="sfide.css" />
 
+  <!-- scrollreveal -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="../src/images/logo.png" />
+
 </head>
 
 <body>
@@ -50,17 +56,17 @@
 
   <!-- Nuove Sfide -->
   <div class="container">
-    <div class="nuova-sfida">
+    <div class="nuova-sfida reveal">
       <div class="casuale">
-        <a class="button" href="./casuale.php">Inizia una nuova sfida casuale!</a>
+        <button class="button zoom" href="./casuale.php">Inizia una nuova sfida casuale!</button>
       </div>
       <form name="cercaAmico" class="amico" action="./amico.php" method='POST'>
-        <button type='submit' class="button" id="sfidaamico">Sfida un tuo amico!</button>
-        <input type="text" name="username" id="avversario" placeholder="Cerca username">
+        <button type='submit' class="button zoom" id="sfidaamico">Sfida un tuo amico!</button>
+        <input class="zoom" type="text" name="username" id="avversario" placeholder="Cerca username">
       </form>
     </div>
 
-    <div class="sfide incorso">
+    <div class="sfide incorso reveal">
       <h3>Sfide in corso</h3>
       <p> Il giocatore con punteggio nullo deve concludere la sfida</p>
       <?php
@@ -88,7 +94,7 @@
       ?>
     </div>
 
-    <div class="sfide concluse">
+    <div class="sfide concluse reveal">
       <?php
       echo "<h3>Sfide concluse</h3>";
       $query = 'SELECT * FROM sfide where (giocatore1=$1 or giocatore2=$1) and (status1=true and status2=true)';
@@ -124,6 +130,23 @@
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-</body>
 
+
+  <script>
+     ScrollReveal().reveal('.reveal', {
+        distance: '50px',
+        duration: 1000,
+        easing: 'cubic-bezier(.215,.61,.355, 1)',
+        interval: 100
+      });
+      ScrollReveal().reveal('.zoom', {
+        duration: 1000,
+        easing: 'cubic-bezier(.215,.61,.355, 1)',
+        interval: 200,
+        scale: 0.65,
+        mobile: false
+      });
+  </script>
+
+</body>
 </html>
