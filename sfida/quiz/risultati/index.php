@@ -125,7 +125,7 @@
 
         <div class="sfide concluse reveal">
             <?php
-            echo "<h3>Sfide concluse</h3>";
+            echo "<h3>Storico delle sfide</h3>";
             $query = 'SELECT * FROM sfide where ((giocatore1=$1 and giocatore2=$2) or (giocatore2=$1 and giocatore1=$2)) and (status1=true and status2=true) and id != $3';
             $result = pg_query_params($dbconn, $query, array($username, $avversario, $_GET['id']));
             while ($sfida = pg_fetch_array($result, null, PGSQL_ASSOC)) {
@@ -134,13 +134,13 @@
                 $giocatore2 = $sfida['giocatore2'];
                 $punteggio1 = $sfida['punteggio1'];
                 $punteggio2 = $sfida['punteggio2'];
-                echo "<a class='sfida' href='./quiz/risultati/?id=$id'>";
+                echo "<div class='sfida'>";
                 echo "<div class='sfida-giocatore'>";
                 echo "<span class='left'>$giocatore1</span>";
                 echo "<span class='center'>$punteggio1 - $punteggio2</span>";
                 echo "<span class='right'>$giocatore2</span>";
                 echo "</div>";
-                echo "</a>";
+                echo "</div>";
             }
             pg_free_result($result);
             pg_close($dbconn);

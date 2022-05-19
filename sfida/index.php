@@ -86,7 +86,7 @@
       $username = json_decode($_COOKIE["userArray"], true)['username'];
 
       $dbconn = pg_connect("postgres://crolxvdhppthgq:76b70cf66246929bd0e20b8c1a277a71fdaf8b317e307801ddcd58314b387a84@ec2-54-170-90-26.eu-west-1.compute.amazonaws.com:5432/d6fkjg0dv9b5uu");
-      $query = 'SELECT * FROM sfide where (giocatore1=$1 and status1=false and status2=true) or (giocatore2=$1 and status2=false and status1=true)';
+      $query = 'SELECT * FROM sfide where (giocatore1=$1 and status1=false) or (giocatore2=$1 and status2=false)';
       $result = pg_query_params($dbconn, $query, array($username));
 
       while ($sfida = pg_fetch_array($result, null, PGSQL_ASSOC)) {
@@ -171,7 +171,6 @@
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
 
   <script>
     ScrollReveal().reveal('.reveal', {

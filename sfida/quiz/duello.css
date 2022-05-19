@@ -18,14 +18,30 @@
     z-index: -1;
 }
 
-.quit {
+.header {
     width: 100%;
-    height: 5vh;
+    height: 10vh;
     padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-.quit > a {
+.header > .exit {
     color: #ffffff;
-    text-decoration: none;
+    font-size: 30px;
+}
+.header > .exit:hover {
+    cursor: pointer;
+}
+.header > .giocatori {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header > .giocatori > span {
+    color: #ffffff;
+    font-size: 20px;
+    margin: 0 10px;
 }
 
 .quiz {

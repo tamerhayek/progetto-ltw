@@ -14,6 +14,7 @@
   <!-- Scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+  <script src="./backend/iniziaQuiz.js"></script>
   <script src="./backend/verifyQuestion.js"></script>
   <script src="./backend/changeQuestion.js"></script>
 
@@ -22,7 +23,8 @@
 
 </head>
 
-<body>
+<body onload="inizializzaStorage(<?php echo $_GET['id']; ?>)">
+
   <?php
   if (!isset($_COOKIE['userArray'])) {
     header("Location: ../../auth/accesso/");
@@ -38,8 +40,18 @@
       $username = json_decode($_COOKIE["userArray"], true)['username'];
       if ($username != $sfida['giocatore1'] and $username != $sfida['giocatore2']) {
         header("Location: ../");
+      } else {
+        if (($username == $sfida['giocatore1'] && $sfida['status1'] == 't') || ($username == $sfida['giocatore2'] && $sfida['status2'] == 't')) {
+          header("Location: ./risultati/?id=" . $_GET['id']);
+        }
       }
     }
+    if ($username == $sfida['giocatore1']) {
+      $avversario = $sfida['giocatore2'];
+    } else {
+      $avversario = $sfida['giocatore1'];
+    }
+    pg_free_result($sfidaResult);
   } else {
     header('Location: ../');
   }
@@ -78,8 +90,15 @@
   <img id="bg" src="../../src/images/quiz.jpg">
 
   <div class="container">
-    <div class="quit">
-      <a href="../">Esci</a>
+    <div class="header">
+      <div class="exit" id="exit">&#10006;</div>
+      <div class="giocatori">
+        <?php
+        echo '<span class="left">' . $username . '</span>';
+        echo '<span class="center"> - </span>';
+        echo '<span class="right">' . $avversario . '</span>';
+        ?>
+      </div>
     </div>
     <div class="quiz" id="quiz">
       <div class="quiz-domanda">
@@ -120,6 +139,21 @@
       </div>
     </div>
   </div>
+
+  <script>
+    let elem = document.getElementById('exit');
+    elem.addEventListener('click', function() {
+      $.post("./backend/finish.php", {
+        id: <?php echo $_GET['id']; ?>
+      }, function(response) {
+        if (response == 1) {
+          window.location.href = "../";
+        } else {
+          console.log(response);
+        }
+      });
+    });
+  </script>
 
 </body>
 
