@@ -19,11 +19,13 @@ table {
 
 th {
     color: #77bc3f;
+    text-align: center;
 }
 
 td {
     padding: 5px;
     border: 1px solid #ffffff;
+    text-align: center;
 }
 
 td > a {

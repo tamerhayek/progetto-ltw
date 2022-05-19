@@ -32,7 +32,7 @@
         pg_free_result($utenti);
         pg_close($dbconn);
     ?>
-
+    <h3>Lista delle domande del gioco</h3>
     <table>
         <tr>
             <th>ID</th>
@@ -42,11 +42,9 @@
             <th>Risposta 3</th>
             <th>Risposta 4</th>
             <th>Risposta Corretta</th>
-            <th>Azioni</th>
         </tr>
         <?php
         $dbconn = pg_connect("postgres://crolxvdhppthgq:76b70cf66246929bd0e20b8c1a277a71fdaf8b317e307801ddcd58314b387a84@ec2-54-170-90-26.eu-west-1.compute.amazonaws.com:5432/d6fkjg0dv9b5uu");
-        echo "Ciao";
         $query = 'SELECT * FROM domande order by id';
         $domande = pg_query($dbconn, $query);
         while ($domanda = pg_fetch_array($domande, null, PGSQL_ASSOC)) {
@@ -56,7 +54,6 @@
                 echo "$value";
                 echo "</td>";
             }
-            echo "<td><a href='edit.php?id=" . $domanda['id'] . "'>Modifica</a> <a href='delete.php?id=" . $domanda['id'] . "'>Elimina</a></td>";
             echo "</tr>";
         }
         pg_free_result($domande);
