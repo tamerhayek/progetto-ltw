@@ -67,6 +67,7 @@
     $querySfidaResult = pg_query_params($dbconn, $querySfida, array($_GET['id']));
     if ($sfida = pg_fetch_array($querySfidaResult, null, PGSQL_ASSOC)) {
         if ($username == $sfida['giocatore1']) {
+            $avversario = $sfida['giocatore2'];
             if ($sfida['status1'] == 't' && $sfida['status2'] == 't') {
                 if ($sfida['punteggio1'] > $sfida['punteggio2']) {
                     $esito = "Hai vinto!";
@@ -81,6 +82,7 @@
                 header("Location: ../?id=$_GET[id]");
             }
         } else if ($username == $sfida['giocatore2']) {
+            $avversario = $sfida['giocatore1'];
             if ($sfida['status1'] == 't' && $sfida['status2'] == 't') {
                 if ($sfida['punteggio1'] > $sfida['punteggio2']) {
                     $esito = "Hai perso!";
@@ -101,11 +103,12 @@
         header("Location: ../../");
     }
     pg_free_result($querySfidaResult);
-    pg_close($dbconn);
+
     ?>
 
     <div class="container zoom">
-        <div class="pannello">
+
+        <div class="risultato reveal">
             <div class="esito">
                 <?php echo "<h2>$esito</h2>" ?>
             </div>
@@ -118,17 +121,44 @@
                 </div>
             </div>
         </div>
+
+
+        <div class="sfide concluse reveal">
+            <?php
+            echo "<h3>Sfide concluse</h3>";
+            $query = 'SELECT * FROM sfide where ((giocatore1=$1 and giocatore2=$2) or (giocatore2=$1 and giocatore1=$2)) and (status1=true and status2=true) and id != $3';
+            $result = pg_query_params($dbconn, $query, array($username, $avversario, $_GET['id']));
+            while ($sfida = pg_fetch_array($result, null, PGSQL_ASSOC)) {
+                $id = $sfida['id'];
+                $giocatore1 = $sfida['giocatore1'];
+                $giocatore2 = $sfida['giocatore2'];
+                $punteggio1 = $sfida['punteggio1'];
+                $punteggio2 = $sfida['punteggio2'];
+                echo "<a class='sfida' href='./quiz/risultati/?id=$id'>";
+                echo "<div class='sfida-giocatore'>";
+                echo "<span class='left'>$giocatore1</span>";
+                echo "<span class='center'>$punteggio1 - $punteggio2</span>";
+                echo "<span class='right'>$giocatore2</span>";
+                echo "</div>";
+                echo "</a>";
+            }
+            pg_free_result($result);
+            pg_close($dbconn);
+            ?>
+        </div>
     </div>
 
+
     <script>
-      ScrollReveal().reveal('.zoom', {
-        duration: 1000,
-        easing: 'cubic-bezier(.215,.61,.355, 1)',
-        interval: 200,
-        scale: 0.65,
-        mobile: false
-      });
-  </script>
+        ScrollReveal().reveal('.zoom', {
+            duration: 1000,
+            easing: 'cubic-bezier(.215,.61,.355, 1)',
+            interval: 200,
+            scale: 0.65,
+            mobile: false
+        });
+    </script>
 
 </body>
+
 </html>

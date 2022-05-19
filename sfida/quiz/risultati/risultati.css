@@ -1,38 +1,40 @@
-.container{
+.container {
     width: 100%;
-    margin-top: 70px;
-    padding: 20px;
+    margin: auto;
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
 }
 
-.container > .pannello {
+.container > .risultato {
     width: 80%;
-    padding: 30px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    padding: 15px;
     border-radius: 12px;
-    background-color: #ffffff;
+    border: 2px solid #77bc3f;
+    color: #ffffff;
 }
 
-.container > .pannello > .esito{
-    padding: 20px;
+.container > .risultato > .esito{
+    padding: 5px;
     text-align: center;
 }
-.container > .pannello > .esito > h2{
+.container > .risultato > .esito > h2{
     font-size: 30px;
     font-weight: bold;
 }
 
-.container > .pannello > .riepilogo{
-    padding: 30px;
+.container > .risultato > .riepilogo{
+    padding: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.container > .pannello > .riepilogo .punteggio{
+.container > .risultato > .riepilogo .punteggio{
     width: 100%;
     font-size: 100px;
     font-weight: bold;
@@ -40,7 +42,7 @@
     justify-content: space-around;
     align-items: center;
 }
-.container > .pannello > .riepilogo .giocatori{
+.container > .risultato > .riepilogo .giocatori{
     width: 100%;
     font-size: 30px;
     font-weight: regular;
@@ -48,16 +50,152 @@
     justify-content: space-around;
     align-items: center;
 }
-.container > .pannello > .riepilogo .left{
+.container > .risultato > .riepilogo .left{
     width: 40%;
     text-align: right;
 }
-.container > .pannello > .riepilogo .center{
+.container > .risultato > .riepilogo .center{
     width: 20%;
     text-align: center;
 }
-.container > .pannello > .riepilogo .right{
+.container > .risultato > .riepilogo .right{
     width: 40%;
     text-align: left;
+}
+
+.container > .sfide {
+    width: 80%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #77bc3f;
+    border-radius: 12px;
+    margin-bottom: 50px;
+    color: #ffffff;
+}
+.container > .sfide > h3 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+.container > .sfide > p {
+    text-align: center;
+    font-size: 20px;
+}
+
+.container > .sfide .sfida {
+    width: 80%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container > .sfide .sfida .sfida-giocatore {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+.container > .sfide .sfida .sfida-giocatore span {
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px solid #ffffff;
+}
+.container > .sfide .sfida .sfida-giocatore:hover {
+    color: #000000;
+    background-color: #ffffff;
+}
+.container > .sfide .sfida .sfida-giocatore .left {
+    width: 40%;
+}
+.container > .sfide .sfida .sfida-giocatore .center {
+    width: 20%;
+}
+.container > .sfide .sfida .sfida-giocatore .right {
+    width: 40%;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .container > .risultato {
+        margin-top: 30px;
+        margin-bottom: 20px;
+        padding: 5px;
+    }
+    
+    .container > .risultato > .esito > h2{
+        font-size: 24px;
+    }
+    
+    .container > .risultato > .riepilogo{
+        padding: 10px;
+    }
+    
+    .container > .risultato > .riepilogo .punteggio{
+        font-size: 80px;
+    }
+    .container > .risultato > .riepilogo .giocatori{
+        font-size: 24px;
+    }
+    
+    .container > .sfide > h3 {
+        font-size: 24px;
+    }
+}
+@media screen and (max-width: 768px) {
+    
+    .container > .risultato {
+        width: 90%;
+    }
+    .container > .sfide {
+        width: 90%;
+    }
+
+    .container > .risultato > .esito > h2{
+        font-size: 18px;
+    }
+    
+    .container > .risultato > .riepilogo{
+        padding: 10px;
+    }
+    
+    .container > .risultato > .riepilogo .punteggio{
+        font-size: 50px;
+    }
+    .container > .risultato > .riepilogo .giocatori{
+        font-size: 12px;
+    }
+    
+    .container > .sfida {
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container > .sfide {
+        padding: 5px;
+    }
+
+    .container > .sfide > h3 {
+        font-size: 18px;
+    }
+    .container > .sfide .sfida .sfida-giocatore span {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container > .sfide .sfida .sfida-giocatore span {
+        padding: 5px;
+        font-size: 8px;
+        font-weight: bold;
+    }
 }
 
