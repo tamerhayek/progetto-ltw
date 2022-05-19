@@ -26,11 +26,20 @@
     justify-content: center;
 }
 .amico input {
-    padding: 15px;
+    padding: 10px;
     border: 1 px solid white;
     border-radius: 10px;
     align-self: center;
-    margin-left: 10px;
+}
+
+.amico > .avversario{
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+}
+
+.amico > .avversario > small{
+    color:red;
 }
 
 .sfide {

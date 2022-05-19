@@ -11,11 +11,9 @@ function verifyQuestion(id, risposta, sfida) {
 
             if (response == 1) {
                 $("#risposta"+risposta).addClass("correct");
-                $("#esito").text("Risposta corretta!");
                 corretta.play();
             } else if (response == 0) {
                 $("#risposta"+risposta).addClass("wrong");
-                $("#esito").text("Risposta errata!");
                 errata.play();
             } 
             // abilita bottone prossima

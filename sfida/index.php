@@ -62,7 +62,10 @@
       </div>
       <form name="cercaAmico" class="amico" action="./amico.php" method='POST'>
         <button type='submit' class="button zoom" id="sfidaamico">Sfida un tuo amico!</button>
-        <input class="zoom" type="text" name="username" id="avversario" placeholder="Cerca username">
+        <div class="avversario">
+          <input class="zoom" type="text" name="username"  placeholder="Cerca username">
+          <small>errore</small>
+        </div>
       </form>
     </div>
 

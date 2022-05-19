@@ -1,4 +1,12 @@
 <?php 
+    session_start();
+    if(!isset($_SESSION['amico_trovato'])){
+        $_SESSION['amico_trovato'] = true;
+    }
+    if(!isset($_SESSION['sfida_esistente'])){
+        $_SESSION['sfida_esistente'] = false;
+    }
+
     if (!isset($_COOKIE['userArray'])) header('Location: ../auth/accesso/');
     
     $data = json_decode($_COOKIE['userArray'], true);
@@ -8,13 +16,13 @@
     $searchUtenteQuery = 'select * from utenti where username!=$1 and username=$2';
     $searchUtenteQueryResult = pg_query_params($dbconn, $searchUtenteQuery, array($data['username'], $avversario));
     if ($utente = pg_fetch_row($searchUtenteQueryResult,null, PGSQL_ASSOC)) {
-        echo "utente trovato".':'.$utente['username'];
+        $_SESSION['amico_trovato'] = true;
 
         $cercaSfidaQuery = 'select * from sfide where ((giocatore1 = $1 and giocatore2 = $2) or (giocatore1 = $2 and giocatore2 = $1)) and (status1 = false or status2 = false)';
         
         $cercaSfidaQueryResult = pg_query_params($dbconn, $cercaSfidaQuery, array($data['username'], $avversario));
         if ($tuple = pg_fetch_array($cercaSfidaQueryResult, null, PGSQL_ASSOC)) {
-            echo "<p>c'è già una sfida in corso con questo utente<p>";
+            $_SESSION['sfida_esistente'] = true;
             header('Location: ./');
         }
         else{
@@ -30,7 +38,8 @@
         }
     }
     else{
-        echo "utente non trovato";
+       header('Location: ./');
+       $_SESSION['amico_trovato'] = false;
     }
     /*pg_free_result($searchUtenteQueryResult);
     pg_free_result($cercaSfidaQueryResult);

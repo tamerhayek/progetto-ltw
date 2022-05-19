@@ -75,16 +75,18 @@
   pg_close($dbconn);
   ?>
 
+  <div class="sfondo">
+    <img id="bg" src="../../src/images/quiz.jpg">
+  </div>
   <div class="container">
     <div class="quit">
-      <a href="../">Quit</a>
+      <a href="../">Esci</a>
     </div>
     <div class="quiz" id="quiz">
       <div class="quiz-domanda">
         <?php
         echo "<h2 id='domanda'>$domanda</h2>";
         ?>
-        <h3 id="esito"></h3>
       </div>
       <div class="quiz-risposte">
         <div class="quiz-risposta">
