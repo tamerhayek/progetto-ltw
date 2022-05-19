@@ -1,11 +1,4 @@
 <?php 
-    session_start();
-    if(!isset($_SESSION['amico_trovato'])){
-        $_SESSION['amico_trovato'] = true;
-    }
-    if(!isset($_SESSION['sfida_esistente'])){
-        $_SESSION['sfida_esistente'] = false;
-    }
 
     if (!isset($_COOKIE['userArray'])) header('Location: ../auth/accesso/');
     
@@ -16,13 +9,11 @@
     $searchUtenteQuery = 'select * from utenti where username!=$1 and username=$2';
     $searchUtenteQueryResult = pg_query_params($dbconn, $searchUtenteQuery, array($data['username'], $avversario));
     if ($utente = pg_fetch_row($searchUtenteQueryResult,null, PGSQL_ASSOC)) {
-        $_SESSION['amico_trovato'] = true;
 
         $cercaSfidaQuery = 'select * from sfide where ((giocatore1 = $1 and giocatore2 = $2) or (giocatore1 = $2 and giocatore2 = $1)) and (status1 = false or status2 = false)';
         
         $cercaSfidaQueryResult = pg_query_params($dbconn, $cercaSfidaQuery, array($data['username'], $avversario));
         if ($tuple = pg_fetch_array($cercaSfidaQueryResult, null, PGSQL_ASSOC)) {
-            $_SESSION['sfida_esistente'] = true;
             header('Location: ./');
         }
         else{
@@ -34,16 +25,14 @@
                 if ($tuple = pg_fetch_array($toSfidaResult, null, PGSQL_ASSOC)) {
                     header('Location: ./quiz/?id='.$tuple['id']);
                 }
+                pg_free_result($toSfidaResult);
             } else echo "Errore Creazione";
+            pg_free_result($createQueryResult);
         }
+        pg_free_result($cercaSfidaQueryResult);
+    } else{
+       header('Location: ./?amico=false');
     }
-    else{
-       header('Location: ./');
-       $_SESSION['amico_trovato'] = false;
-    }
-    /*pg_free_result($searchUtenteQueryResult);
-    pg_free_result($cercaSfidaQueryResult);
-    pg_free_result($createQueryResult);
-    pg_free_result($toSfidaResult);*/
+    pg_free_result($searchUtenteQueryResult);
     pg_close($dbconn);
 ?>

@@ -62,7 +62,17 @@
       </div>
       <form name="cercaAmico" class="amico" action="./amico.php" method='POST'>
         <button type='submit' class="button zoom" id="sfidaamico">Sfida un tuo amico!</button>
-        <input class="zoom" type="text" name="username"  placeholder="Cerca username">
+        <div class="search-input">
+          <input class="zoom" type="text" name="username" placeholder="Cerca username" required>
+          <?php
+          if (isset($_GET['amico'])) {
+            if ($_GET['amico'] == 'false') {
+              echo '<p class="error">Username non trovato</p>';
+            }
+          }
+          ?>
+        </div>
+
       </form>
     </div>
 
@@ -133,20 +143,21 @@
 
 
   <script>
-     ScrollReveal().reveal('.reveal', {
-        distance: '50px',
-        duration: 1000,
-        easing: 'cubic-bezier(.215,.61,.355, 1)',
-        interval: 100
-      });
-      ScrollReveal().reveal('.zoom', {
-        duration: 1000,
-        easing: 'cubic-bezier(.215,.61,.355, 1)',
-        interval: 200,
-        scale: 0.65,
-        mobile: false
-      });
+    ScrollReveal().reveal('.reveal', {
+      distance: '50px',
+      duration: 1000,
+      easing: 'cubic-bezier(.215,.61,.355, 1)',
+      interval: 100
+    });
+    ScrollReveal().reveal('.zoom', {
+      duration: 1000,
+      easing: 'cubic-bezier(.215,.61,.355, 1)',
+      interval: 200,
+      scale: 0.65,
+      mobile: false
+    });
   </script>
 
 </body>
+
 </html>

@@ -22,15 +22,32 @@
 }
 .amico {
     width: 50%;
-    padding: 20px;
+    padding: 10px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
 }
-.amico input {
+.amico .search-input {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.amico .search-input input {
+    width: 100%;
     padding: 10px;
     border: 1 px solid white;
     border-radius: 10px;
     align-self: center;
+}
+.amico .search-input .error {
+    color: red;
+    margin-top: 5px;
+    font-size: 12px;
+    font-style: italic;
 }
 
 .sfide {
@@ -123,12 +140,14 @@
         display: flex;
         justify-content: center;
     }
+    .amico .search-input {
+        margin: 0;
+    }
     .amico button {
         width: 30%;
         margin: 15px;
     }
-    .amico input {
-        width: 30%;
+    .amico .search-input input {
         margin: 15px;
     }
     
@@ -159,9 +178,8 @@
         margin: 5px;
         width: 50%;
     }
-    .amico input {
+    .amico .search-input input {
         margin: 5px;
-        width: 50%;
     }
     
     .sfide > h3 {
