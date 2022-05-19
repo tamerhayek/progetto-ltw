@@ -97,6 +97,8 @@
         } else {
             header("Location: ../../");
         }
+    } else {
+        header("Location: ../../");
     }
     pg_free_result($querySfidaResult);
     pg_close($dbconn);

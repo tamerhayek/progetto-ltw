@@ -60,10 +60,10 @@
   <div class="descrizione reveal">
     <h2>I MIGLIORI GIOCATORI</h2>
   </div><br>
-  <div class="container reveal">
+  <div class="container">
     <table class="table">
       <thead>
-        <tr>
+        <tr class="reveal">
           <th scope="col">#</th>
           <th scope="col">Nome</th>
           <th scope="col">Username</th>
@@ -85,7 +85,7 @@
           $nome = $utente['nome'] . ' ' . $utente['cognome'];
           $username = $utente['username'];
           $punteggio = $utente['punteggio'];
-          echo "<tr>";
+          echo "<tr class='reveal'>";
           echo "<td scope='row'>$posizione</td>";
           echo "<td>$nome</td>";
           echo "<td>$username</td>";

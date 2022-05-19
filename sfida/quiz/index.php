@@ -10,7 +10,7 @@
   <!-- STYLE -->
   <link rel="stylesheet" href="../../src/css/general.css">
   <link rel="stylesheet" href="duello.css">
-  
+
   <!-- Scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -75,9 +75,8 @@
   pg_close($dbconn);
   ?>
 
-  <div class="sfondo">
-    <img id="bg" src="../../src/images/quiz.jpg">
-  </div>
+  <img id="bg" src="../../src/images/quiz.jpg">
+
   <div class="container">
     <div class="quit">
       <a href="../">Esci</a>
@@ -91,32 +90,32 @@
       <div class="quiz-risposte">
         <div class="quiz-risposta">
           <?php
-          echo "<button type='button' class='risposta' id='risposta1' onclick='verifyQuestion($arrayQuestions[0], 1, ".$_GET["id"].")'>$risposta1</button>";
+          echo "<button type='button' class='risposta' id='risposta1' onclick='verifyQuestion($arrayQuestions[0], 1, " . $_GET["id"] . ")'>$risposta1</button>";
           ?>
         </div>
         <div class="quiz-risposta">
           <?php
-          echo "<button type='button' class='risposta' id='risposta2' onclick='verifyQuestion($arrayQuestions[0], 2, ".$_GET["id"].")'>$risposta2</button>";
+          echo "<button type='button' class='risposta' id='risposta2' onclick='verifyQuestion($arrayQuestions[0], 2, " . $_GET["id"] . ")'>$risposta2</button>";
           ?>
         </div>
         <div class="quiz-risposta">
           <?php
-          echo "<button type='button' class='risposta' id='risposta3' onclick='verifyQuestion($arrayQuestions[0], 3, ".$_GET["id"].")'>$risposta3</button>";
+          echo "<button type='button' class='risposta' id='risposta3' onclick='verifyQuestion($arrayQuestions[0], 3, " . $_GET["id"] . ")'>$risposta3</button>";
           ?>
         </div>
         <div class="quiz-risposta">
           <?php
-          echo "<button type='button' class='risposta' id='risposta4' onclick='verifyQuestion($arrayQuestions[0], 4, ".$_GET["id"].")'>$risposta4</button>";
+          echo "<button type='button' class='risposta' id='risposta4' onclick='verifyQuestion($arrayQuestions[0], 4, " . $_GET["id"] . ")'>$risposta4</button>";
           ?>
         </div>
       </div>
       <div class="quiz-prossima">
         <?php
-        echo "<button type='button' class='prossima' id='prossima1' onclick='changeQuestion($arrayQuestions[1],".$_GET['id'].", 2)' disabled>Prossima domanda</button>";
-        echo "<button type='button' class='prossima' id='prossima2' onclick='changeQuestion($arrayQuestions[2],".$_GET['id'].", 3)'>Prossima domanda</button>";
-        echo "<button type='button' class='prossima' id='prossima3' onclick='changeQuestion($arrayQuestions[3],".$_GET['id'].", 4)'>Prossima domanda</button>";
-        echo "<button type='button' class='prossima' id='prossima4' onclick='changeQuestion($arrayQuestions[4],".$_GET['id'].", 5)'>Prossima domanda</button>";
-        echo "<button type='button' class='prossima' id='prossima5' onclick='changeQuestion(0,".$_GET['id'].", 6)'>Vedi i risultati</button>";
+        echo "<button type='button' class='prossima' id='prossima1' onclick='changeQuestion($arrayQuestions[1]," . $_GET['id'] . ", 2)' disabled>Prossima domanda</button>";
+        echo "<button type='button' class='prossima' id='prossima2' onclick='changeQuestion($arrayQuestions[2]," . $_GET['id'] . ", 3)'>Prossima domanda</button>";
+        echo "<button type='button' class='prossima' id='prossima3' onclick='changeQuestion($arrayQuestions[3]," . $_GET['id'] . ", 4)'>Prossima domanda</button>";
+        echo "<button type='button' class='prossima' id='prossima4' onclick='changeQuestion($arrayQuestions[4]," . $_GET['id'] . ", 5)'>Prossima domanda</button>";
+        echo "<button type='button' class='prossima' id='prossima5' onclick='changeQuestion(0," . $_GET['id'] . ", 6)'>Vedi i risultati</button>";
         ?>
       </div>
     </div>

@@ -32,6 +32,7 @@
                 pg_free_result($queryUpdateWinnerResult);
             }
             pg_free_result($queryUpdateStatusResult);
+            echo 1;
         } 
         else {
             $queryUpdateStatus = "UPDATE sfide SET status2=true WHERE id = $1";
@@ -50,7 +51,11 @@
                 pg_free_result($queryUpdateWinnerResult);
             }
             pg_free_result($queryUpdateStatusResult);
+            echo 1;
         }
+    } else {
+        echo -1;
     }
+    
     
 ?>

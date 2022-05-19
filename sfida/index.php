@@ -58,14 +58,11 @@
   <div class="container">
     <div class="nuova-sfida reveal">
       <div class="casuale">
-        <button class="button zoom" href="./casuale.php">Inizia una nuova sfida casuale!</button>
+        <a class="button zoom" href="./casuale.php">Inizia una nuova sfida casuale!</a>
       </div>
       <form name="cercaAmico" class="amico" action="./amico.php" method='POST'>
         <button type='submit' class="button zoom" id="sfidaamico">Sfida un tuo amico!</button>
-        <div class="avversario">
-          <input class="zoom" type="text" name="username"  placeholder="Cerca username">
-          <small>errore</small>
-        </div>
+        <input class="zoom" type="text" name="username"  placeholder="Cerca username">
       </form>
     </div>
 

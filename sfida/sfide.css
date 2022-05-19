@@ -15,31 +15,22 @@
 }
 
 .casuale {
-    padding-right: 100px;
-    padding-left: 20px;
+    padding: 20px;
     width: 50%;
+    justify-content: center;
+    align-items: center;
 }
 .amico {
     width: 50%;
     padding: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 .amico input {
     padding: 10px;
     border: 1 px solid white;
     border-radius: 10px;
     align-self: center;
-}
-
-.amico > .avversario{
-    display: flex;
-    flex-direction: column;
-    margin-left: 50px;
-}
-
-.amico > .avversario > small{
-    color:red;
 }
 
 .sfide {
@@ -120,6 +111,11 @@
     .casuale {
         padding: 10px 50px;
         width: 100%;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
     }
     .amico {
         width: 100%;
@@ -129,9 +125,11 @@
     }
     .amico button {
         width: 30%;
+        margin: 15px;
     }
     .amico input {
         width: 30%;
+        margin: 15px;
     }
     
     .sfide > h3 {
@@ -148,19 +146,21 @@
     }
     
     .casuale {
-        padding: 10px;
+        padding: 0;
         width: 100%;
     }
     .amico {
         width: 100%;
-        padding: 10px;
+        padding: 5px;
         display: flex;
         justify-content: center;
     }
     .amico button {
+        margin: 5px;
         width: 50%;
     }
     .amico input {
+        margin: 5px;
         width: 50%;
     }
     
