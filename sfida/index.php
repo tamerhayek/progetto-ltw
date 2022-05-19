@@ -63,7 +63,7 @@
       <form name="cercaAmico" class="amico" action="./amico.php" method='POST'>
         <button type='submit' class="button zoom" id="sfidaamico">Sfida un tuo amico!</button>
         <div class="search-input">
-          <input class="zoom" type="text" name="username" placeholder="Cerca username" required>
+          <input class="zoom" type="text" name="username" placeholder="Cerca username">
           <?php
           if (isset($_GET['amico'])) {
             if ($_GET['amico'] == 'false') {
@@ -80,7 +80,8 @@
     </div>
 
     <div class="sfide incorso reveal">
-      <h3>Sfide in corso: è il tuo turno!</h3>
+      <h3>Sfide in corso</h3>
+      <p> È il tuo turno!</p>
       <?php
       $username = json_decode($_COOKIE["userArray"], true)['username'];
 
@@ -107,7 +108,8 @@
     </div>
 
     <div class="sfide inattesa reveal">
-      <h3>Sfide in attesa: l'avversario deve ancora giocare!</h3>
+      <h3>Sfide in attesa</h3>
+      <p>L'avversario deve ancora giocare!</p>
       <?php
       $username = json_decode($_COOKIE["userArray"], true)['username'];
 

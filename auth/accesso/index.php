@@ -19,6 +19,9 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./enterClicked.js"></script>
 
+    <!-- scrollreveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
     <!-- favicon -->
     <link rel="shortcut icon" href="../../src/images/logo.png" />
 
@@ -53,10 +56,10 @@
     <!-- ACCEDI -->
     <div class="container">
         <div class="descrizione">
-            <h3>Entra con il tuo account e intraprendi una sfida!</h3>
-            <a href="../registrazione/">Ancora non sei registrato?</a>
+            <h3 class="reveal">Entra con il tuo account e intraprendi una sfida!</h3>
+            <a class="reveal" href="../registrazione/">Ancora non sei registrato?</a>
         </div>
-        <div class="terminale">
+        <div class="terminale zoom">
             <div class="window-bar">
                 <div class="window-bar-title">
                     <img src="../../src/images/icons/code.svg" alt="Logo Terminale">
@@ -96,6 +99,23 @@
             </form>
         </div>
     </div>
+
+
+    <script>
+     ScrollReveal().reveal('.reveal', {
+        distance: '50px',
+        duration: 1000,
+        easing: 'cubic-bezier(.215,.61,.355, 1)',
+        interval: 100
+      });
+      ScrollReveal().reveal('.zoom', {
+        duration: 1000,
+        easing: 'cubic-bezier(.215,.61,.355, 1)',
+        interval: 200,
+        scale: 0.65,
+        mobile: false
+      });
+    </script>
 
 </body>
 
