@@ -45,8 +45,9 @@
 }
 .amico .search-input .error {
     color: red;
+    font-weight: bold;
     margin-top: 5px;
-    font-size: 12px;
+    font-size: 14px;
     font-style: italic;
 }
 

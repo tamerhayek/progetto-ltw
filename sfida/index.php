@@ -67,7 +67,10 @@
           <?php
           if (isset($_GET['amico'])) {
             if ($_GET['amico'] == 'false') {
-              echo '<p class="error">Username non trovato</p>';
+              echo '<p class="error">Utente non trovato!</p>';
+            }
+            else if ($_GET['amico'] == 'true') {
+              echo '<p class="error">Sfida già esistente!</p>';
             }
           }
           ?>
@@ -77,13 +80,39 @@
     </div>
 
     <div class="sfide incorso reveal">
-      <h3>Sfide in corso</h3>
-      <p> Il giocatore con punteggio nullo deve concludere la sfida</p>
+      <h3>Sfide in corso: è il tuo turno!</h3>
       <?php
       $username = json_decode($_COOKIE["userArray"], true)['username'];
 
       $dbconn = pg_connect("postgres://crolxvdhppthgq:76b70cf66246929bd0e20b8c1a277a71fdaf8b317e307801ddcd58314b387a84@ec2-54-170-90-26.eu-west-1.compute.amazonaws.com:5432/d6fkjg0dv9b5uu");
-      $query = 'SELECT * FROM sfide where (giocatore1=$1 or giocatore2=$1) and (status1=false or status2=false)';
+      $query = 'SELECT * FROM sfide where (giocatore1=$1 and status1=false and status2=true) or (giocatore2=$1 and status2=false and status1=true)';
+      $result = pg_query_params($dbconn, $query, array($username));
+
+      while ($sfida = pg_fetch_array($result, null, PGSQL_ASSOC)) {
+        $id = $sfida['id'];
+        $giocatore1 = $sfida['giocatore1'];
+        $giocatore2 = $sfida['giocatore2'];
+        $punteggio1 = $sfida['punteggio1'];
+        $punteggio2 = $sfida['punteggio2'];
+        echo "<a class='sfida' href='./quiz/risultati/?id=$id'>";
+        echo "<div class='sfida-giocatore'>";
+        echo "<span class='left'>$giocatore1</span>";
+        echo "<span class='center'>$punteggio1 - $punteggio2</span>";
+        echo "<span class='right'>$giocatore2</span>";
+        echo "</div>";
+        echo "</a>";
+      }
+      pg_free_result($result);
+      ?>
+    </div>
+
+    <div class="sfide inattesa reveal">
+      <h3>Sfide in attesa: l'avversario deve ancora giocare!</h3>
+      <?php
+      $username = json_decode($_COOKIE["userArray"], true)['username'];
+
+      $dbconn = pg_connect("postgres://crolxvdhppthgq:76b70cf66246929bd0e20b8c1a277a71fdaf8b317e307801ddcd58314b387a84@ec2-54-170-90-26.eu-west-1.compute.amazonaws.com:5432/d6fkjg0dv9b5uu");
+      $query = 'SELECT * FROM sfide where (giocatore1=$1 and status1=true and status2=false) or (giocatore2=$1 and status2=true and status1=false)';
       $result = pg_query_params($dbconn, $query, array($username));
 
       while ($sfida = pg_fetch_array($result, null, PGSQL_ASSOC)) {

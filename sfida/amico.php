@@ -14,7 +14,7 @@
         
         $cercaSfidaQueryResult = pg_query_params($dbconn, $cercaSfidaQuery, array($data['username'], $avversario));
         if ($tuple = pg_fetch_array($cercaSfidaQueryResult, null, PGSQL_ASSOC)) {
-            header('Location: ./');
+            header('Location: ./?amico=true');
         }
         else{
             $createQuery = 'INSERT INTO sfide(giocatore1, giocatore2) VALUES ($1, $2)';
