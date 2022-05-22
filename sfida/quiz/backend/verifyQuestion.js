@@ -12,11 +12,12 @@ function verifyQuestion(id, risposta, sfida) {
             //disable buttons
             $(".risposta").attr("disabled", true);
 
-            if (response == 1) {
+            if (response == 0) {
                 $("#risposta"+risposta).addClass("correct");
                 corretta.play();
-            } else if (response == 0) {
+            } else {
                 $("#risposta"+risposta).addClass("wrong");
+                $("#risposta"+response).addClass("correct");
                 errata.play();
             } 
             // abilita bottone prossima

@@ -24,7 +24,7 @@
 </head>
 
 <body onload="inizializzaStorage(<?php echo $_GET['id']; ?>)">
-
+  
   <?php
   if (!isset($_COOKIE['userArray'])) {
     header("Location: ../../auth/accesso/");
@@ -89,6 +89,8 @@
 
   <img id="bg" src="../../src/images/quiz.jpg">
 
+  
+
   <div class="container">
     <div class="header">
       <div class="exit" id="exit">&#10006;</div>
@@ -100,6 +102,7 @@
         ?>
       </div>
     </div>
+    <div class="progress-bar" id="progress-bar"></div>
     <div class="quiz" id="quiz">
       <div class="quiz-domanda">
         <?php

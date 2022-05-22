@@ -106,10 +106,6 @@
     font-weight: bold;
     border: 1px solid #ffffff;
 }
-.container > .sfide .sfida .sfida-giocatore:hover {
-    color: #000000;
-    background-color: #ffffff;
-}
 .container > .sfide .sfida .sfida-giocatore .left {
     width: 40%;
 }

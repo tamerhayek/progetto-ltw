@@ -222,7 +222,7 @@
     }
 }
 
-.fixbutton{
+.newbutton{
     background-color:#77bc3f;
     border-color:#77bc3f;
     border-radius: 12px;
@@ -239,18 +239,18 @@
     z-index: 999;
     min-width: 50px;
     min-height: 50px;
-    box-shadow: 4px 4px 0px #034d09; 
+    box-shadow: 4px 4px 0px #034d09;
 }
 
 
-.fixbutton:hover {
+.newbutton:hover {
     background-color: green;
     border-color: green;
     color: #ffffff;
     cursor: pointer;
 }
 
-.fixbutton:active{
+.newbutton:active{
     transform: translateY(4px) translateX(4px);
     box-shadow: #055202 0px 0px 0px;
 }

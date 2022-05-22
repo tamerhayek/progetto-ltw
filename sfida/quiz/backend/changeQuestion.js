@@ -1,5 +1,10 @@
 function changeQuestion(id, sfida, next) {
     if (next == 6) {
+        $("#progress-bar").css("width", "100%");
+        $("#progress-bar").css("background-color", "green");
+        // wait 2 seconds
+        setTimeout(2000);
+
         $.post("./backend/finish.php", { id: sfida }, function (response) {
             if (response == 1) {
                 window.location.href = "./risultati/?id=" + sfida;
@@ -8,6 +13,20 @@ function changeQuestion(id, sfida, next) {
             }
         });
     } else {
+        if (next == 2) {
+            $("#progress-bar").css("width", "20%");
+            $("#progress-bar").css("background-color", "red");
+        } else if (next == 3) {
+            $("#progress-bar").css("width", "40%");
+            $("#progress-bar").css("background-color", "orange");
+        } else if (next == 4) {
+            $("#progress-bar").css("width", "60%");
+            $("#progress-bar").css("background-color", "yellow");
+        } else if (next == 5) {
+            $("#progress-bar").css("width", "80%");
+            $("#progress-bar").css("background-color", "lightgreen");
+        }
+
         $.post(
             "./backend/changeQuestion.php",
             { id: id, sfida: sfida },

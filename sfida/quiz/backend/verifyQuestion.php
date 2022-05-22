@@ -23,9 +23,9 @@ if (isset($_POST["id"]) && isset($_POST["risposta"])) {
                 pg_free_result($queryUpdateScoreResult);
             }
             pg_free_result($queryScoreResult);
-            echo 1;
-        } else {
             echo 0;
+        } else {
+            echo $result["corretta"];
         }
     }
     pg_free_result($queryVerifyResult);

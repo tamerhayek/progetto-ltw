@@ -28,12 +28,12 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         $(document).ready(function() {
-            $("#fixbtn").on({
+            $("#newbtn").on({
               mouseenter: function(){
-                $(this).delay(2000).text("Inizia a giocare!");
+                $(this).text("Inizia a giocare!");
               },
               mouseleave: function(){
-                $(this).delay(2000).text("+");
+                $(this).text("+");
               }
             })
         });
@@ -42,7 +42,7 @@
   <?php include './src/php/logout.php'; ?>
   
   <!-- PULSANTE GIOCO -->
-  <a id="fixbtn" class="fixbutton zoom" href="./sfida/casuale.php">+</a>
+  <a id="newbtn" class="newbutton zoom" href="./sfida/casuale.php">+</a>
   
 
   <!-- NAVBAR -->
