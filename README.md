@@ -38,21 +38,5 @@ DB URI: "postgres://crolxvdhppthgq:76b70cf66246929bd0e20b8c1a277a71fdaf8b317e307
 
 # TO DO
 
-- Auth
-    - AJAX Post
-
-- Lista Sfide
-    - Cerca utente (gestisci tutto)
-    - Casuale
-
-- Round Quiz
-    - Controlla se funziona risultati dopo quiz (file finish.php)
-    - Evitare cheat
-
--Risultati
-    - Prossima Sfida (aggiungere su pagina risultati se partita conclusa)
-    - Partite scorse
-
-- Animazioni su tutto
-
-- Controllo sul duello se hai già giocato
+Cancella cose inutili
+Commenta tutto

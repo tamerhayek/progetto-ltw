@@ -14,7 +14,7 @@
   <!-- Scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-  <script src="./backend/iniziaQuiz.js"></script>
+
   <script src="./backend/verifyQuestion.js"></script>
   <script src="./backend/changeQuestion.js"></script>
 
@@ -23,8 +23,8 @@
 
 </head>
 
-<body onload="inizializzaStorage(<?php echo $_GET['id']; ?>)">
-  
+<body>
+
   <?php
   if (!isset($_COOKIE['userArray'])) {
     header("Location: ../../auth/accesso/");
@@ -43,6 +43,15 @@
       } else {
         if (($username == $sfida['giocatore1'] && $sfida['status1'] == 't') || ($username == $sfida['giocatore2'] && $sfida['status2'] == 't')) {
           header("Location: ./risultati/?id=" . $_GET['id']);
+        }
+        if ($username == $sfida['giocatore1'] && $sfida['status1'] == 'f') {
+          $queryUpdateStatus = "UPDATE sfide SET status1=true WHERE id = $1";
+          $queryUpdateStatusResult = pg_query_params($dbconn, $queryUpdateStatus, array($_GET['id']));
+          pg_free_result($queryUpdateStatusResult);
+        } else if ($username == $sfida['giocatore2'] && $sfida['status2'] == 'f') {
+          $queryUpdateStatus = "UPDATE sfide SET status2=true WHERE id = $1";
+          $queryUpdateStatusResult = pg_query_params($dbconn, $queryUpdateStatus, array($_GET['id']));
+          pg_free_result($queryUpdateStatusResult);
         }
       }
     }
@@ -89,7 +98,6 @@
 
   <img id="bg" src="../../src/images/quiz.jpg">
 
-  
 
   <div class="container">
     <div class="header">
@@ -100,6 +108,11 @@
         echo '<span class="center"> - </span>';
         echo '<span class="right">' . $avversario . '</span>';
         ?>
+      </div>
+      <div class="timer">
+        <span class="minuti" id="minuti">5</span>
+        <span>:</span>
+        <span class="secondi" id="secondi">00</span>
       </div>
     </div>
     <div class="progress-bar" id="progress-bar"></div>
@@ -156,6 +169,25 @@
         }
       });
     });
+  </script>
+
+  <script>
+    var minuti = document.getElementById("minuti");
+    var secondi = document.getElementById("secondi");
+
+    var setTimer = setInterval(function() {
+      if (parseInt(minuti.innerText) == 0 && parseInt(secondi.innerText) == 0) {
+        clearInterval(setTimer);
+        alert("Tempo scaduto!");
+        window.location.href = "./?id=<?php echo $_GET['id']; ?>";
+      } else if (parseInt(secondi.innerText) == 0) {
+        secondi.innerText = "59";
+        minuti.innerText = parseInt(minuti.innerText) - 1 + "";
+      } else {
+        secondi.innerText = parseInt(secondi.innerText) - 1 + "";
+      }
+
+    }, 1000)
   </script>
 
 </body>

@@ -59,6 +59,13 @@
     <div class="nuova-sfida reveal">
       <div class="casuale">
         <a class="button zoom" href="./casuale.php">Inizia una nuova sfida casuale!</a>
+        <?php
+          if (isset($_GET['casuale'])) {
+            if ($_GET['casuale'] == 'false') {
+              echo '<p class="error">La ricerca ha impiegato troppo tempo! <br> Cerca le sfide in attesa e in corso.</p>';
+            }
+          }
+          ?>
       </div>
       <form name="cercaAmico" class="amico" action="./amico.php" method='POST'>
         <button type='submit' class="button zoom" id="sfidaamico">Sfida un tuo amico!</button>

@@ -20,6 +20,13 @@
     justify-content: center;
     align-items: center;
 }
+.casuale p {
+    color: red;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    font-style: italic;
+}
 .amico {
     width: 50%;
     padding: 10px;

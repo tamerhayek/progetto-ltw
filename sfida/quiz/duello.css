@@ -30,29 +30,46 @@
 
 .header {
     width: 100%;
-    height: 10vh;
     padding: 20px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 }
 .header > .exit {
     color: #ffffff;
     font-size: 30px;
+    width: 50%;
 }
 .header > .exit:hover {
     cursor: pointer;
 }
 .header > .giocatori {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+    width: 50%;
 }
 .header > .giocatori > span {
     color: #ffffff;
     font-size: 20px;
-    margin: 0 10px;
+    margin: 0 2px;
 }
+
+.header > .timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+.header > .timer > span {
+    color: #ffffff;
+    font-size: 20px;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
 
 .quiz {
     width: 100%;
@@ -210,7 +227,7 @@
 }
 
 @media screen and (max-width: 768px) {
-    
+
     .quiz > .quiz-domanda #domanda {
         width: 100%;
         padding: 10px;
