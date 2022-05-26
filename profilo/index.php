@@ -86,7 +86,7 @@
         <div class="descrizione">
             <h2>IL TUO PROFILO</h2>
             <?php
-            if ($admin) {
+            if ($admin=='t') {
                 echo "<a class='button' href='../admin/'>Vai alla sezione admin</a>";
             }
             ?>

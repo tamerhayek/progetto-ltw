@@ -145,7 +145,7 @@
                     $sfida = pg_fetch_array($result, null, PGSQL_ASSOC);
                 }
             } else {
-                echo "<div class='sfida'><h3>Nessuna partita precedente!</h3></div>";
+                echo "<div class='sfida'><h3>Nessuna partita precedente con questo giocatore!</h3></div>";
             }
             pg_free_result($result);
             pg_close($dbconn);
