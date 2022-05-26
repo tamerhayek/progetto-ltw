@@ -9,7 +9,7 @@
 
   <!-- STYLE -->
   <link rel="stylesheet" href="../../src/css/general.css">
-  <link rel="stylesheet" href="duello.css">
+  <link rel="stylesheet" href="./duello.css">
 
   <!-- Scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

@@ -1,0 +1,77 @@
+body {
+    overflow-x: none;
+    overflow-y: auto;
+}
+
+.admin {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.choose {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.choose > button {
+    background-color:#77bc3f;
+    border-color:#77bc3f;
+    border-radius: 12px;
+    padding: 15px;
+    font-weight: bolder;
+    color: black;
+    box-shadow: 3px 3px 0px #034d09;
+}
+
+
+.choose > button:hover {
+    background-color: green;
+    border-color: green;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.choose > button:active{
+    transform: translateY(3px) translateX(3px);
+    box-shadow: #055202 0px 0px 0px;
+}
+
+.table {
+    overflow-x: scroll;
+}
+
+h3 {
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    padding: 20px;
+    color: #ffffff;
+}
+
+th {
+    color: #77bc3f;
+    text-align: center;
+}
+
+td {
+    padding: 10px;
+    border: 1px solid #ffffff;
+    text-align: center;
+}
+
+td > a {
+    color: #ffffff;
+}

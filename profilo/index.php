@@ -87,7 +87,7 @@
             <h2>IL TUO PROFILO</h2>
             <?php
             if ($admin) {
-                echo "<a class='button' href='../admin/domande/'>Vai alla sezione admin</a>";
+                echo "<a class='button' href='../admin/'>Vai alla sezione admin</a>";
             }
             ?>
         </div>
