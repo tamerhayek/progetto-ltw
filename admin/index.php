@@ -37,7 +37,7 @@
             <?php
             if (isset($_COOKIE['userArray'])) {
                 $data = json_decode($_COOKIE['userArray'], true);
-                echo '<a class="button" href="./"><img src="../src/images/icons/profile.svg" alt="Icona Profilo">' . $data['username'] . '</a>';
+                echo '<a class="button" href="../profilo/"><img src="../src/images/icons/profile.svg" alt="Icona Profilo">' . $data['username'] . '</a>';
                 echo "<a class='login' href='?logout=true'><img class='black-icon' src='../src/images/icons/logout.svg'></a>";
             } else {
                 echo "<a class='login' href='../auth/accesso/'>Accedi</a>";

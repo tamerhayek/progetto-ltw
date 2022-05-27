@@ -1,9 +1,10 @@
 .container{
     width: 50%;
     background-color: white;
+    margin: 0 auto;
     border-radius: 20px;
     margin-top: 70px;
-    padding: 20px;
+    padding: 40px;
     font-weight: bolder;
     display: flex;
     flex-direction: column;
@@ -42,6 +43,7 @@
 @media screen and (max-width: 768px){
     .container{
         width: 90%;
+        padding: 20px;
     }
 }
 .footer {

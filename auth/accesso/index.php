@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="./accesso.css" />
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="./enterClicked.js"></script>
+    <script src="./validaDati.js"></script>
 
     <!-- scrollreveal -->
     <script src="https://unpkg.com/scrollreveal"></script>

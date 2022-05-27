@@ -38,13 +38,27 @@
     $sfidaResult = pg_query_params($dbconn, $sfidaQuery, array($_GET['id']));
     if ($sfida = pg_fetch_array($sfidaResult, null, PGSQL_ASSOC)) {
       $username = json_decode($_COOKIE["userArray"], true)['username'];
+      // Giocatori diversi dalla sfida
       if ($username != $sfida['giocatore1'] and $username != $sfida['giocatore2']) {
         header("Location: ../");
       } else {
-        if (($username == $sfida['giocatore1'] && $sfida['status1'] == 't') || ($username == $sfida['giocatore2'] && $sfida['status2'] == 't')) {
+        // setta vincitore se giocatori hanno giocato
+        if ($sfida['status1'] == 't' && $sfida['status2'] == 't') {
+          $queryUpdateWinner = "UPDATE sfide SET vincitore=$1 WHERE id = $2";
+          if ($sfida['punteggio1'] > $sfida['punteggio2']) {
+            $queryUpdateWinnerResult = pg_query_params($dbconn, $queryUpdateWinner, array($sfida["giocatore1"], $_GET['id']));
+          } else if ($sfida['punteggio1'] < $sfida['punteggio2']) {
+            $queryUpdateWinnerResult = pg_query_params($dbconn, $queryUpdateWinner, array($sfida["giocatore2"], $_GET['id']));
+          } else {
+            $queryUpdateWinnerResult = pg_query_params($dbconn, $queryUpdateWinner, array("pareggio", $_GET['id']));
+          }
+          pg_free_result($queryUpdateWinnerResult);
           header("Location: ./risultati/?id=" . $_GET['id']);
-        }
-        if ($username == $sfida['giocatore1'] && $sfida['status1'] == 'f') {
+        } // se solo il giocatore corrente ha giocato vai a risultati 
+        else if (($username == $sfida['giocatore1'] && $sfida['status1'] == 't') || ($username == $sfida['giocatore2'] && $sfida['status2'] == 't')) {
+          header("Location: ./risultati/?id=" . $_GET['id']);
+        } // setta a true lo status di chi sta iniziando ora (cerca tra giocatore 1 o 2)
+        else if ($username == $sfida['giocatore1'] && $sfida['status1'] == 'f') {
           $queryUpdateStatus = "UPDATE sfide SET status1=true WHERE id = $1";
           $queryUpdateStatusResult = pg_query_params($dbconn, $queryUpdateStatus, array($_GET['id']));
           pg_free_result($queryUpdateStatusResult);
@@ -55,6 +69,7 @@
         }
       }
     }
+    // salva nome user e avversario
     if ($username == $sfida['giocatore1']) {
       $avversario = $sfida['giocatore2'];
     } else {
@@ -65,6 +80,7 @@
     header('Location: ../');
   }
 
+  // Genera 5 domande random e salva in array
   $countQuery = 'SELECT count(*) from domande';
   $count = pg_fetch_row(pg_query($dbconn, $countQuery))[0];
 
@@ -77,7 +93,7 @@
   }
 
 
-
+  // salva prima domanda
   $domandaQuery = 'SELECT * from domande where id = $1';
   $domandaQueryResult = pg_query_params($dbconn, $domandaQuery, array($arrayQuestions[0]));
 
@@ -110,7 +126,7 @@
         ?>
       </div>
       <div class="timer">
-        <span class="minuti" id="minuti">5</span>
+        <span class="minuti" id="minuti">3</span>
         <span>:</span>
         <span class="secondi" id="secondi">00</span>
       </div>
@@ -157,6 +173,7 @@
   </div>
 
   <script>
+    // tasto exit
     let elem = document.getElementById('exit');
     elem.addEventListener('click', function() {
       $.post("./backend/finish.php", {
@@ -172,6 +189,7 @@
   </script>
 
   <script>
+    // timer
     var minuti = document.getElementById("minuti");
     var secondi = document.getElementById("secondi");
 

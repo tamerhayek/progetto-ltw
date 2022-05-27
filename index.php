@@ -20,30 +20,31 @@
   <script src="https://unpkg.com/scrollreveal"></script>
 
   <!-- favicon -->
-  <link rel="shortcut icon" href="src/images/logo.png" />
-   
+  <link rel="shortcut icon" href="./src/images/logo.png" />
+
 </head>
 
 <body>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $("#newbtn").on({
-              mouseenter: function(){
-                $(this).text("Inizia a giocare!");
-              },
-              mouseleave: function(){
-                $(this).text("+");
-              }
-            })
-        });
-    </script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#newbtn").on({
+        mouseenter: function() {
+          $(this).text("Inizia a giocare!");
+        },
+        mouseleave: function() {
+          $(this).text("+");
+        }
+      })
+    });
+  </script>
 
+  <!-- PHP LOGOUT -->
   <?php include './src/php/logout.php'; ?>
-  
-  <!-- PULSANTE GIOCO -->
+
+  <!-- PULSANTE GIOCO SFIDA CASUALE -->
   <a id="newbtn" class="newbutton zoom" href="./sfida/casuale.php">+</a>
-  
+
 
   <!-- NAVBAR -->
   <div class="barra-nav">
@@ -59,6 +60,7 @@
     </div>
     <div class="barra-nav-user">
       <?php
+      // CONTROLLA SE SEI LOGGATO
       if (isset($_COOKIE['userArray'])) {
         $data = json_decode($_COOKIE['userArray'], true);
         echo '<a class="button" href="./profilo/"><img src="./src/images/icons/profile.svg" alt="Icona Profilo">' . $data['username'] . '</a>';
@@ -129,7 +131,7 @@
       </div>
     </div>
   </div>
-  
+
   <!-- FOOTER -->
   <div class="footer reveal">
     <div class="footer-copyright">
@@ -143,21 +145,21 @@
 
 
   <script>
-     ScrollReveal().reveal('.reveal', {
-        distance: '50px',
-        duration: 1000,
-        easing: 'cubic-bezier(.215,.61,.355, 1)',
-        interval: 100
-      });
-      ScrollReveal().reveal('.zoom', {
-        duration: 1000,
-        easing: 'cubic-bezier(.215,.61,.355, 1)',
-        interval: 200,
-        scale: 0.65,
-        mobile: false
-      });
+    ScrollReveal().reveal('.reveal', {
+      distance: '50px',
+      duration: 1000,
+      easing: 'cubic-bezier(.215,.61,.355, 1)',
+      interval: 100
+    });
+    ScrollReveal().reveal('.zoom', {
+      duration: 1000,
+      easing: 'cubic-bezier(.215,.61,.355, 1)',
+      interval: 200,
+      scale: 0.65,
+      mobile: false
+    });
   </script>
-  
+
 </body>
 
 </html>

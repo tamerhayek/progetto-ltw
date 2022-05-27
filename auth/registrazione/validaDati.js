@@ -10,6 +10,11 @@ function nomePressed(event) {
             $("#smallNome").text("");
             $("#divCognome").css("visibility", "visible");
             $("#cognome").focus();
+            $("#nome").prop("readonly", true);
+            $("#nomeButton").css("display", "none");
+            $("#nomeButton").prop("disabled", true);
+            $("#cognomeButton").css("visibility", "visible");
+            $("#cognomeButton").removeAttr("disabled");
         } else {
             $("#smallNome").text("Questo campo non può essere vuoto!");
             $("#smallNome").css("visibility", "visible");
@@ -21,6 +26,7 @@ function nomePressedBtn() {
         $("#smallNome").text("");
         $("#divCognome").css("visibility", "visible");
         $("#cognome").focus();
+        $("#nome").prop("readonly", true);
         $("#nomeButton").css("display", "none");
         $("#nomeButton").prop("disabled", true);
         $("#cognomeButton").css("visibility", "visible");
@@ -37,6 +43,11 @@ function cognomePressed(event) {
             $("#smallCognome").text("");
             $("#divEmail").css("visibility", "visible");
             $("#email").focus();
+            $("#cognome").prop("readonly", true);
+            $("#cognomeButton").css("display", "none");
+            $("#cognomeButton").prop("disabled", true);
+            $("#emailButton").css("visibility", "visible");
+            $("#emailButton").removeAttr("disabled");
         } else {
             $("#smallCognome").text("Questo campo non può essere vuoto!");
             $("#smallCognome").css("visibility", "visible");
@@ -48,6 +59,7 @@ function cognomePressedBtn() {
         $("#smallCognome").text("");
         $("#divEmail").css("visibility", "visible");
         $("#email").focus();
+        $("#cognome").prop("readonly", true);
         $("#cognomeButton").css("display", "none");
         $("#cognomeButton").prop("disabled", true);
         $("#emailButton").css("visibility", "visible");
@@ -58,7 +70,6 @@ function cognomePressedBtn() {
     }
 }
 
-
 function emailPressed(event) {
     if (event.keyCode == 13) {
         if ($("#email").val() != "") {
@@ -66,6 +77,11 @@ function emailPressed(event) {
                 $("#smallEmail").text("");
                 $("#divUsername").css("visibility", "visible");
                 $("#username").focus();
+                $("#email").prop("readonly", true);
+                $("#emailButton").css("display", "none");
+                $("#emailButton").prop("disabled", true);
+                $("#usernameButton").css("visibility", "visible");
+                $("#usernameButton").removeAttr("disabled");
             } else {
                 $("#smallEmail").text("Email non valida");
                 $("#smallEmail").css("visibility", "visible");
@@ -82,6 +98,7 @@ function emailPressedBtn() {
             $("#smallEmail").text("");
             $("#divUsername").css("visibility", "visible");
             $("#username").focus();
+            $("#email").prop("readonly", true);
             $("#emailButton").css("display", "none");
             $("#emailButton").prop("disabled", true);
             $("#usernameButton").css("visibility", "visible");
@@ -96,7 +113,6 @@ function emailPressedBtn() {
     }
 }
 
-
 function usernamePressed(event) {
     if (event.keyCode == 13) {
         if ($("#username").val() != "") {
@@ -109,6 +125,11 @@ function usernamePressed(event) {
                 $("#smallUsername").text("");
                 $("#divPassword").css("visibility", "visible");
                 $("#password").focus();
+                $("#username").prop("readonly", true);
+                $("#usernameButton").css("display", "none");
+                $("#usernameButton").prop("disabled", true);
+                $("#passwordButton").css("visibility", "visible");
+                $("#passwordButton").removeAttr("disabled");
             }
         } else {
             $("#smallUsername").text("Questo campo non può essere vuoto!");
@@ -127,6 +148,7 @@ function usernamePressedBtn() {
             $("#smallUsername").text("");
             $("#divPassword").css("visibility", "visible");
             $("#password").focus();
+            $("#username").prop("readonly", true);
             $("#usernameButton").css("display", "none");
             $("#usernameButton").prop("disabled", true);
             $("#passwordButton").css("visibility", "visible");
@@ -137,7 +159,6 @@ function usernamePressedBtn() {
         $("#smallUsername").css("visibility", "visible");
     }
 }
-
 
 function passwordPressed(event) {
     if (event.keyCode == 13) {
@@ -151,6 +172,11 @@ function passwordPressed(event) {
                 $("#smallPassword").text("");
                 $("#divPasswordConf").css("visibility", "visible");
                 $("#passwordconferma").focus();
+                $("#password").prop("readonly", true);
+                $("#passwordButton").css("display", "none");
+                $("#passwordButton").prop("disabled", true);
+                $("#submit").css("visibility", "visible");
+                $("#submit").removeAttr("disabled");
             }
         } else {
             $("#smallPassword").text("Questo campo non può essere vuoto!");
@@ -169,6 +195,7 @@ function passwordPressedBtn() {
             $("#smallPassword").text("");
             $("#divPasswordConf").css("visibility", "visible");
             $("#passwordconferma").focus();
+            $("#password").prop("readonly", true);
             $("#passwordButton").css("display", "none");
             $("#passwordButton").prop("disabled", true);
             $("#submit").css("visibility", "visible");
@@ -179,7 +206,6 @@ function passwordPressedBtn() {
         $("#smallPassword").css("visibility", "visible");
     }
 }
-
 
 function passwordConfPressed(event) {
     if (event.keyCode == 13) {

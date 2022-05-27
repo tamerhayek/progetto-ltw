@@ -19,3 +19,4 @@
 - John Butler [@johnbutler](Password: `john2000`)
 - Laura Marini [@lauramarini](Password: `laura2000`)
 - Anna Rossi [@annarossi](Password: `anna2000`)
+- Gianmarco Celeste [@gianmarcoceleste](Password: `gianmarco2000`)

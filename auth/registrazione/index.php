@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trivia Stack</title>
+    <title>Trivia Stack | Registrazione</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,14 +17,13 @@
     <link rel="stylesheet" href="./registrazione.css" />
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!-- <script src="./validaRegistrazione.js"></script> -->
-    <script src="./enterClicked.js"></script>
+    <script src="./validaDati.js"></script>
 
     <!-- scrollreveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
 
     <!-- favicon -->
-    <link rel="shortcut icon" href="../..src/images/logo.png" />
+    <link rel="shortcut icon" href="../../src/images/logo.png" />
 
 </head>
 
@@ -122,14 +121,6 @@
             </form>
         </div>
     </div>
-
-    <?php
-    if (isset($_GET['utente'])) {
-        if ($_GET['utente'] == "false") {
-            echo "<p style='color: white'>" . $_POST["nomeUtente"] . "</p>";
-        }
-    }
-    ?>
 
     <script>
      ScrollReveal().reveal('.reveal', {

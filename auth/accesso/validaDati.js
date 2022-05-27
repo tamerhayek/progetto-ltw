@@ -4,6 +4,7 @@ function usernamePressed(event) {
             $("#smallUsername").text("");
             $("#divPassword").css("visibility", "visible");
             $("#password").focus();
+            $("#username").prop("readonly", true);
             $("#usernameButton").css("visibility", "hidden");
             $("#usernameButton").prop("disabled", true);
         } else {
@@ -18,6 +19,7 @@ function usernamePressedBtn() {
         $("#smallUsername").text("");
         $("#divPassword").css("visibility", "visible");
         $("#password").focus();
+        $("#username").prop("readonly", true);
         $("#usernameButton").css("display", "none");
         $("#usernameButton").prop("disabled", true);
         $('#submit').css("visibility", "visible");

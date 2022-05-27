@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php
-    echo "<title>Trivia Stack | " . "Profilo" . "</title>";
+    echo "<title>Trivia Stack | Profilo</title>";
     ?>
 
     <!-- Fonts -->
@@ -16,18 +16,18 @@
 
     <!-- Style -->
     <link rel="stylesheet" href="../src/css/general.css">
-    <link rel="stylesheet" href="profilo.css">
+    <link rel="stylesheet" href="./profilo.css">
 
     <!-- scrollreveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
-   
+
     <!-- favicon -->
     <link rel="shortcut icon" href="../src/images/logo.png" />
 
 </head>
 
 <body>
-    
+
     <?php include '../src/php/logout.php'; ?>
     <?php
     if (!isset($_COOKIE['userArray'])) header("Location: ../auth/accesso/");
@@ -81,12 +81,14 @@
     if ($tuple = pg_fetch_array($giocateQueryResult, null, PGSQL_ASSOC)) {
         $partiteGiocate = $tuple['giocate'];
     }
+    pg_free_result($result);
+    pg_close($dbconn);
     ?>
     <div class="container">
         <div class="descrizione">
             <h2>IL TUO PROFILO</h2>
             <?php
-            if ($admin=='t') {
+            if ($admin == 't') {
                 echo "<a class='button' href='../admin/'>Vai alla sezione admin</a>";
             }
             ?>
@@ -121,7 +123,10 @@
 
     <script>
         ScrollReveal().reveal('.descrizione');
-        ScrollReveal().reveal('.data',{ interval: 100, distance: '50px'});
+        ScrollReveal().reveal('.data', {
+            interval: 100,
+            distance: '50px'
+        });
     </script>
 
     <!-- FOOTER -->
@@ -134,10 +139,6 @@
             <a href=""><img alt="Logo Instagram" src="../src/images/instagram.png"></a>
         </div>
     </div>
-    <?php 
-        pg_free_result($result);
-        pg_close($dbconn);
-    ?>
 
 </body>
 
