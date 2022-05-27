@@ -18,7 +18,7 @@ Inoltre abbiamo inserito il logo del nostro sito come icona della tab che esce a
 Per riprendere sempre l'ambito informatico, abbiamo creato, per login e registrazione, un'interfaccia stile terminale.
 
 
-- Nella versione Desktop, dov'è possibile premere invio da tastiera, abbiamo creato delle funzioni che catturassero l'evento legato al tasto invio: in caso non ci siano errori viene aggiornata la form, settando come readonly il dato appena inserito e rendendo visibile il campo successivo per l'inserimento del prossimo dato. In caso di errore invece, verrà stampato in rosso sotto al campo corrente della form, il corrispondente messaggio di errore, impedendo all'utente di inserire il prossimo dato finché non si inserirà un input valido. 
+- Nella versione Desktop, dov'è possibile premere invio da tastiera, abbiamo creato delle funzioni che catturino l'evento legato al tasto invio: in caso non ci siano errori viene aggiornata la form, settando come readonly il dato appena inserito e rendendo visibile il campo successivo per l'inserimento del prossimo dato. In caso di errore invece, verrà stampato in rosso sotto al campo corrente della form, il corrispondente messaggio di errore, impedendo all'utente di inserire il prossimo dato finché non si inserirà un input valido. 
 Dopo aver inserito l'ultimo input, confermata la sua validità, viene reso visibile un bottone di tipo submit che inizialmente è nascosto e disabilitato, che viene cliccato tramite JQuery. Successivamente avviene quindi la submit che fa un controllo generale dei dati inseriti e poi indirizza verso il file registrati.php che controlla nel database che non ci sia un altro utente con lo stesso username. In caso di successo, viene presentata una pagina di benvenuto con un link alla pagina di accesso. In caso di errore, viene ricaricata la pagina della registrazione comunicando all'inizio del terminale che esiste già un utente con lo stesso username. Questo viene realizzato passando un parametro alla GET.
 *Prova registrazione con successo*
 
@@ -65,7 +65,11 @@ Teniamo conto dello status dei due giocatori durante la sfida per sapere quando 
 
 # CLASSIFICA
 *aggiungi*
+La pagina della classifica mostra i giocatori migliori insieme al numero di sfide vinte.
+
+# LOGOUT
+Nel caso in cui l'utente sia loggato, nella sezione Utente della navbar compare il collegamento al profilo utente e il pulsante di logout. Alla pressione di questo pulsante, verrà passato un parametro alla GET che, tramite uno script php, permetterà di cancellare il cookie tramite cui l'utente veniva memorizzato precedentemente e di ritornare all'home page, facendo ricomparire nella sezione Utente della Navbar i collegamenti per accesso e registrazione.
 
 # ADMIN
-Gli account di noi due sono registrati come admin, il che ci permette, dal profilo utente, di andare in una sezione riservata dove possiamo visualizzare gli utenti, le sfide e le domande della nostra applicazione. Il caricamento di queste informazioni avviene all'interno della stessa pagina in modo dinamico attraverso AJAX. 
+Gli account di noi due sono registrati come admin, il che ci permette, dal profilo utente, di andare in una sezione riservata dove possiamo visualizzare gli utenti, le sfide e le domande della nostra applicazione. Il caricamento di queste informazioni avviene all'interno della stessa pagina in modo dinamico attraverso AJAX: viene fatta una richiesta al server e quando questo fornirà la risorsa, verrà eseguita una funzione gestore che caricherà la risorsa ricevuta nell'apposito div.
 
