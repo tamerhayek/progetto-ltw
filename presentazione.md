@@ -63,6 +63,9 @@ Quanto si clicca sulla X per uscire viene effettuata una POST sullo stesso file 
 Teniamo conto dello status dei due giocatori durante la sfida per sapere quando una partita è terminata. Quindi, per evitare ricaricamenti della pagina con cambiamenti delle domande all'infinito, all'inizio della partita viene settato lo status del giocatore corrente a true, per indicare che il giocatore ha giocato o sta giocando indipendentemente se risponderà a tutte le domande oppure no. Abbiamo perciò messo, all'inizio di ogni sfida un controllo php che verifica che lo status di quell'utente nella sfida non sia settato a true: in quel caso reindirizza l'utente direttamente alla pagina dei risultati.
 *gioca sfida e refresha*
 
+# CLASSIFICA
+*aggiungi*
+
 # ADMIN
 Gli account di noi due sono registrati come admin, il che ci permette, dal profilo utente, di andare in una sezione riservata dove possiamo visualizzare gli utenti, le sfide e le domande della nostra applicazione. Il caricamento di queste informazioni avviene all'interno della stessa pagina in modo dinamico attraverso AJAX. 
 
