@@ -16,6 +16,21 @@ function nomePressed(event) {
         }
     }
 }
+function nomePressedBtn() {
+    if ($("#nome").val() != "") {
+        $("#smallNome").text("");
+        $("#divCognome").css("visibility", "visible");
+        $("#cognome").focus();
+        $("#nomeButton").css("display", "none");
+        $("#nomeButton").prop("disabled", true);
+        $("#cognomeButton").css("visibility", "visible");
+        $("#cognomeButton").removeAttr("disabled");
+    } else {
+        $("#smallNome").text("Questo campo non può essere vuoto!");
+        $("#smallNome").css("visibility", "visible");
+    }
+}
+
 function cognomePressed(event) {
     if (event.keyCode == 13) {
         if ($("#cognome").val() != "") {
@@ -28,6 +43,21 @@ function cognomePressed(event) {
         }
     }
 }
+function cognomePressedBtn() {
+    if ($("#cognome").val() != "") {
+        $("#smallCognome").text("");
+        $("#divEmail").css("visibility", "visible");
+        $("#email").focus();
+        $("#cognomeButton").css("display", "none");
+        $("#cognomeButton").prop("disabled", true);
+        $("#emailButton").css("visibility", "visible");
+        $("#emailButton").removeAttr("disabled");
+    } else {
+        $("#smallCognome").text("Questo campo non può essere vuoto!");
+        $("#smallCognome").css("visibility", "visible");
+    }
+}
+
 
 function emailPressed(event) {
     if (event.keyCode == 13) {
@@ -46,6 +76,26 @@ function emailPressed(event) {
         }
     }
 }
+function emailPressedBtn() {
+    if ($("#email").val() != "") {
+        if (validEmail($("#email").val())) {
+            $("#smallEmail").text("");
+            $("#divUsername").css("visibility", "visible");
+            $("#username").focus();
+            $("#emailButton").css("display", "none");
+            $("#emailButton").prop("disabled", true);
+            $("#usernameButton").css("visibility", "visible");
+            $("#usernameButton").removeAttr("disabled");
+        } else {
+            $("#smallEmail").text("Email non valida");
+            $("#smallEmail").css("visibility", "visible");
+        }
+    } else {
+        $("#smallEmail").text("Questo campo non può essere vuoto!");
+        $("#smallEmail").css("visibility", "visible");
+    }
+}
+
 
 function usernamePressed(event) {
     if (event.keyCode == 13) {
@@ -66,6 +116,28 @@ function usernamePressed(event) {
         }
     }
 }
+function usernamePressedBtn() {
+    if ($("#username").val() != "") {
+        if ($("#username").val().length < 8) {
+            $("#smallUsername").text(
+                "Lo username deve contenere almeno 8 caratteri!"
+            );
+            $("#smallUsername").css("visibility", "visible");
+        } else {
+            $("#smallUsername").text("");
+            $("#divPassword").css("visibility", "visible");
+            $("#password").focus();
+            $("#usernameButton").css("display", "none");
+            $("#usernameButton").prop("disabled", true);
+            $("#passwordButton").css("visibility", "visible");
+            $("#passwordButton").removeAttr("disabled");
+        }
+    } else {
+        $("#smallUsername").text("Questo campo non può essere vuoto!");
+        $("#smallUsername").css("visibility", "visible");
+    }
+}
+
 
 function passwordPressed(event) {
     if (event.keyCode == 13) {
@@ -86,6 +158,28 @@ function passwordPressed(event) {
         }
     }
 }
+function passwordPressedBtn() {
+    if ($("#password").val() != "") {
+        if ($("#password").val().length < 8) {
+            $("#smallPassword").text(
+                "La password deve contenere almeno 8 caratteri!"
+            );
+            $("#smallPassword").css("visibility", "visible");
+        } else {
+            $("#smallPassword").text("");
+            $("#divPasswordConf").css("visibility", "visible");
+            $("#passwordconferma").focus();
+            $("#passwordButton").css("display", "none");
+            $("#passwordButton").prop("disabled", true);
+            $("#submit").css("visibility", "visible");
+            $("#submit").removeAttr("disabled");
+        }
+    } else {
+        $("#smallPassword").text("Questo campo non può essere vuoto!");
+        $("#smallPassword").css("visibility", "visible");
+    }
+}
+
 
 function passwordConfPressed(event) {
     if (event.keyCode == 13) {
@@ -138,5 +232,5 @@ function validaForm() {
     if ($("#passwordconferma").val() !== $("#password").val()) {
         return false;
     }
-    return true;   
+    return true;
 }

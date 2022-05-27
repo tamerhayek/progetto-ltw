@@ -152,6 +152,17 @@ small{
     cursor: pointer;
 }
 
+.form .btn {
+    background-color: #77bc3f;
+    color: #000000;
+    border-radius: 12px;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    outline: none;
+    visibility: hidden;
+}
+
 @media screen and (max-width: 1200px) {
     .container {
         padding: 20px 50px 10px;
@@ -171,6 +182,10 @@ small{
     }
     .pressEnter {
         display: none;
+    }
+    .form .btn {
+        visibility: visible;
+        margin: 10px;
     }
 }
 
@@ -230,7 +245,7 @@ small{
 }
 
 
-#divCognome, #divUsername, #divPassword, #divPasswordConf, #divEmail {
+#divCognome, #divUsername, #divPassword, #divPasswordConf, #divEmail, #cognomeButton, #usernameButton, #passwordButton, #emailButton {
     visibility: hidden;
 }
 
@@ -241,6 +256,7 @@ small{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     color: #ffffff;
 }
 

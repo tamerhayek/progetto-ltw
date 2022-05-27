@@ -17,3 +17,5 @@
 - Robert Walker [@robertwalker](Password: `robert2000`)
 - Axel Adams [@axeladams](Password: `axel2000`)
 - John Butler [@johnbutler](Password: `john2000`)
+- Laura Marini [@lauramarini](Password: `laura2000`)
+- Anna Rossi [@annarossi](Password: `anna2000`)

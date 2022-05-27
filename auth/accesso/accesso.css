@@ -138,6 +138,17 @@ small{
     color: rgb(153, 13, 8);
 }
 
+.form .btn {
+    background-color: #77bc3f;
+    color: #000000;
+    border-radius: 12px;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    outline: none;
+    visibility: hidden;
+}
+
 @media screen and (max-width: 1200px) {
     .container {
         padding: 20px 50px 10px;
@@ -157,6 +168,10 @@ small{
     }
     .pressEnter {
         display: none;
+    }
+    .form .btn {
+        visibility: visible;
+        margin: 10px;
     }
 }
 

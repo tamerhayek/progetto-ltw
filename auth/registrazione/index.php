@@ -84,26 +84,31 @@
                 <div id="divNome" class="form-elem">
                     <label for="nome"><span class="dominio">trivia@registrazione</span>:<span class="root">/nome</span>$></label>
                     <input type="text" id="nome" name="nomeUtente" placeholder="Il tuo nome" onkeypress="nomePressed(event)" autofocus />
+                    <button type="button" class="btn" id="nomeButton" onclick="nomePressedBtn()">Invio</button>
                 </div>
                 <small id="smallNome"></small>
                 <div id="divCognome" class="form-elem">
                     <label for="cognome"><span class="dominio">trivia@registrazione</span>:<span class="root">/cognome</span>$></label>
                     <input type="text" id="cognome" name="cognomeUtente" placeholder="Il tuo cognome" onkeypress="cognomePressed(event)" />
+                    <button type="button" class="btn" id="cognomeButton" onclick="cognomePressedBtn()" disabled>Invio</button>
                 </div>
                 <small id="smallCognome"></small>
                 <div id="divEmail" class="form-elem">
                     <label for="email"><span class="dominio">trivia@registrazione</span>:<span class="root">/email</span>$></label>
                     <input type="email" id="email" name="emailUtente" placeholder="example@mail.com" onkeypress="emailPressed(event)" />
+                    <button type="button" class="btn" id="emailButton" onclick="emailPressedBtn()" disabled>Invio</button>
                 </div>
                 <small id="smallEmail"></small>
                 <div id="divUsername" class="form-elem">
                     <label for="username"><span class="dominio">trivia@registrazione</span>:<span class="root">/username</span>$></label>
                     <input type="text" id="username" name="username" placeholder="Almeno 8 caratteri" onkeypress="usernamePressed(event)" />
+                    <button type="button" class="btn" id="usernameButton" onclick="usernamePressedBtn()" disabled>Invio</button>
                 </div>
                 <small id="smallUsername"></small>
                 <div id="divPassword" class="form-elem">
                     <label for="password"><span class="dominio">trivia@registrazione</span>:<span class="root">/password</span>$></label>
                     <input type="password" id="password" name="passwordUtente" placeholder="Almeno 8 caratteri" onkeypress="passwordPressed(event)" />
+                    <button type="button" class="btn" id="passwordButton" onclick="passwordPressedBtn()" disabled>Invio</button>
                 </div>
                 <small id="smallPassword"></small>
                 <div id="divPasswordConf" class="form-elem">

@@ -71,7 +71,7 @@
                     <a href="../../"><img src="../../src/images/icons/close.svg" alt="Close"></a>
                 </div>
             </div>
-            <form class="form" action="./accedi.php" method="post" onsubmit="">
+            <form class="form" action="./accedi.php" method="post">
                 <div class="utenteNotFound">
                     <?php
                     if (isset($_GET['utente'])) {
@@ -84,6 +84,7 @@
                 <div id="divUsername" class="form-elem">
                     <label for="username"><span class="dominio">trivia@accesso</span>:<span class="root">/username</span>$></label>
                     <input type="text" id="username" name="username" placeholder="Inserisci il tuo username" onkeypress="usernamePressed(event)" autofocus />
+                    <button type="button" class="btn" id="usernameButton" onclick="usernamePressedBtn()">Invio</button>
                 </div>
                 <small id="smallUsername"></small>
                 <div id="divPassword" class="form-elem">
