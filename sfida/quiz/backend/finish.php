@@ -21,13 +21,13 @@
             if($sfida['status2'] == 't'){
                 $queryUpdateWinner = "UPDATE sfide SET vincitore=$1 WHERE id = $2";
                 if($sfida['punteggio1'] > $sfida['punteggio2']){
-                    $queryUpdateWinnerResult = pg_query_params($dbconn, $queryUpdateWinner, array($giocatore1,$_POST['id']));
+                    $queryUpdateWinnerResult = pg_query_params($dbconn, $queryUpdateWinner, array(1, $_POST['id']));
                 }
                 else if($sfida['punteggio1'] < $sfida['punteggio2']){
-                    $queryUpdateWinnerResult = pg_query_params($dbconn, $queryUpdateWinner, array($giocatore2,$_POST['id']));
+                    $queryUpdateWinnerResult = pg_query_params($dbconn, $queryUpdateWinner, array(2, $_POST['id']));
                 }
                 else{
-                    $queryUpdateWinnerResult = pg_query_params($dbconn, $queryUpdateWinner, array("pareggio",$_POST['id']));
+                    $queryUpdateWinnerResult = pg_query_params($dbconn, $queryUpdateWinner, array(0, $_POST['id']));
                 }
                 pg_free_result($queryUpdateWinnerResult);
             }
@@ -40,13 +40,13 @@
             if($sfida['status1'] == 't'){
                 $queryUpdateWinner = "UPDATE sfide SET vincitore=$1 WHERE id = $2";
                 if($sfida['punteggio1'] > $sfida['punteggio2']){
-                    $queryUpdateWinnerResult = pg_query_params($dbconn, $queryUpdateWinner, array($giocatore1,$_POST['id']));
+                    $queryUpdateWinnerResult = pg_query_params($dbconn, $queryUpdateWinner, array(1, $_POST['id']));
                 }
                 else if($sfida['punteggio1'] < $sfida['punteggio2']){
-                    $queryUpdateWinnerResult = pg_query_params($dbconn, $queryUpdateWinner, array($giocatore2,$_POST['id']));
+                    $queryUpdateWinnerResult = pg_query_params($dbconn, $queryUpdateWinner, array(2, $_POST['id']));
                 }
                 else{
-                    $queryUpdateWinnerResult = pg_query_params($dbconn, $queryUpdateWinner, array("pareggio",$_POST['id']));
+                    $queryUpdateWinnerResult = pg_query_params($dbconn, $queryUpdateWinner, array(0, $_POST['id']));
                 }
                 pg_free_result($queryUpdateWinnerResult);
             }

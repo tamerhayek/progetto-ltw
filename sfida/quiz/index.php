@@ -46,11 +46,11 @@
         if ($sfida['status1'] == 't' && $sfida['status2'] == 't') {
           $queryUpdateWinner = "UPDATE sfide SET vincitore=$1 WHERE id = $2";
           if ($sfida['punteggio1'] > $sfida['punteggio2']) {
-            $queryUpdateWinnerResult = pg_query_params($dbconn, $queryUpdateWinner, array($sfida["giocatore1"], $_GET['id']));
+            $queryUpdateWinnerResult = pg_query_params($dbconn, $queryUpdateWinner, array(1, $_GET['id']));
           } else if ($sfida['punteggio1'] < $sfida['punteggio2']) {
-            $queryUpdateWinnerResult = pg_query_params($dbconn, $queryUpdateWinner, array($sfida["giocatore2"], $_GET['id']));
+            $queryUpdateWinnerResult = pg_query_params($dbconn, $queryUpdateWinner, array(2, $_GET['id']));
           } else {
-            $queryUpdateWinnerResult = pg_query_params($dbconn, $queryUpdateWinner, array("pareggio", $_GET['id']));
+            $queryUpdateWinnerResult = pg_query_params($dbconn, $queryUpdateWinner, array(0, $_GET['id']));
           }
           pg_free_result($queryUpdateWinnerResult);
           header("Location: ./risultati/?id=" . $_GET['id']);

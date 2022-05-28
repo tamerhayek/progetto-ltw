@@ -71,7 +71,7 @@
         $email = $tuple['email'];
         $admin = $tuple['admin'];
     }
-    $vincitoreQuery = 'SELECT count(*) as vinte from sfide where vincitore = $1';
+    $vincitoreQuery = 'SELECT count(*) as vinte from sfide where (giocatore1=$1 and vincitore = 1) or (giocatore2=$1 and vincitore = 2)';
     $vincitoreQueryResult = pg_query_params($dbconn, $vincitoreQuery, array($data['username']));
     if ($tuple = pg_fetch_array($vincitoreQueryResult, null, PGSQL_ASSOC)) {
         $partiteVinte = $tuple['vinte'];
