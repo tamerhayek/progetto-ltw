@@ -7,7 +7,7 @@
     align-items: center;
 }
 
-.container > .risultato {
+.risultato {
     width: 80%;
     margin-top: 30px;
     margin-bottom: 50px;
@@ -17,16 +17,16 @@
     color: #ffffff;
 }
 
-.container > .risultato > .esito{
+.risultato > .esito{
     padding: 5px;
     text-align: center;
 }
-.container > .risultato > .esito > h2{
+.risultato > .esito > h2{
     font-size: 30px;
     font-weight: bold;
 }
 
-.container > .risultato > .riepilogo{
+.risultato > .riepilogo{
     padding: 15px;
     display: flex;
     flex-direction: column;
@@ -34,7 +34,7 @@
     justify-content: center;
 }
 
-.container > .risultato > .riepilogo .punteggio{
+.risultato > .riepilogo .punteggio{
     width: 100%;
     font-size: 100px;
     font-weight: bold;
@@ -42,7 +42,7 @@
     justify-content: space-around;
     align-items: center;
 }
-.container > .risultato > .riepilogo .giocatori{
+.risultato > .riepilogo .giocatori{
     width: 100%;
     font-size: 30px;
     font-weight: regular;
@@ -50,20 +50,20 @@
     justify-content: space-around;
     align-items: center;
 }
-.container > .risultato > .riepilogo .left{
+.risultato > .riepilogo .left{
     width: 40%;
     text-align: right;
 }
-.container > .risultato > .riepilogo .center{
+.risultato > .riepilogo .center{
     width: 20%;
     text-align: center;
 }
-.container > .risultato > .riepilogo .right{
+.risultato > .riepilogo .right{
     width: 40%;
     text-align: left;
 }
 
-.container > .sfide {
+.sfide {
     width: 80%;
     padding: 20px;
     display: flex;
@@ -75,99 +75,130 @@
     margin-bottom: 50px;
     color: #ffffff;
 }
-.container > .sfide > h3 {
+.sfide > h3 {
     text-align: center;
-    font-size: 30px;
+    font-size: 42px;
     font-weight: bold;
 }
-.container > .sfide > p {
+.sfide > p {
     text-align: center;
     font-size: 20px;
 }
 
-.container > .sfide .sfida {
+.sfide .sfida {
     width: 80%;
     padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.container > .sfide .sfida .sfida-giocatore {
+.sfida .sfida-giocatore {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #ffffff;
 }
-.container > .sfide .sfida .sfida-giocatore span {
+.sfida .sfida-giocatore span {
     text-align: center;
     padding: 10px;
     font-size: 20px;
     font-weight: bold;
-    border: 1px solid #ffffff;
+    border: 2px solid #ffffff;
 }
-.container > .sfide .sfida .sfida-giocatore .left {
+.sfida .sfida-giocatore .left {
     width: 40%;
 }
-.container > .sfide .sfida .sfida-giocatore .center {
+.sfida .sfida-giocatore .center {
     width: 20%;
 }
-.container > .sfide .sfida .sfida-giocatore .right {
+.sfida .sfida-giocatore .right {
     width: 40%;
+}
+.sfida .vittoria span {
+    border: 2px solid #6fc42e;
+}
+.sfida .sconfitta span {
+    border: 2px solid #b41717;
+}
+.sfida .vittoria .center {
+    background-color: #6fc42e;
+}
+.sfida .sconfitta .center {
+    background-color: #b41717;
+}
+.sfida .vittoria:hover {
+    background-color: #6fc42e;
+    color: #ffffff;
+}
+.sfida .sconfitta:hover {
+    background-color: #b41717;
+    color: #ffffff;
 }
 
 
 @media screen and (max-width: 1200px) {
-    .container > .risultato {
+    .risultato {
         margin-top: 30px;
         margin-bottom: 20px;
         padding: 5px;
     }
     
-    .container > .risultato > .esito > h2{
+    .risultato > .esito > h2{
         font-size: 24px;
     }
     
-    .container > .risultato > .riepilogo{
+    .risultato > .riepilogo{
         padding: 10px;
     }
     
-    .container > .risultato > .riepilogo .punteggio{
+    .risultato > .riepilogo .punteggio{
         font-size: 80px;
     }
-    .container > .risultato > .riepilogo .giocatori{
+    .risultato > .riepilogo .giocatori{
         font-size: 24px;
     }
-    
-    .container > .sfide > h3 {
-        font-size: 24px;
+    .sfide .sfida {
+        width: 100%;
+        padding: 10px 20px;
+    }
+    .sfide > h3 {
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .sfide > p {
+        font-size: 16px;
+    }
+    .sfida .sfida-giocatore span {
+        font-size: 18px;
+        font-weight: bold;
     }
 }
 @media screen and (max-width: 768px) {
     
-    .container > .risultato {
+    .risultato {
         width: 90%;
     }
-    .container > .sfide {
+    .sfide {
         width: 90%;
     }
 
-    .container > .risultato > .esito > h2{
+    .risultato > .esito > h2{
         font-size: 18px;
     }
     
-    .container > .risultato > .riepilogo{
+    .risultato > .riepilogo{
         padding: 10px;
     }
     
-    .container > .risultato > .riepilogo .punteggio{
+    .risultato > .riepilogo .punteggio{
         font-size: 50px;
     }
-    .container > .risultato > .riepilogo .giocatori{
+    .risultato > .riepilogo .giocatori{
         font-size: 12px;
     }
     
-    .container > .sfida {
+    .sfida {
         width: 100%;
         padding: 10px;
         display: flex;
@@ -175,22 +206,33 @@
         align-items: center;
     }
 
-    .container > .sfide {
-        padding: 5px;
+    .sfide > h3 {
+        font-size: 24px;
+        font-weight: bold;
     }
-
-    .container > .sfide > h3 {
-        font-size: 18px;
+    .sfide > p {
+        padding: 10px;
+        font-size: 12px;
     }
-    .container > .sfide .sfida .sfida-giocatore span {
+    .sfida .sfida-giocatore span {
         font-size: 14px;
+        font-weight: bold;
     }
 }
 
 @media screen and (max-width: 500px) {
-    .container > .sfide .sfida .sfida-giocatore span {
-        padding: 5px;
-        font-size: 8px;
+    .sfide {
+        padding: 10px;
+    }
+    .sfide .sfida {
+        width: 100%;
+        padding: 10px 5px;
+    }
+    .sfide h3 {
+        font-size: 20px;
+    }
+    .sfida .sfida-giocatore span {
+        font-size: 10px;
         font-weight: bold;
     }
 }

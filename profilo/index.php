@@ -71,12 +71,16 @@
         $email = $tuple['email'];
         $admin = $tuple['admin'];
     }
-    $vincitoreQuery = 'SELECT count(*) as vinte from sfide where (giocatore1=$1 and vincitore = 1) or (giocatore2=$1 and vincitore = 2)';
+    $vincitoreQuery = 'select count(*) as vinte
+                        from sfide
+                        where (giocatore1=$1 and vincitore = 1) or (giocatore2=$1 and vincitore = 2)';
     $vincitoreQueryResult = pg_query_params($dbconn, $vincitoreQuery, array($data['username']));
     if ($tuple = pg_fetch_array($vincitoreQueryResult, null, PGSQL_ASSOC)) {
         $partiteVinte = $tuple['vinte'];
     }
-    $giocateQuery = 'SELECT count(*) as giocate from sfide where (giocatore1 = $1 and status1 = true) or (giocatore2 = $1 and status2 = true)';
+    $giocateQuery = 'select count(*) as giocate 
+                    from sfide
+                    where (giocatore1 = $1 and status1 = true) or (giocatore2 = $1 and status2 = true)';
     $giocateQueryResult = pg_query_params($dbconn, $giocateQuery, array($data['username']));
     if ($tuple = pg_fetch_array($giocateQueryResult, null, PGSQL_ASSOC)) {
         $partiteGiocate = $tuple['giocate'];

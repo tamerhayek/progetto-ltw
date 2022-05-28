@@ -64,11 +64,10 @@ Teniamo conto dello status dei due giocatori durante la sfida per sapere quando 
 *gioca sfida e refresha*
 
 # CLASSIFICA
-*aggiungi*
 La pagina della classifica mostra i giocatori migliori insieme al numero di sfide vinte.
 
 # LOGOUT
-Nel caso in cui l'utente sia loggato, nella sezione Utente della navbar compare il collegamento al profilo utente e il pulsante di logout. Alla pressione di questo pulsante, verrà passato un parametro alla GET che, tramite uno script php, permetterà di cancellare il cookie tramite cui l'utente veniva memorizzato precedentemente e di ritornare all'home page, facendo ricomparire nella sezione Utente della Navbar i collegamenti per accesso e registrazione.
+Nel caso in cui l'utente sia loggato, nella sezione Utente della navbar compare il collegamento al profilo utente e il pulsante di logout. Alla pressione di questo pulsante, verrà ricaricata la pagina passando un parametro alla GET che, tramite un controllo iniziale da parte di un file php incluso in quasi tutte le pagine (tranne quella del quiz) permetterà di cancellare il cookie tramite cui l'utente veniva memorizzato precedentemente e ricaricare la pagina, facendo ricomparire nella sezione Utente della Navbar i collegamenti per accesso e registrazione.
 
 # ADMIN
 Gli account di noi due sono registrati come admin, il che ci permette, dal profilo utente, di andare in una sezione riservata dove possiamo visualizzare gli utenti, le sfide e le domande della nostra applicazione. Il caricamento di queste informazioni avviene all'interno della stessa pagina in modo dinamico attraverso AJAX: viene fatta una richiesta al server e quando questo fornirà la risorsa, verrà eseguita una funzione gestore che caricherà la risorsa ricevuta nell'apposito div.

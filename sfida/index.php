@@ -159,8 +159,16 @@
           $giocatore2 = $sfida['giocatore2'];
           $punteggio1 = $sfida['punteggio1'];
           $punteggio2 = $sfida['punteggio2'];
+          $vincitore = $sfida['vincitore'];
           echo "<a class='sfida' href='./quiz/risultati/?id=$id'>";
-          echo "<div class='sfida-giocatore'>";
+          if (($vincitore == 1 && $giocatore1 == $username) || ($vincitore == 2 && $giocatore2 == $username)) {
+            echo "<div class='sfida-giocatore vittoria'>";
+          }
+          else if (($vincitore == 1 && $giocatore2 == $username) || ($vincitore == 2 && $giocatore1 == $username)) {
+            echo "<div class='sfida-giocatore sconfitta'>";
+          } else {
+            echo "<div class='sfida-giocatore'>";
+          }
           echo "<span class='left'>$giocatore1</span>";
           echo "<span class='center'>$punteggio1 - $punteggio2</span>";
           echo "<span class='right'>$giocatore2</span>";

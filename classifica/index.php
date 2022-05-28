@@ -73,11 +73,15 @@
       <tbody>
         <?php
         $dbconn = pg_connect("postgres://crolxvdhppthgq:76b70cf66246929bd0e20b8c1a277a71fdaf8b317e307801ddcd58314b387a84@ec2-54-170-90-26.eu-west-1.compute.amazonaws.com:5432/d6fkjg0dv9b5uu");
-        $query = 'select u.nome, u.cognome, u.username, count(*) as punteggio
-                from utenti u join sfide s on (u.username = s.vincitore)
-                group by u.username
-                order by punteggio desc
-                limit 10';
+        $query = 'select u.nome, u.cognome, u.username, s.vinte punteggio
+                  from utenti u join (
+                      select u2.username as giocatore, count(*) as vinte
+                      from sfide s join utenti u2 on (s.giocatore1 = u2.username or s.giocatore2 = u2.username)
+                      where (giocatore1=u2.username and vincitore = 1) or (giocatore2=u2.username and vincitore = 2)
+                      group by u2.username
+                      ) s on (u.username = s.giocatore)
+                  order by s.vinte desc
+                  limit 10';
         $utenti = pg_query($dbconn, $query);
         $posizione = 0;
         while ($utente = pg_fetch_array($utenti, null, PGSQL_ASSOC)) {

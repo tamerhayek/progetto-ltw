@@ -130,13 +130,20 @@
             $result = pg_query_params($dbconn, $query, array($username, $avversario, $_GET['id']));
             if ($sfida = pg_fetch_array($result, null, PGSQL_ASSOC)) {
                 while ($sfida) {
+                    echo "<div class='sfida'>";
                     $id = $sfida['id'];
                     $giocatore1 = $sfida['giocatore1'];
                     $giocatore2 = $sfida['giocatore2'];
                     $punteggio1 = $sfida['punteggio1'];
                     $punteggio2 = $sfida['punteggio2'];
-                    echo "<div class='sfida'>";
-                    echo "<div class='sfida-giocatore'>";
+                    $vincitore = $sfida['vincitore'];
+                    if (($vincitore == 1 && $giocatore1 == $username) || ($vincitore == 2 && $giocatore2 == $username)) {
+                        echo "<div class='sfida-giocatore vittoria'>";
+                    } else if (($vincitore == 1 && $giocatore2 == $username) || ($vincitore == 2 && $giocatore1 == $username)) {
+                        echo "<div class='sfida-giocatore sconfitta'>";
+                    } else {
+                        echo "<div class='sfida-giocatore'>";
+                    }
                     echo "<span class='left'>$giocatore1</span>";
                     echo "<span class='center'>$punteggio1 - $punteggio2</span>";
                     echo "<span class='right'>$giocatore2</span>";

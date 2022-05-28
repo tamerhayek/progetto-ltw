@@ -101,7 +101,7 @@
     padding: 10px;
     font-size: 20px;
     font-weight: bold;
-    border: 1px solid #ffffff;
+    border: 2px solid #ffffff;
 }
 .sfida .sfida-giocatore:hover {
     color: #000000;
@@ -116,6 +116,27 @@
 .sfida .sfida-giocatore .right {
     width: 40%;
 }
+.sfida .vittoria span {
+    border: 2px solid #6fc42e;
+}
+.sfida .sconfitta span {
+    border: 2px solid #b41717;
+}
+.sfida .vittoria .center {
+    background-color: #6fc42e;
+}
+.sfida .sconfitta .center {
+    background-color: #b41717;
+}
+.sfida .vittoria:hover {
+    background-color: #6fc42e;
+    color: #ffffff;
+}
+.sfida .sconfitta:hover {
+    background-color: #b41717;
+    color: #ffffff;
+}
+
 
 @media screen and (max-width: 1200px) {
     .container {
@@ -206,10 +227,6 @@
     .sfida .sfida-giocatore span {
         font-size: 14px;
         font-weight: bold;
-    }
-    .sfida .sfida-giocatore:hover {
-        color: #000000;
-        background-color: #ffffff;
     }
 }
 
