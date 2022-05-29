@@ -4,7 +4,7 @@ create table sfide(
     status2 boolean not null default false,
     giocatore1 varchar(50) not null,
     giocatore2 varchar(50) not null,
-    vincitore varchar(50),
+    vincitore integer,
     punteggio1 integer not null default 0,
     punteggio2 integer not null default 0
 );
