@@ -19,7 +19,6 @@
             
             $cercaSfidaQueryResult = pg_query_params($dbconn, $cercaSfidaQuery, array($data['username'], $avversario));
             if (!($tuple = pg_fetch_array($cercaSfidaQueryResult, null, PGSQL_ASSOC))) { 
-                echo "ciao";
                 $createQuery = 'INSERT INTO sfide(giocatore1, giocatore2) VALUES ($1, $2)';
                 $createQueryResult = pg_query_params($dbconn, $createQuery, array($data['username'], $avversario));
                 if ($createQueryResult) {
@@ -40,7 +39,7 @@
         pg_free_result($randomQueryResult);
     } while ($tentativo <= 10);
 
-    //header('Location: ./?casuale=false');
+    header('Location: ./?casuale=false');
     
     pg_close($dbconn);
 

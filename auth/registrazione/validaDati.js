@@ -13,8 +13,6 @@ function nomePressed(event) {
             $("#nome").prop("readonly", true);
             $("#nomeButton").css("display", "none");
             $("#nomeButton").prop("disabled", true);
-            $("#cognomeButton").css("visibility", "visible");
-            $("#cognomeButton").removeAttr("disabled");
         } else {
             $("#smallNome").text("Questo campo non può essere vuoto!");
             $("#smallNome").css("visibility", "visible");
@@ -46,8 +44,6 @@ function cognomePressed(event) {
             $("#cognome").prop("readonly", true);
             $("#cognomeButton").css("display", "none");
             $("#cognomeButton").prop("disabled", true);
-            $("#emailButton").css("visibility", "visible");
-            $("#emailButton").removeAttr("disabled");
         } else {
             $("#smallCognome").text("Questo campo non può essere vuoto!");
             $("#smallCognome").css("visibility", "visible");
@@ -80,8 +76,6 @@ function emailPressed(event) {
                 $("#email").prop("readonly", true);
                 $("#emailButton").css("display", "none");
                 $("#emailButton").prop("disabled", true);
-                $("#usernameButton").css("visibility", "visible");
-                $("#usernameButton").removeAttr("disabled");
             } else {
                 $("#smallEmail").text("Email non valida");
                 $("#smallEmail").css("visibility", "visible");
@@ -128,8 +122,6 @@ function usernamePressed(event) {
                 $("#username").prop("readonly", true);
                 $("#usernameButton").css("display", "none");
                 $("#usernameButton").prop("disabled", true);
-                $("#passwordButton").css("visibility", "visible");
-                $("#passwordButton").removeAttr("disabled");
             }
         } else {
             $("#smallUsername").text("Questo campo non può essere vuoto!");
@@ -175,8 +167,6 @@ function passwordPressed(event) {
                 $("#password").prop("readonly", true);
                 $("#passwordButton").css("display", "none");
                 $("#passwordButton").prop("disabled", true);
-                $("#submit").css("visibility", "visible");
-                $("#submit").removeAttr("disabled");
             }
         } else {
             $("#smallPassword").text("Questo campo non può essere vuoto!");

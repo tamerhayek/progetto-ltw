@@ -72,14 +72,14 @@
 
 
     <script>
-        function loadTable(which) {
+        function loadTable(page) {
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     document.getElementById("table").innerHTML = this.responseText;
                 }
             };
-            xhttp.open("GET", which, true);
+            xhttp.open("GET", page, true);
             xhttp.send();
         }
     </script>

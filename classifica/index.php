@@ -17,7 +17,7 @@
 
   <!-- Style -->
   <link rel="stylesheet" href="../src/css/general.css" />
-  <link rel="stylesheet" href="classifica.css" />
+  <link rel="stylesheet" href="./classifica.css" />
 
   <!-- scrollreveal -->
   <script src="https://unpkg.com/scrollreveal"></script>
