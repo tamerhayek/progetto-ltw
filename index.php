@@ -115,19 +115,10 @@
         <p>Matricola: 1893272</p>
       </div>
     </div>
-    <h2>COLLABORAZIONI</h2>
     <div class="collaborazioni">
       <div class="sponsor reveal">
         <img src="./src/images/dev/sapienza.jpg">
         <h3>Sapienza</h3>
-      </div>
-      <div class="sponsor reveal">
-        <img src="./src/images/dev/zuckerberg.jpg">
-        <h3>Mark Zuckerberg</h3>
-      </div>
-      <div class="sponsor reveal">
-        <img src="./src/images/dev/musk.jpg">
-        <h3>Elon Musk</h3>
       </div>
     </div>
   </div>
