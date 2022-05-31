@@ -38,8 +38,6 @@
         $tentativo += 1;
         pg_free_result($randomQueryResult);
     } while ($tentativo <= 10);
-
-    header('Location: ./?casuale=false');
     
     pg_close($dbconn);
 
