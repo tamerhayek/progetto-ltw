@@ -9,7 +9,7 @@
         <th>Admin</th>
     </tr>
     <?php
-    $dbconn = pg_connect("postgres://crolxvdhppthgq:76b70cf66246929bd0e20b8c1a277a71fdaf8b317e307801ddcd58314b387a84@ec2-54-170-90-26.eu-west-1.compute.amazonaws.com:5432/d6fkjg0dv9b5uu");
+    $dbconn = pg_connect("host=localhost port=5432 dbname=trivia-stack user=postgres password=password");
     $query = 'SELECT nome,cognome,email,username,admin FROM utenti';
     $utenti = pg_query($dbconn, $query);
     while ($utente = pg_fetch_array($utenti, null, PGSQL_ASSOC)) {

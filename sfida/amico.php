@@ -5,7 +5,7 @@
     $data = json_decode($_COOKIE['userArray'], true);
     $avversario = $_POST['username'];
 
-    $dbconn = pg_connect("postgres://crolxvdhppthgq:76b70cf66246929bd0e20b8c1a277a71fdaf8b317e307801ddcd58314b387a84@ec2-54-170-90-26.eu-west-1.compute.amazonaws.com:5432/d6fkjg0dv9b5uu");
+    $dbconn = pg_connect("host=localhost port=5432 dbname=trivia-stack user=postgres password=password");
     $searchUtenteQuery = 'select * from utenti where username!=$1 and username=$2';
     $searchUtenteQueryResult = pg_query_params($dbconn, $searchUtenteQuery, array($data['username'], $avversario));
     if ($utente = pg_fetch_row($searchUtenteQueryResult,null, PGSQL_ASSOC)) {
